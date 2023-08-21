@@ -4,78 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="窗口创建">
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Camera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Mesh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Renderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/ShaderProgram.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Sprite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Texture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Transform.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Transformation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Vector2D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/java/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/STKAITI.TTF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/sound.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image0.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid10148.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid12388.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid12644.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid13344.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid16344.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid16644.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid18140.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid18768.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid19012.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid19216.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid19864.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid19980.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid20544.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid21252.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid21612.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid21808.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid21924.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid22828.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid23068.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid23132.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid23260.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid23380.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid25156.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid25512.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid25856.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid26092.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid26900.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid27680.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid27824.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid28420.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid29880.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid30208.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid3264.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid5824.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid9500.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="纹理创建">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/fragment.frag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/vertex.vert" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sjge/engine/GLController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/WindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sjge/engine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Mesh.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Mesh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/ShaderProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Sprite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Texture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Transformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Transformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/WindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/WindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,17 +86,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17 (2)",
-    "last_opened_file_path": "D:/PROJECT/Java/Rebound-Hero/GameEngine/src/main/java/org/sphinx/sphinxengine/engine"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17 (2)&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PROJECT/Java/Rebound-Hero/GameEngine/src/main/java/org/sphinx/sphinxengine/engine&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\PROJECT\Java\Rebound-Hero\GameEngine\src\main\java\org\sphinx\sphinxengine\engine" />
@@ -192,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692189120385</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="纹理创建">
+      <option name="closed" value="true" />
+      <created>1692541602525</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1692541602525</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,9 +162,10 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="窗口创建" />
-    <option name="LAST_COMMIT_MESSAGE" value="窗口创建" />
+    <MESSAGE value="纹理创建" />
+    <option name="LAST_COMMIT_MESSAGE" value="纹理创建" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Rebound_Hero$.ic" NAME="引擎测试 覆盖结果" MODIFIED="1692522970684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Rebound_Hero$.ic" NAME="引擎测试 覆盖结果" MODIFIED="1692615956786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

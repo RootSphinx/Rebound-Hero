@@ -5,10 +5,12 @@ public class Camera extends GameObject{
     private int width;
     private int height;
     private float zoom = 1;
-    public Transformation transformation = new Transformation();
+    public static final Transformation transformation = new Transformation();
     public Camera(int width, int height){
         this.width = width;
         this.height = height;
+        tag = "Camera";
+        name = "Camera";
     }
 
     public int getWidth() {

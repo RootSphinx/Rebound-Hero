@@ -28,15 +28,15 @@ public class Texture {
         ByteBuffer buffer = null;
 
         try {
-            BufferedImage image = ImageIO.read(Texture.class.getResource(path));
+            BufferedImage image = ImageIO.read(Objects.requireNonNull(Texture.class.getResource(path)));
             width = image.getWidth();
             height = image.getHeight();
             int[] pixels =  image.getRGB(0,0,width,height,null,0,width);
 
-            buffer  = BufferUtils.createByteBuffer(width * height * 4);//MemoryUtil.memAlloc(width * height * 4);
+            buffer  = MemoryUtil.memAlloc(width * height * 4);
 
-            for (int y = 0; y < width; y++){
-                for (int x = 0; x < height; x++){
+            for (int y = 0; y < height; y++){
+                for (int x = 0; x < width; x++){
                     Color color = new Color(pixels[y * width + x],true);
                     buffer.put((byte) color.getRed());
                     buffer.put((byte) color.getGreen());
@@ -45,7 +45,7 @@ public class Texture {
                 }
             }
             buffer.flip();
-            glGenTextures();
+            textureId = glGenTextures();
             glBindTexture(GL_TEXTURE_2D, textureId);
 
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
@@ -65,10 +65,21 @@ public class Texture {
 
     }
 
-    public void bind(){
+    public int getWidth() {
+        return width;
+    }
 
+    public int getHeight() {
+        return height;
+    }
+
+    public void bind(){
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, textureId);
     }
     public void unbind(){
-
+        glDisable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, 0);
     }
+
 }

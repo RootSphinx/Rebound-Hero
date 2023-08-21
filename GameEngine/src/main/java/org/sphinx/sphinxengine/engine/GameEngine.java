@@ -15,19 +15,22 @@ public class GameEngine {
 
     public void init(){
         windowController.glInit();
+        ShaderProgram.defaultShaderInit();
+        Renderer.init();
     }
     private void loop(){
-
         while (!GLFW.glfwWindowShouldClose(windowController.window)){
+            GLFW.glfwPollEvents();
             GameObject.gameObjectStatusUpdate();    //对象更新
             GameObject.gameObjectsUpdate();     //对象状态更新
             Renderer.startSpriteRender();     //纹理渲染
             Renderer.startNormalRender();   //无纹理渲染
-            GLFW.glfwPollEvents();
+            windowController.swapBuffer();  //交换缓冲区
         }
     }
     private void cleanup(){
         windowController.windowDestroy();
+        GameObject.gameObjectsRemoveAll();
     }
 
     public void runLoop() {

@@ -10,7 +10,7 @@ public class WindowController {
     private int windowSizeY = 800;
     private String windowTitle = "hello, world";
     public long window = 0;
-    public static WindowController instance;
+    private static WindowController instance;
     public static WindowController getInstance(){
         if (instance == null){
             instance = new WindowController();
@@ -36,6 +36,7 @@ public class WindowController {
             throw new RuntimeException("窗口创建失败");
         }
         context();
+        glfwSwapInterval(1);
     }
     public void context(){
         glfwMakeContextCurrent(window);
@@ -55,8 +56,10 @@ public class WindowController {
     public int getWindowSizeY() {
         return windowSizeY;
     }
+    public void swapBuffer(){
+        glfwSwapBuffers(window);
+    }
     public void windowDestroy(){
-        glfwSetWindowShouldClose(window,true);
         glfwTerminate();
     }
 }
