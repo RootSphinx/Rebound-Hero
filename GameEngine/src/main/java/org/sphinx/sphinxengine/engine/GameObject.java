@@ -11,6 +11,7 @@ public abstract class GameObject {
     public boolean isEnable = true;
     private boolean beforeIsEnable = false;
     public Transform transform = new Transform();
+    private GameObject parent = null;
     public GameObject(){
         gameObjects.add(this);
         start();
@@ -62,10 +63,19 @@ public abstract class GameObject {
     public float getRotation(){
         return this.transform.rotation;
     }
+    public void addRotation(float add){
+        this.transform.rotation += add;
+    }
     public float getScale(){
         return this.transform.scale;
     }
     public void setActive(boolean bool){
         this.isEnable = bool;
+    }
+    public void setParent(GameObject gameObject){
+        this.parent = gameObject;
+    }
+    public GameObject getParent(){
+        return parent;
     }
 }

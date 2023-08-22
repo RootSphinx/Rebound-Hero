@@ -1,13 +1,15 @@
 package org.sphinx.sphinxengine.engine;
 
+import static java.lang.Math.*;
+
 public class Vector2D {
     public float x;
     public float y;
-    Vector2D(){
+    public Vector2D(){
         x = 0;
         y = 0;
     }
-    Vector2D(float x, float y){
+    public Vector2D(float x, float y){
         this.x = x;
         this.y = y;
     }
@@ -16,7 +18,9 @@ public class Vector2D {
      *
      */
     public void normalize(){
-
+        float rad = (float)atan2(y,x);
+        x = x!=0?(float)cos(rad):0;
+        y = (float)sin(rad);
     }
     public Vector2D normalized(){
         Vector2D tempVector = new Vector2D();
@@ -27,13 +31,33 @@ public class Vector2D {
      * todo 向量旋转
      *
      */
+    public void multiply(float num){
+        this.x *= num;
+        this.y *= num;
+    }
+    public Vector2D multiplied(float num){
+        Vector2D tempVector = new Vector2D(x,y);
+        tempVector.multiply(num);
+        return tempVector;
+    }
+    public float getDistance(Vector2D vec){
+        return (float) sqrt(pow(vec.x-x, 2)+pow(vec.y-y, 2));
+    }
     public void rotate(float angle){
-
+        float distance = getDistance(new Vector2D(0,0));
+        float rad = (float) atan2(y,x);
+        x = x!=0? (float) cos(rad+angle):0;
+        y = (float) sin(rad+angle);
+        this.multiply(distance);
     }
 
     public Vector2D rotated(float angle){
-        Vector2D tempVector = new Vector2D();
+        Vector2D tempVector = new Vector2D(x,y);
         tempVector.rotate(angle);
         return tempVector;
+    }
+    @Override
+    public String toString(){
+        return this.x+" "+this.y;
     }
 }

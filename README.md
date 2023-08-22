@@ -1,2 +1,2 @@
 # Rebound-Hero
-A java game engine based on LWJGL.
+A simple java game engine based on LWJGL.

@@ -4,8 +4,8 @@ public class Sprite {
     public enum Type{
         UI,Item
     }
-    GameObject gameObject;
-    private Mesh mesh;
+    private final GameObject gameObject;
+    private final Mesh mesh;
     private ShaderProgram shaderProgram = ShaderProgram.defaultShader;
     private Texture texture;
     private int layout = 0;
@@ -66,5 +66,8 @@ public class Sprite {
 
     public void setTexture(Texture texture) {
         this.texture = texture;
+    }
+    public GameObject getGameObject(){
+        return gameObject;
     }
 }

@@ -80,6 +80,7 @@ public class ShaderProgram {
         defaultShader.createFragmentShader(Utils.getFileContent("/fragment.frag"));
         defaultShader.link();
         defaultShader.createUniform("matrix");
+        defaultShader.createUniform("UIsign");
     }
     public static ShaderProgram getDefaultShader(){
         return defaultShader;

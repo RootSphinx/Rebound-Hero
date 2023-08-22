@@ -5,7 +5,7 @@ import org.sphinx.sphinxengine.engine.Texture;
 import org.sphinx.sphinxengine.engine.WindowController;
 
 public class Player extends GameObject {
-    Sprite sprite = new Sprite(this, "/图片包/image0.png", Sprite.Type.Item);
+    Sprite sprite;
     @Override
     public void start(){
 
@@ -13,6 +13,8 @@ public class Player extends GameObject {
         tag = "Player";
         name = "Player";
         transform.scale = 3;
+        sprite = new Sprite(this, "/图片包/image0.png", Sprite.Type.Item);
+        sprite.setLayout(2);
     }
 
     @Override
@@ -42,6 +44,12 @@ public class Player extends GameObject {
         }
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_D)==GLFW.GLFW_PRESS){
             transform.position.x++;
+        }
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_Q)==GLFW.GLFW_PRESS){
+            addRotation(0.01f);
+        }
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_E)==GLFW.GLFW_PRESS){
+            addRotation(-0.01f);
         }
     }
 }

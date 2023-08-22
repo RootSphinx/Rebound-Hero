@@ -1,10 +1,9 @@
 package org.sphinx.sphinxengine.engine;
 
 public class Camera extends GameObject{
-    private Transform transform;
     private int width;
     private int height;
-    private float zoom = 1;
+    public float zoom = 1;
     public static final Transformation transformation = new Transformation();
     public Camera(int width, int height){
         this.width = width;
@@ -21,16 +20,19 @@ public class Camera extends GameObject{
         return height;
     }
 
-    public float getZoom() {
-        return zoom;
-    }
-
     public void setZoom(float zoom) {
-        this.zoom = zoom;
+        if (zoom < 0){
+            this.zoom=0;
+        }
+        else {
+            this.zoom = zoom;
+        }
     }
-    public void setSize(int width, int height){
-        this.width = width;
-        this.height = height;
+    public void addZoom(float add) {
+        zoom+=add;
+        if (zoom < 0.000001){
+            zoom = 0.000001f;
+        }
     }
 
     @Override

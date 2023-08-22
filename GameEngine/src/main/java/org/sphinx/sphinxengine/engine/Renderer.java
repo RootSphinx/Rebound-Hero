@@ -45,13 +45,25 @@ public class Renderer {
         glVertex2d(0.5f,-0.5f);
         glEnd();
 
+        ShaderProgram.defaultShader.bind();
+        Vector2D vector2D = new Vector2D(1,1);
+        ShaderProgram.defaultShader.setUniform("matrix", Transformation.getWorldMatrix(activeCamera.transform,activeCamera),16);
+        ShaderProgram.defaultShader.setUniform("UIsign", 1);
+        System.out.println("原始 = "+vector2D);
+        System.out.println("转换 = "+vector2D.rotated(activeCamera.getRotation()));
+        glBegin(GL_LINE_LOOP);
+        glVertex2f(0,0);
+        glVertex2f(vector2D.rotated(activeCamera.getRotation()).multiplied(200).x,vector2D.rotated(activeCamera.getRotation()).multiplied(200).y);
+        glEnd();
+        ShaderProgram.defaultShader.unbind();
     }
     private static void render(Sprite sprite){
 
         sprite.getMesh().bind();
         sprite.getShaderProgram().bind();
         sprite.getTexture().bind();
-        sprite.getShaderProgram().setUniform("matrix", Transformation.getWorldMatrix(sprite.gameObject,activeCamera),16);
+        sprite.getShaderProgram().setUniform("matrix", Transformation.getWorldMatrix(sprite.getGameObject().transform,activeCamera),16);
+        ShaderProgram.defaultShader.setUniform("UIsign", 0);
         glDrawArrays(GL_POLYGON, 0,sprite.getMesh().getVertexCount());
 
         sprite.getTexture().unbind();
