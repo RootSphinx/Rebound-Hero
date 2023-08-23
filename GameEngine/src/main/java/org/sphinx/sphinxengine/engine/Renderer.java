@@ -1,4 +1,6 @@
 package org.sphinx.sphinxengine.engine;
+import org.lwjgl.opengl.GL30;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,11 +26,11 @@ public class Renderer {
 
     protected static void startSpriteRender(){
         skyboxDraw();
-        for (int i = 0; i< 10; i++){
+        //for (int i = 0; i< 10; i++){
             for (Sprite sprite : spriteList){
-                if (sprite.getLayout() == i)
+              //  if (sprite.getLayout() == i)
                     render(sprite);
-            }
+            //}
         }
     }
 
@@ -46,15 +48,29 @@ public class Renderer {
         glEnd();
 
         ShaderProgram.defaultShader.bind();
-        Vector2D vector2D = new Vector2D(1,1);
-        ShaderProgram.defaultShader.setUniform("matrix", Transformation.getWorldMatrix(activeCamera.transform,activeCamera),16);
+        Vector2D vector2D = new Vector2D(0,0);
+        ShaderProgram.defaultShader.setUniform("matrix", Transformation.getWorldMatrix(new Transform(),activeCamera),16);
         ShaderProgram.defaultShader.setUniform("UIsign", 1);
-        System.out.println("原始 = "+vector2D);
-        System.out.println("转换 = "+vector2D.rotated(activeCamera.getRotation()));
         glBegin(GL_LINE_LOOP);
-        glVertex2f(0,0);
-        glVertex2f(vector2D.rotated(activeCamera.getRotation()).multiplied(200).x,vector2D.rotated(activeCamera.getRotation()).multiplied(200).y);
+        glVertex2f(activeCamera.transform.position.x,
+                activeCamera.transform.position.y);
+        glVertex2f(vector2D.rotated(activeCamera.getRotation()).x,
+                vector2D.rotated(activeCamera.getRotation()).y);
         glEnd();
+        ShaderProgram.defaultShader.unbind();
+
+        GL30.glPointSize(30);
+        ShaderProgram.defaultShader.bind();
+        ShaderProgram.defaultShader.setUniform("matrix", Transformation.getWorldMatrix(new Transform(),activeCamera),16);
+        ShaderProgram.defaultShader.setUniform("UIsign", 1);
+        GL30.glBegin(GL_POINTS);
+        glVertex2f(activeCamera.transform.position.x,
+                activeCamera.transform.position.y);
+        glVertex2f(activeCamera.transform.position.x- activeCamera.getWidth()/2f * activeCamera.zoom
+                ,activeCamera.transform.position.y + activeCamera.getHeight()/2f* activeCamera.zoom);
+        glVertex2f(activeCamera.transform.position.x+ activeCamera.getWidth()/2f* activeCamera.zoom,
+                activeCamera.transform.position.y- activeCamera.getHeight()/2f* activeCamera.zoom);
+        GL30.glEnd();
         ShaderProgram.defaultShader.unbind();
     }
     private static void render(Sprite sprite){
@@ -62,7 +78,14 @@ public class Renderer {
         sprite.getMesh().bind();
         sprite.getShaderProgram().bind();
         sprite.getTexture().bind();
-        sprite.getShaderProgram().setUniform("matrix", Transformation.getWorldMatrix(sprite.getGameObject().transform,activeCamera),16);
+        switch (sprite.type){
+            case UI -> {
+                sprite.getShaderProgram().setUniform("matrix", Transformation.getUIMatrix(sprite.getGameObject().transform,activeCamera),16);
+            }
+            case Item -> {
+                sprite.getShaderProgram().setUniform("matrix", Transformation.getWorldMatrix(sprite.getGameObject().transform,activeCamera),16);
+            }
+        }
         ShaderProgram.defaultShader.setUniform("UIsign", 0);
         glDrawArrays(GL_POLYGON, 0,sprite.getMesh().getVertexCount());
 
@@ -77,9 +100,12 @@ public class Renderer {
         glBegin(GL_POLYGON);
         glColor4f(0.2f,0.2f,0.5f,1);
         glVertex2d(1,1);
+        glColor4f(0.2f,0.5f,0.2f,1);
         glVertex2d(-1,1);
+        glColor4f(0.5f,0.2f,0.5f,1);
         glVertex2d(-1,-1);
-        glVertex2d(15f,-1);
+        glColor4f(0.2f,0.5f,0.5f,1);
+        glVertex2d(1f,-1);
         glEnd();
     }
 }

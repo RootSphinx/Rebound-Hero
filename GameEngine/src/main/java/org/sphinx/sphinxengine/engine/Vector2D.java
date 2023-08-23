@@ -23,7 +23,7 @@ public class Vector2D {
         y = (float)sin(rad);
     }
     public Vector2D normalized(){
-        Vector2D tempVector = new Vector2D();
+        Vector2D tempVector = new Vector2D(x,y);
         tempVector.normalize();
         return tempVector;
     }

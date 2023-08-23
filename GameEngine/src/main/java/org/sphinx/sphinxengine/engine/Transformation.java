@@ -1,8 +1,10 @@
 package org.sphinx.sphinxengine.engine;
 
 import org.joml.Matrix4f;
+import org.lwjgl.opengl.GL30;
 
-import static java.lang.Math.*;
+import static org.lwjgl.opengl.GL11.glVertex2f;
+import static org.lwjgl.opengl.GL11.glViewport;
 
 public class Transformation {
     private static final Matrix4f matrix = new Matrix4f();
@@ -14,27 +16,21 @@ public class Transformation {
     public static Matrix4f getWorldMatrix(Transform transform,Camera camera){
         Vector2D topLeft = new Vector2D(camera.getPosition().x - camera.getWidth()/2f * camera.zoom,
                 camera.getPosition().y + camera.getHeight()/2f * camera.zoom);
-        Vector2D bottomLeft = new Vector2D(camera.getPosition().x - camera.getWidth()/2f * camera.zoom,
-                camera.getPosition().y - camera.getHeight()/2f * camera.zoom);
-        Vector2D topRight = new Vector2D(camera.getPosition().x + camera.getWidth()/2f * camera.zoom,
-                camera.getPosition().y + camera.getHeight()/2f * camera.zoom);
         Vector2D bottomRight = new Vector2D(camera.getPosition().x + camera.getWidth()/2f * camera.zoom,
                 camera.getPosition().y - camera.getHeight()/2f * camera.zoom);
-
+        Vector2D d = camera.transform.position.normalized();
         return matrix.identity()
-                .ortho2D(topLeft.rotated(camera.getRotation()).x,
-                        bottomRight.rotated(camera.getRotation()).x,
-                        bottomLeft.rotated(camera.getRotation()).y,
-                        topRight.rotated(camera.getRotation()).y)
+                .ortho2D(topLeft.x,bottomRight.x,bottomRight.y,topLeft.y)
                 .translate(transform.position.x,transform.position.y,0)
-                .rotateZ(transform.rotation - camera.getRotation())
+                .rotateZ(transform.rotation)
                 .scaleXY(transform.scale,transform.scale);
+
     }
-    public static Matrix4f getUIMatrix(GameObject gameObject,Camera camera){
+    public static Matrix4f getUIMatrix(Transform transform, Camera camera){
         return matrix.identity()
-                .ortho2D(0,camera.getWidth(), camera.getHeight(), 0)
-                .translate(gameObject.getPosition().x,gameObject.getPosition().y,0)
-                .rotateZ(gameObject.getRotation())
-                .scaleXY(gameObject.getScale(),gameObject.getScale());
+                .ortho2D(0,camera.getWidth(),0,  camera.getHeight())
+                .translate(transform.position.x,transform.position.y,0)
+                .rotateZ(transform.rotation)
+                .scaleXY(transform.scale,transform.scale);
     }
 }

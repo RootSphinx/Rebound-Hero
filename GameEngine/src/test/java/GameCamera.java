@@ -36,5 +36,7 @@ public class GameCamera extends Camera {
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_L) == GLFW.GLFW_PRESS){
             this.addRotation(-0.01f);
         }
+/*      System.out.println("Camera.update()");
+        System.out.println("    Camera.transform.position = "+transform.position);*/
     }
 }
