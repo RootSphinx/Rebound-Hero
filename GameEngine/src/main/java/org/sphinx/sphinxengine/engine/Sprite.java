@@ -70,4 +70,7 @@ public class Sprite {
     public GameObject getGameObject(){
         return gameObject;
     }
+    public void cleanup(){
+        //this.texture;
+    }
 }

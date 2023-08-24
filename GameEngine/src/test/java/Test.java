@@ -11,8 +11,8 @@ public class Test {
     public static void main(String[] args) {
         GameEngine gameEngine = new GameEngine();
         gameEngine.setWindowInfo(1400,800,"你好");
-        Renderer.setActiveCamera(new GameCamera(1400, 800));
         gameEngine.init();
+        Renderer.setActiveCamera(new GameCamera(1400, 800));
         BackGround backGround = new BackGround();
         Player player = new Player();
         gameEngine.runLoop();
