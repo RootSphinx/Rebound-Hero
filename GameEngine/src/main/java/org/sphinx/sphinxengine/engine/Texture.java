@@ -32,7 +32,7 @@ public class Texture {
     public Texture(String path,int row, int col, int count){
         createTexture(path,row,col,count);
     }
-    private void createTexture(String path,int row, int col, int count){
+    private void createTexture(String path,int row, int col, int index){
         ByteBuffer buffer = null;
         try {
             BufferedImage image = ImageIO.read(Objects.requireNonNull(Texture.class.getResource(path)));
@@ -40,10 +40,7 @@ public class Texture {
             int imageHeight = image.getHeight();
             width = imageWidth / row;
             height = imageHeight / col;
-            //System.out.println((count / row - 1) * oneWidth);
-            System.out.format("%d %d %d\n",count,col,(count / col ) * height);
-            //System.out.println((count % col - 1) * oneHeight);
-            int[] pixels =  image.getRGB((count % row ) * width,(count / col ) * height,width,height,null,0,width);
+            int[] pixels =  image.getRGB((index % row ) * width,(index / col ) * height,width,height,null,0,width);
 
             buffer  = MemoryUtil.memAlloc(width * height * 4);
 
@@ -56,7 +53,6 @@ public class Texture {
                     buffer.put((byte) color.getAlpha());
                 }
             }
-            buffer.flip();
             buffer.flip();
             textureId = glGenTextures();
             glBindTexture(GL_TEXTURE_2D, textureId);
@@ -97,9 +93,10 @@ public class Texture {
         }
         return textures;
     }
-    public static List<Texture> textureSplite(String path,int row, int col,int start, int end){
+
+    public static List<Texture> textureSplite(String path,int row, int col,int ... indexes){
         List<Texture> textures = new ArrayList<>();
-        for (int i = start; i <= end; i++){
+        for (int i : indexes){
             textures.add(new Texture(path, row, col,i));
         }
         return textures;

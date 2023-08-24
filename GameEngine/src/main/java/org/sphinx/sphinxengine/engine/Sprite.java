@@ -13,8 +13,8 @@ public class Sprite {
     float[] vertices;
     float[] texCoords = new float[]{
             0, 0,
-            1, 0,
-            1, 1,
+            -1, 0,
+            -1, 1,
             0, 1
     };
 

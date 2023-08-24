@@ -43,12 +43,15 @@ public class Vector2D {
     public float getDistance(Vector2D vec){
         return (float) sqrt(pow(vec.x-x, 2)+pow(vec.y-y, 2));
     }
+    public float getLength(){
+        return this.getDistance(new Vector2D(0,0));
+    }
     public void rotate(float angle){
-        float distance = getDistance(new Vector2D(0,0));
+        float length = getLength();
         float rad = (float) atan2(y,x);
         x = x!=0? (float) cos(rad+angle):0;
         y = (float) sin(rad+angle);
-        this.multiply(distance);
+        this.multiply(length);
     }
 
     public Vector2D rotated(float angle){

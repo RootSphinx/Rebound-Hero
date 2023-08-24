@@ -87,7 +87,7 @@ public class Renderer {
             }
         }
         ShaderProgram.defaultShader.setUniform("UIsign", 0);
-        glDrawArrays(GL_POLYGON, 0,sprite.getMesh().getVertexCount());
+        glDrawArrays(GL_QUADS, 0,sprite.getMesh().getVertexCount());
 
         sprite.getTexture().unbind();
         sprite.getShaderProgram().unbind();

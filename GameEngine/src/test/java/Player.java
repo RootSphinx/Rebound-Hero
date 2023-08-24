@@ -2,6 +2,17 @@ import org.lwjgl.glfw.GLFW;
 import org.sphinx.sphinxengine.engine.*;
 
 public class Player extends GameObject {
+    enum VectorType{
+        left ("left") ,right("right"),back("back"),front("front");
+        public final String value;
+        private VectorType(String value) {
+            this.value = value;
+        }
+        public String value() {
+            return this.value;
+        }
+    }
+    VectorType vector = VectorType.front;
     Sprite sprite;
     Animator animator;
     @Override
@@ -14,10 +25,15 @@ public class Player extends GameObject {
         sprite = new Sprite(this, "/图片包/image0.png", Sprite.Type.Item);
         sprite.setLayout(2);
         animator = new Animator(this,sprite);
-        animator.createAction("left", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,4,7));
-        animator.createAction("right", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,8,11));
-        animator.createAction("back", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,12,15));
-        animator.createAction("front", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,0,3));
+        animator.createAction("left-idle", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,4,4));
+        animator.createAction("right-idle", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,8,8));
+        animator.createAction("back-idle", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,12,12));
+        animator.createAction("front-idle", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,0,0));
+
+        animator.createAction("left", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,5,6,7,4));
+        animator.createAction("right", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,9,10,11,8));
+        animator.createAction("back", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,13,14,15,12));
+        animator.createAction("front", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,1,2,3,0));
     }
 
     @Override
@@ -37,21 +53,22 @@ public class Player extends GameObject {
 
     }
     void move(){
+        Vector2D moveVector = new Vector2D();
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_W)==GLFW.GLFW_PRESS){
-            transform.position.y++;
-            animator.setAction("back");
+            moveVector.y = 1;
+            vector = VectorType.back;
         }
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_A)==GLFW.GLFW_PRESS){
-            transform.position.x--;
-            animator.setAction("left");
+            moveVector.x = -1;
+            vector = VectorType.left;
         }
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_S)==GLFW.GLFW_PRESS){
-            transform.position.y--;
-            animator.setAction("front");
+            moveVector.y = -1;
+            vector = VectorType.front;
         }
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_D)==GLFW.GLFW_PRESS){
-            transform.position.x++;
-            animator.setAction("right");
+            moveVector.x = 1;
+            vector = VectorType.right;
         }
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_Q)==GLFW.GLFW_PRESS){
             addRotation(0.01f);
@@ -59,5 +76,14 @@ public class Player extends GameObject {
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_E)==GLFW.GLFW_PRESS){
             addRotation(-0.01f);
         }
+        moveVector.normalize();
+        transform.addVector(moveVector);
+        if (moveVector.getLength() < 0.1f){
+            animator.setAction(vector.value+"-idle");
+        }
+        else {
+            animator.setAction(vector.value);
+        }
+
     }
 }

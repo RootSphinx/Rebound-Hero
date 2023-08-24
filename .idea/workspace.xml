@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="摄像机">
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameTimer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/resources/sprite.png" afterDir="false" />
+    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="纹理切割与动画器">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Animator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Animator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Renderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Sprite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Texture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Transformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Transformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Transform.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Vector2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/GameCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/GameCamera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692683699401</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="纹理切割与动画器">
+      <option name="closed" value="true" />
+      <created>1692799651824</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1692799651824</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,7 +227,8 @@
     <MESSAGE value="纹理创建" />
     <MESSAGE value="精灵显示" />
     <MESSAGE value="摄像机" />
-    <option name="LAST_COMMIT_MESSAGE" value="摄像机" />
+    <MESSAGE value="纹理切割与动画器" />
+    <option name="LAST_COMMIT_MESSAGE" value="纹理切割与动画器" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Rebound_Hero$.ic" NAME="引擎测试 覆盖结果" MODIFIED="1692629886818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

@@ -42,7 +42,7 @@ public class Animator {
         texturesMap.get(name).add(texture);
     }
     public void setAction(String name){
-        if (!texturesMap.containsKey(name) || currentAction == name) return;
+        if (!texturesMap.containsKey(name) || Objects.equals(currentAction, name)) return;
 
         if (typeMap.get(name) == Type.instant){
             timer.reset();
@@ -69,9 +69,9 @@ public class Animator {
                 else {
                     currentTexture =(currentTexture+1) % texturesMap.get(currentAction).size();
                 }
-                currentSprite.setTexture(texturesMap.get(currentAction).get(currentTexture));
                 timer.reset();
             }
+            currentSprite.setTexture(texturesMap.get(currentAction).get(currentTexture));
         }
         catch (NullPointerException e){
             e.printStackTrace();
