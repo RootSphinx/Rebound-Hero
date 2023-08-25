@@ -3,17 +3,22 @@ import org.lwjgl.system.MemoryUtil;
 
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.lwjgl.opengl.GL40.*;
 
 public class Mesh {
+    protected static final Map<Integer,Mesh> MESH_MAP = new HashMap<>();
     private final int vaoId;
     private final List<Integer> vboIdList = new ArrayList<>();
     private int vertexCount;
 
     /**
-     * todo 创建VAO和VBO
+     * 创建VAO
+     * @param vertices 顶点
+     * @param texCoords 纹理顶点
      */
     Mesh(float[] vertices, float[] texCoords){
         FloatBuffer vertexBuffer = null;
@@ -67,14 +72,32 @@ public class Mesh {
         glBindVertexArray(0);
     }
 
-    /**
-     * todo vao清理
-     */
-    public void cleanup(){
+    public void destroy(){
         glDeleteVertexArrays(vaoId);
-        for (int i : vboIdList){
-            glDeleteBuffers(i);
-            vboIdList.remove(i);
+        while (vboIdList.isEmpty()){
+            glDeleteBuffers(vboIdList.get(0));
+            vboIdList.remove(0);
         }
     }
+
+    public static void destroy(int id){
+        if (MESH_MAP.containsKey(id)) {
+            glDeleteVertexArrays(MESH_MAP.get(id).vaoId);
+            while (!MESH_MAP.get(id).vboIdList.isEmpty()) {
+                glDeleteBuffers(MESH_MAP.get(id).vboIdList.get(0));
+                MESH_MAP.get(id).vboIdList.remove(0);
+            }
+        }
+    }
+    public static void destroyAll(){
+        MESH_MAP.forEach((key,mesh)-> {
+            glDeleteVertexArrays(mesh.vaoId);
+            while (!mesh.vboIdList.isEmpty()){
+                glDeleteBuffers(mesh.vboIdList.get(0));
+                mesh.vboIdList.remove(0);
+            }
+        });
+
+    }
+
 }

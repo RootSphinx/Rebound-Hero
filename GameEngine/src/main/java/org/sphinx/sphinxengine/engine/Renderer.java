@@ -4,6 +4,7 @@ import org.lwjgl.opengl.GL30;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static org.lwjgl.opengl.GL40.*;
 
@@ -12,10 +13,18 @@ public class Renderer {
     private static Camera activeCamera = null;
     private static final List<Sprite> spriteList = new ArrayList<>();
 
+    /**
+     * 设置当前渲染器的活动摄像机
+     * @param activeCamera 指定摄像机
+     */
     public static void setActiveCamera(Camera activeCamera) {
         Renderer.activeCamera = activeCamera;
     }
 
+    /**
+     * 获得当前渲染器的活动摄像机
+     * @return 当前活动摄像机
+     */
     public static Camera getActiveCamera() {
         return activeCamera;
     }
@@ -35,6 +44,7 @@ public class Renderer {
     }
 
     protected static void startNormalRender(){
+        if (Objects.isNull(activeCamera)){return;}
         glLineWidth(3);
         glBegin(GL_LINE_LOOP);
         glColor4f(1,1,0,1);

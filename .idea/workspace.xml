@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="动画器完善">
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Scene.java" afterDir="false" />
+    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="场景">
+      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/SceneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/java/GameTestScene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/java/TestTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Mesh.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Mesh.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Sprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Vector2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Texture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,13 +89,14 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17 (2)&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/PROJECT/Java/Rebound-Hero/GameEngine/src/test/resources&quot;,
     &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -170,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692837108477</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="场景">
+      <option name="closed" value="true" />
+      <created>1692841766492</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1692841766492</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,7 +251,12 @@
     <MESSAGE value="摄像机" />
     <MESSAGE value="纹理切割与动画器" />
     <MESSAGE value="动画器完善" />
-    <option name="LAST_COMMIT_MESSAGE" value="动画器完善" />
+    <MESSAGE value="场景" />
+    <option name="LAST_COMMIT_MESSAGE" value="场景" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Rebound_Hero$.ic" NAME="引擎测试 覆盖结果" MODIFIED="1692838898749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

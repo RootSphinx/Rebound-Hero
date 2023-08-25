@@ -6,13 +6,29 @@ import org.lwjgl.opengl.GL;
 import static org.lwjgl.glfw.GLFW.glfwMakeContextCurrent;
 import static org.lwjgl.opengl.GL11.glGenTextures;
 
-
 public class GameEngine {
+    public static GameEngine gameEngine = null;
+    private GameEngine(){}
+    public static GameEngine getGameEngine(){
+        if (gameEngine==null)
+            gameEngine = new GameEngine();
+        return gameEngine;
+    }
     private final WindowController windowController = WindowController.getInstance();
+
+    /**
+     * 设置窗口属性
+     * @param windowSizeX 窗口宽度
+     * @param windowSizeY 窗口高度
+     * @param windowTitle 窗口标题
+     */
     public void setWindowInfo(int windowSizeX, int windowSizeY, String windowTitle){
         windowController.setWindowInfo(windowSizeX, windowSizeY, windowTitle);
     }
 
+    /**
+     * 引擎初始化
+     */
     public void init(){
         windowController.glInit();
         ShaderProgram.defaultShaderInit();
@@ -30,13 +46,17 @@ public class GameEngine {
             windowController.swapBuffer();  //交换缓冲区
         }
     }
-    private void cleanup(){
+    protected void cleanup(){
         windowController.windowDestroy();
-        GameObject.gameObjectsRemoveAll();
+        SceneController.cleanScene();
     }
 
-    public void runLoop() {
+    /**
+     * 启动引擎循环
+     */
+    public void start() {
        try {
+           SceneController.loadScene(0);
            loop();
        }
        catch (Exception e){

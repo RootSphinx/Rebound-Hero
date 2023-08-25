@@ -10,8 +10,11 @@ project.ext.jomlVersion = "1.10.5"
 project.ext.lwjglNatives = "natives-windows"
 
 repositories {
+    maven {url 'https://maven.aliyun.com/repository/public/'}
+    //mavenLocal()
     mavenCentral()
 }
+
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')

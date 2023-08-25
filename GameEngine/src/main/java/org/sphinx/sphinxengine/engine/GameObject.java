@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class GameObject {
-    private static final List<GameObject> gameObjects = new ArrayList<>();
-    private int Id;
+    private static final List<GameObject> GAME_OBJECT_LIST = new ArrayList<>();
+    public static int gameObjectCount = 0;
+    private final int Id;
     public String tag;
     public String name;
     public boolean isEnable = true;
@@ -13,7 +14,9 @@ public abstract class GameObject {
     public Transform transform = new Transform();
     private GameObject parent = null;
     public GameObject(){
-        gameObjects.add(this);
+        this.Id = gameObjectCount;
+        gameObjectCount++;
+        GAME_OBJECT_LIST.add(this);
         start();
     }
     public abstract void start();
@@ -30,7 +33,7 @@ public abstract class GameObject {
         }
     }
     protected static void gameObjectStatusUpdate(){
-        for(GameObject gameObject : gameObjects){
+        for(GameObject gameObject : GAME_OBJECT_LIST){
             if (gameObject.isEnable != gameObject.beforeIsEnable){
                 if (gameObject.isEnable){
                     gameObject.enable();
@@ -43,19 +46,20 @@ public abstract class GameObject {
         }
     }
     protected static void gameObjectsRemoveAll(){
-        for (GameObject gameObject : gameObjects){
-            gameObject.destroy();
+        while (!GAME_OBJECT_LIST.isEmpty()){
+            GAME_OBJECT_LIST.get(0).destroy();
         }
     }
     public boolean isEnable(){
         return isEnable && beforeIsEnable;
     }
     public void destroy(){
-        gameObjects.remove(this);
+        GAME_OBJECT_LIST.remove(this);
+        Mesh.destroy(Id);
     }
 
     public static List<GameObject> getGameObjects() {
-        return gameObjects;
+        return GAME_OBJECT_LIST;
     }
     public Vector2D getPosition(){
         return this.transform.position;
@@ -77,5 +81,9 @@ public abstract class GameObject {
     }
     public GameObject getParent(){
         return parent;
+    }
+
+    public int getId() {
+        return Id;
     }
 }
