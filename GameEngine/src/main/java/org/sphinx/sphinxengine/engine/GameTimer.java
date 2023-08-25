@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameTimer {
-    private static final List<GameTimer> gameTimers = new ArrayList<>();
+    private static final List<GameTimer> GAME_TIMER_LIST = new ArrayList<>();
     public double time = 0;
     public static double deltaTime;
     private static double lastTimer = glfwGetTime();
     public boolean isFreeze = false;
 
-    GameTimer(){
-        gameTimers.add(this);
+    public GameTimer(){
+        GAME_TIMER_LIST.add(this);
     }
     public void reset(){
         this.time = 0;
@@ -19,9 +19,17 @@ public class GameTimer {
     public static void timerUpdate(){
         deltaTime = glfwGetTime() - lastTimer;
         lastTimer = glfwGetTime();
-        for (GameTimer gameTimer : gameTimers){
+        for (GameTimer gameTimer : GAME_TIMER_LIST){
             if (!gameTimer.isFreeze)
                 gameTimer.time += deltaTime;
         }
+    }
+    public static void destroyAllGameTimer(){
+        while (!GAME_TIMER_LIST.isEmpty()){
+            GAME_TIMER_LIST.remove(0);
+        }
+    }
+    public void destroy(){
+        GAME_TIMER_LIST.remove(this);
     }
 }

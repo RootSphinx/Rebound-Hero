@@ -4,20 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="场景">
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/SceneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/java/GameTestScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/java/TestTest.java" afterDir="false" />
+    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="解决切换场景时资源释放不正常的问题">
+      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/java/BackGround1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/java/BackGround2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/java/GameTestScene1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameEngine/src/test/java/GameTestScene2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Animator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Animator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameTimer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Mesh.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Mesh.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Scene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/SceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Sprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Texture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/BackGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/BackGround.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/GameTestScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/GameTestScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +114,9 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="引擎测试" type="Application" factoryName="Application">
@@ -187,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692841766492</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="场景加载器">
+      <option name="closed" value="true" />
+      <created>1692937637732</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1692937637732</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -252,7 +267,9 @@
     <MESSAGE value="纹理切割与动画器" />
     <MESSAGE value="动画器完善" />
     <MESSAGE value="场景" />
-    <option name="LAST_COMMIT_MESSAGE" value="场景" />
+    <MESSAGE value="场景加载器" />
+    <MESSAGE value="解决切换场景时资源释放不正常的问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="解决切换场景时资源释放不正常的问题" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

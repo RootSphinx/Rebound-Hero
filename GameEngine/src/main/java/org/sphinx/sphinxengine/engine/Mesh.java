@@ -74,7 +74,7 @@ public class Mesh {
 
     public void destroy(){
         glDeleteVertexArrays(vaoId);
-        while (vboIdList.isEmpty()){
+        while (!vboIdList.isEmpty()){
             glDeleteBuffers(vboIdList.get(0));
             vboIdList.remove(0);
         }
@@ -89,7 +89,7 @@ public class Mesh {
             }
         }
     }
-    public static void destroyAll(){
+    public static void destroyAllMesh(){
         MESH_MAP.forEach((key,mesh)-> {
             glDeleteVertexArrays(mesh.vaoId);
             while (!mesh.vboIdList.isEmpty()){

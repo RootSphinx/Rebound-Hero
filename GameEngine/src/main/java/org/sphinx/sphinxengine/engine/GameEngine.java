@@ -1,10 +1,5 @@
 package org.sphinx.sphinxengine.engine;
-
 import org.lwjgl.glfw.GLFW;
-import org.lwjgl.opengl.GL;
-
-import static org.lwjgl.glfw.GLFW.glfwMakeContextCurrent;
-import static org.lwjgl.opengl.GL11.glGenTextures;
 
 public class GameEngine {
     public static GameEngine gameEngine = null;
@@ -46,7 +41,7 @@ public class GameEngine {
             windowController.swapBuffer();  //交换缓冲区
         }
     }
-    protected void cleanup(){
+    private void cleanup(){
         windowController.windowDestroy();
         SceneController.cleanScene();
     }

@@ -26,12 +26,17 @@ public abstract class GameObject {
     public abstract void disable();
 
     protected static void gameObjectsUpdate(){
-        for(GameObject gameObject : GameObject.getGameObjects()){
+        for (GameObject gameObject : GAME_OBJECT_LIST){
             if (gameObject.isEnable()){
                 gameObject.update();
+                if (SceneController.isLoadingNextScene){
+                    SceneController.isLoadingNextScene = false;
+                    break;
+                }
             }
         }
     }
+
     protected static void gameObjectStatusUpdate(){
         for(GameObject gameObject : GAME_OBJECT_LIST){
             if (gameObject.isEnable != gameObject.beforeIsEnable){
@@ -48,6 +53,7 @@ public abstract class GameObject {
     protected static void gameObjectsRemoveAll(){
         while (!GAME_OBJECT_LIST.isEmpty()){
             GAME_OBJECT_LIST.get(0).destroy();
+            System.out.println(GAME_OBJECT_LIST.size());
         }
     }
     public boolean isEnable(){

@@ -1,7 +1,6 @@
 package org.sphinx.sphinxengine.engine;
 import org.lwjgl.opengl.GL30;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -35,11 +34,11 @@ public class Renderer {
 
     protected static void startSpriteRender(){
         skyboxDraw();
-        //for (int i = 0; i< 10; i++){
+        for (int i = 0; i< 10; i++){
             for (Sprite sprite : spriteList){
-              //  if (sprite.getLayout() == i)
+                if (sprite.getLayout() == i)
                     render(sprite);
-            //}
+            }
         }
     }
 
@@ -89,12 +88,10 @@ public class Renderer {
         sprite.getShaderProgram().bind();
         sprite.getTexture().bind();
         switch (sprite.type){
-            case UI -> {
+            case UI ->
                 sprite.getShaderProgram().setUniform("matrix", Transformation.getUIMatrix(sprite.getGameObject().transform,activeCamera),16);
-            }
-            case Item -> {
+            case Item ->
                 sprite.getShaderProgram().setUniform("matrix", Transformation.getWorldMatrix(sprite.getGameObject().transform,activeCamera),16);
-            }
         }
         ShaderProgram.defaultShader.setUniform("UIsign", 0);
         glDrawArrays(GL_QUADS, 0,sprite.getMesh().getVertexCount());
@@ -105,6 +102,17 @@ public class Renderer {
     }
     public static void spriteListAdd(Sprite sprite){
         spriteList.add(sprite);
+    }
+    protected static void destroyAllSprite(){
+        while (!spriteList.isEmpty()){
+            Sprite sprite = spriteList.get(0);
+            sprite.getMesh().destroy();
+            spriteList.remove(sprite);
+        }
+    }
+    protected static void destroySprite(Sprite sprite){
+        sprite.getMesh().destroy();
+        spriteList.remove(sprite);
     }
     private static void skyboxDraw(){
         glBegin(GL_POLYGON);
