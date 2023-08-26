@@ -6,60 +6,70 @@ import org.lwjgl.opengl.GL;
 import static org.lwjgl.glfw.GLFW.*;
 
 public class WindowController {
-    private int windowSizeX = 1200;
-    private int windowSizeY = 800;
+    private int windowWidth = 1200;
+    private int windowHeight = 800;
     private String windowTitle = "hello, world";
     public long window = 0;
     private static WindowController instance;
     public static WindowController getInstance(){
         if (instance == null){
             instance = new WindowController();
+            Debug.log("窗口管理器----实例创建成功");
         }
         return instance;
     }
     private WindowController() {
 
     }
-    public void setWindowInfo(int windowSizeX, int windowSizeY, String windowTitle){
-        this.windowSizeX = windowSizeX;
-        this.windowSizeY = windowSizeY;
+    public void setWindowInfo(int windowWidth, int windowHeight, String windowTitle){
+        this.windowWidth = windowWidth;
+        this.windowHeight = windowHeight;
         this.windowTitle = windowTitle;
+        Debug.log("窗口管理器----设置窗口宽为 : "+windowWidth);
+        Debug.log("\t高为 : "+windowHeight);
+        Debug.log("\t标题为 : "+windowTitle);
     }
     public void glInit(){
+        Debug.log("窗口管理器----实初始化中……");
         GLFWErrorCallback.createPrint(System.err).set();
         if (!glfwInit()){
             throw new RuntimeException("glfw初始化失败");
         }
         glfwWindowHint(GLFW_RESIZABLE,GLFW_FALSE);
-        window = glfwCreateWindow(windowSizeX,windowSizeY,windowTitle,0,0);
+        window = glfwCreateWindow(windowWidth,windowHeight,windowTitle,0,0);
         if (window==0){
             throw new RuntimeException("窗口创建失败");
         }
         context();
         glfwSwapInterval(1);
+        Debug.log("窗口管理器----实初始化完毕");
     }
     public void context(){
         glfwMakeContextCurrent(window);
         GL.createCapabilities();
+        Debug.log("窗口管理器----上下文创建完毕");
     }
     public void hideWindow(){
         glfwHideWindow(window);
+        Debug.log("窗口管理器----窗口隐藏");
     }
     public void showWindow(){
         glfwShowWindow(window);
+        Debug.log("窗口管理器----窗口显示");
     }
 
     public int getWindowSizeX() {
-        return windowSizeX;
+        return windowWidth;
     }
 
     public int getWindowSizeY() {
-        return windowSizeY;
+        return windowHeight;
     }
     public void swapBuffer(){
         glfwSwapBuffers(window);
     }
     public void windowDestroy(){
         glfwTerminate();
+        Debug.log("窗口管理器----窗口销毁");
     }
 }

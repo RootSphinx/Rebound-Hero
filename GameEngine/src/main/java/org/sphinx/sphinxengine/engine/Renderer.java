@@ -18,6 +18,7 @@ public class Renderer {
      */
     public static void setActiveCamera(Camera activeCamera) {
         Renderer.activeCamera = activeCamera;
+        Debug.log("渲染器----当前活动摄像机已修改");
     }
 
     /**
@@ -30,13 +31,15 @@ public class Renderer {
     protected static void init(){
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        Debug.log("渲染器----初始化成功");
     }
 
     protected static void startSpriteRender(){
+        //Debug.log("渲染器----开始精灵渲染");
         skyboxDraw();
         for (int i = 0; i< 10; i++){
             for (Sprite sprite : spriteList){
-                if (sprite.getLayout() == i)
+                if (sprite.getLayout() == i && sprite.getGameObject().isEnable())
                     render(sprite);
             }
         }
@@ -104,6 +107,7 @@ public class Renderer {
         spriteList.add(sprite);
     }
     protected static void destroyAllSprite(){
+        Debug.log("渲染器----开始释放精灵");
         while (!spriteList.isEmpty()){
             Sprite sprite = spriteList.get(0);
             sprite.getMesh().destroy();
@@ -115,6 +119,7 @@ public class Renderer {
         spriteList.remove(sprite);
     }
     private static void skyboxDraw(){
+        //Debug.log("渲染器----开始绘制天空盒");
         glBegin(GL_POLYGON);
         glColor4f(0.2f,0.2f,0.5f,1);
         glVertex2d(1,1);

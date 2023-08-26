@@ -5,8 +5,10 @@ public class GameEngine {
     public static GameEngine gameEngine = null;
     private GameEngine(){}
     public static GameEngine getGameEngine(){
-        if (gameEngine==null)
+        if (gameEngine==null) {
             gameEngine = new GameEngine();
+            Debug.log("引擎实例创建成功");
+        }
         return gameEngine;
     }
     private final WindowController windowController = WindowController.getInstance();
@@ -28,8 +30,10 @@ public class GameEngine {
         windowController.glInit();
         ShaderProgram.defaultShaderInit();
         Renderer.init();
+        Debug.log("引擎初始化成功");
     }
     private void loop(){
+        Debug.log("引擎循环启动");
         while (!GLFW.glfwWindowShouldClose(windowController.window)){
             GLFW.glfwPollEvents();
             GameTimer.timerUpdate();
@@ -42,6 +46,7 @@ public class GameEngine {
         }
     }
     private void cleanup(){
+        Debug.log("开始资源释放");
         windowController.windowDestroy();
         SceneController.cleanScene();
     }

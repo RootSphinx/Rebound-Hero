@@ -65,4 +65,7 @@ public class Sprite {
     public GameObject getGameObject(){
         return gameObject;
     }
+    public void setShaderProgram(ShaderProgram shaderProgram){
+        this.shaderProgram = shaderProgram;
+    }
 }

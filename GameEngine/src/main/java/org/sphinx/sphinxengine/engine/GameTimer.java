@@ -25,6 +25,7 @@ public class GameTimer {
         }
     }
     public static void destroyAllGameTimer(){
+        Debug.log("计时器----正在释放计时器");
         while (!GAME_TIMER_LIST.isEmpty()){
             GAME_TIMER_LIST.remove(0);
         }

@@ -142,6 +142,7 @@ public class Texture {
         return textures;
     }
     protected static void destroyAllTexture(){
+        Debug.log("纹理----正在释放纹理");
         while (!TEXTURE_LIST.isEmpty()){
             glDeleteTextures(TEXTURE_LIST.get(0));
             TEXTURE_LIST.remove(0);

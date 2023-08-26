@@ -10,24 +10,27 @@ public class SceneController {
     private static int activeSceneId = 0;
     public static void register(Scene scene){
         SCENE_LIST.add(scene);
+        Debug.log("场景加载器----场景注册成功,当前场景总数 : "+SCENE_LIST.size());
     }
     public static void loadScene(int sceneId){
         isLoadingNextScene = true;
         activeScene = SCENE_LIST.get(sceneId);
         cleanScene();
-        System.out.println("SceneController.loadScene()");
+        Debug.log("场景加载器----加载场景ID : "+sceneId);
         activeScene.initScene();
         activeSceneId = sceneId;
     }
     public static void loadNextScene(){
         isLoadingNextScene = true;
         activeScene = SCENE_LIST.get(++activeSceneId);
-        System.out.println("场景 : "+activeSceneId);
+        Debug.log("正在加载场景 : "+activeSceneId);
         cleanScene();
-        System.out.println("SceneController.loadNextScene()");
+        Debug.log("场景加载器----加载下一个场景，ID : "+activeSceneId);
         activeScene.initScene();
     }
     public static void cleanScene(){
+        Debug.log("场景资源释放中");
+        Renderer.setActiveCamera(null);
         GameObject.gameObjectsRemoveAll();
         Texture.destroyAllTexture();
         Renderer.destroyAllSprite();

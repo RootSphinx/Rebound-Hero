@@ -77,6 +77,7 @@ public class Animator {
         }
     }
     protected static void destroyAllAnimator(){
+        Debug.log("动画器----正在释放动画器");
         while (!ANIMATOR_LIST.isEmpty()){
             ANIMATOR_LIST.remove(0);
         }

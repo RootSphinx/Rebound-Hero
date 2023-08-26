@@ -51,15 +51,16 @@ public abstract class GameObject {
         }
     }
     protected static void gameObjectsRemoveAll(){
+        Debug.log("游戏对象----正在释放游戏对象");
         while (!GAME_OBJECT_LIST.isEmpty()){
             GAME_OBJECT_LIST.get(0).destroy();
-            System.out.println(GAME_OBJECT_LIST.size());
         }
     }
     public boolean isEnable(){
         return isEnable && beforeIsEnable;
     }
     public void destroy(){
+        Debug.log("\t当前ID : "+ this.Id+" 正在释放");
         GAME_OBJECT_LIST.remove(this);
         Mesh.destroy(Id);
     }

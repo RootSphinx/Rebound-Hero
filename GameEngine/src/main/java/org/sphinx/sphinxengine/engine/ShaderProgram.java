@@ -81,6 +81,7 @@ public class ShaderProgram {
         defaultShader.link();
         defaultShader.createUniform("matrix");
         defaultShader.createUniform("UIsign");
+        Debug.log("默认着色器编译成功");
     }
     public static ShaderProgram getDefaultShader(){
         return defaultShader;
