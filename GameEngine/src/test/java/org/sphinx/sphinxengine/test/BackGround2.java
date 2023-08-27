@@ -1,3 +1,5 @@
+package org.sphinx.sphinxengine.test;
+
 import org.sphinx.sphinxengine.engine.GameObject;
 import org.sphinx.sphinxengine.engine.GameTimer;
 import org.sphinx.sphinxengine.engine.Sprite;

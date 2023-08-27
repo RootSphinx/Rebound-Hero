@@ -112,35 +112,6 @@ public class Texture {
         glBindTexture(GL_TEXTURE_2D, 0);
     }
 
-    /**
-     * 纹理切割
-     * @param path 图片的路径
-     * @param row 切割行数
-     * @param col 切割列数
-     * @return 返回切割后纹理列表
-     */
-    public static List<Texture> textureSplite(String path,int row, int col){
-        List<Texture> textures = new ArrayList<>();
-        for (int i = 0; i < row * col; i++){
-            textures.add(new Texture(path, row, col,i));
-        }
-        return textures;
-    }
-    /**
-     * 纹理切割
-     * @param path 图片的路径
-     * @param row 切割行数
-     * @param col 切割列数
-     * @param indexes 指定切割的纹理排序
-     * @return 返回切割后纹理列表
-     */
-    public static List<Texture> textureSplite(String path,int row, int col,int ... indexes){
-        List<Texture> textures = new ArrayList<>();
-        for (int i : indexes){
-            textures.add(new Texture(path, row, col,i));
-        }
-        return textures;
-    }
     protected static void destroyAllTexture(){
         Debug.log("纹理----正在释放纹理");
         while (!TEXTURE_LIST.isEmpty()){
@@ -148,4 +119,5 @@ public class Texture {
             TEXTURE_LIST.remove(0);
         }
     }
+
 }

@@ -41,7 +41,7 @@ public class GameEngine {
             GameObject.gameObjectsUpdate();     //对象状态更新
             Animator.animatorsUpdate();         //动画更新
             Renderer.startSpriteRender();     //纹理渲染
-            Renderer.startNormalRender();   //无纹理渲染
+            Renderer.startManualRender();   //无纹理渲染
             windowController.swapBuffer();  //交换缓冲区
         }
     }

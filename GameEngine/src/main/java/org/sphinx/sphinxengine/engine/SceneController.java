@@ -36,5 +36,6 @@ public class SceneController {
         Renderer.destroyAllSprite();
         GameTimer.destroyAllGameTimer();
         Animator.destroyAllAnimator();
+        System.gc();
     }
 }

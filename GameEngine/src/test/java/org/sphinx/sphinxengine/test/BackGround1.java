@@ -1,3 +1,5 @@
+package org.sphinx.sphinxengine.test;
+
 import org.sphinx.sphinxengine.engine.*;
 
 public class BackGround1 extends GameObject {
@@ -6,7 +8,7 @@ public class BackGround1 extends GameObject {
 
     @Override
     public void start() {
-        this.transform.position = new Vector2D(1000,0);
+        //this.transform.position = new Vector2D(1000,0);
         sprite = new Sprite(this, "/background.jpg", Sprite.Type.Item);
         sprite.setLayout(1);
     }

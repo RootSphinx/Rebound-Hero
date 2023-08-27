@@ -1,3 +1,4 @@
+package org.sphinx.sphinxengine.test;
 import org.sphinx.sphinxengine.engine.*;
 
 public class Test {

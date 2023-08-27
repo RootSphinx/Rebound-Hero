@@ -1,3 +1,5 @@
+package org.sphinx.sphinxengine.test;
+
 import org.lwjgl.glfw.GLFW;
 import org.sphinx.sphinxengine.engine.*;
 
@@ -19,27 +21,26 @@ public class Player extends GameObject {
     public void start(){
 
         //System.out.println("player.start()");
-        tag = "Player";
-        name = "Player";
+        tag = "org.sphinx.sphinxengine.test.Player";
+        name = "org.sphinx.sphinxengine.test.Player";
         transform.scale = 3;
         sprite = new Sprite(this, "/图片包/image0.png", Sprite.Type.Item);
         sprite.setLayout(2);
+        SplitTexture textures = new SplitTexture("/sprite.png", 4, 4);
         animator = new Animator(this,sprite);
-        animator.createAction("left-idle", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,4,4));
-        animator.createAction("right-idle", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,8,8));
-        animator.createAction("back-idle", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,12,12));
-        animator.createAction("front-idle", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,0,0));
+        animator.createAction("left-idle", 0.2f, Animator.Type.instant,textures.getTextureIndex(4));
+        animator.createAction("right-idle", 0.2f, Animator.Type.instant,textures.getTextureIndex(8));
+        animator.createAction("back-idle", 0.2f, Animator.Type.instant,textures.getTextureIndex(12));
+        animator.createAction("front-idle", 0.2f, Animator.Type.instant,textures.getTextureIndex(0));
 
-        animator.createAction("left", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,5,6,7,4));
-        animator.createAction("right", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,9,10,11,8));
-        animator.createAction("back", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,13,14,15,12));
-        animator.createAction("front", 0.2f, Animator.Type.instant,Texture.textureSplite("/sprite.png",4,4,1,2,3,0));
+        animator.createAction("left", 0.2f, Animator.Type.instant,textures.getTextureIndex(5,6,7,4));
+        animator.createAction("right", 0.2f, Animator.Type.instant,textures.getTextureIndex(9,10,11,8));
+        animator.createAction("back", 0.2f, Animator.Type.instant,textures.getTextureIndex(13,14,15,12));
+        animator.createAction("front", 0.2f, Animator.Type.instant,textures.getTextureIndex(1,2,3,0));
     }
 
     @Override
     public void update(){
-/*        System.out.println("player.update()");
-        System.out.println("    player.transform.position = "+transform.position);*/
         move();
     }
 

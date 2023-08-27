@@ -1,3 +1,5 @@
+package org.sphinx.sphinxengine.test;
+
 import org.joml.Vector2d;
 import org.lwjgl.glfw.GLFW;
 import org.sphinx.sphinxengine.engine.Camera;
