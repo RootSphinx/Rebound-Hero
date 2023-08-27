@@ -11,6 +11,5 @@ public class GameTestScene implements Scene {
         BackGround backGround = new BackGround();
         BackGround1 backGround1 = new BackGround1();
         Player player = new Player();
-        backGround1.setParent(player);
     }
 }

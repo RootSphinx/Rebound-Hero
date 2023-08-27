@@ -5,6 +5,7 @@ import org.sphinx.sphinxengine.engine.*;
 public class BackGround1 extends GameObject {
     Sprite sprite;
     GameTimer gameTimer = new GameTimer();
+    int fps = 0;
 
     @Override
     public void start() {
@@ -16,7 +17,12 @@ public class BackGround1 extends GameObject {
 
     @Override
     public void update() {
-
+        if (gameTimer.time > 1){
+            System.out.println(fps / gameTimer.time);
+            gameTimer.reset();
+            fps = 0;
+        }
+        fps++;
     }
 
     @Override

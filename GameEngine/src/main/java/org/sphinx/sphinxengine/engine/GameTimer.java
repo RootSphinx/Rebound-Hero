@@ -24,6 +24,9 @@ public class GameTimer {
                 gameTimer.time += deltaTime;
         }
     }
+    protected static double onceLoopTime(){
+        return glfwGetTime() -lastTimer;
+    }
     public static void destroyAllGameTimer(){
         Debug.log("计时器----正在释放计时器");
         while (!GAME_TIMER_LIST.isEmpty()){

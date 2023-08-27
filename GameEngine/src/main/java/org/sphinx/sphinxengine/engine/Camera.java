@@ -4,7 +4,6 @@ public class Camera extends GameObject{
     private int width;
     private int height;
     public float zoom = 1;
-    public static final Transformation transformation = new Transformation();
     public Camera(int width, int height){
         this.width = width;
         this.height = height;

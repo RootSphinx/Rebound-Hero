@@ -9,20 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="改善了纹理切割，加入了绘画类">
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/ui/Canvas.java" afterDir="false" />
+    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="完善了游戏对象的父对象功能，以及画布功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Drawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Drawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/ShaderProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Transformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Transformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Vector2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/resources/fragment.frag" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/fragment.frag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/BackGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/BackGround.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/WindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/WindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/ui/Canvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/ui/Canvas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/BackGround1.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/BackGround1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/GameTestScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/GameTestScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693107454927</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="完善了游戏对象的父对象功能，以及画布功能">
+      <option name="closed" value="true" />
+      <created>1693146270198</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1693146270198</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -330,7 +334,8 @@
     <MESSAGE value="解决切换场景时资源释放不正常的问题" />
     <MESSAGE value="新增Debug类" />
     <MESSAGE value="改善了纹理切割，加入了绘画类" />
-    <option name="LAST_COMMIT_MESSAGE" value="改善了纹理切割，加入了绘画类" />
+    <MESSAGE value="完善了游戏对象的父对象功能，以及画布功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善了游戏对象的父对象功能，以及画布功能" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

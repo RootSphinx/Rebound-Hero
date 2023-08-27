@@ -65,7 +65,7 @@ public abstract class GameObject {
         }
     }
     public void destroy(){
-        Debug.log("\t当前ID : "+ this.Id+" 名字 : "+name+" 正在释放");
+        Debug.log("\t当前ID : "+ this.Id+" 名字 : "+name+" tag : "+tag+" 正在释放");
         GAME_OBJECT_LIST.remove(this);
         Mesh.destroy(Id);
     }

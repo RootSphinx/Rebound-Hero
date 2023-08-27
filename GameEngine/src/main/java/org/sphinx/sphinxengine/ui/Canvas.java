@@ -19,6 +19,8 @@ public class Canvas extends GameObject {
         this.transform.position = new Vector2D(x, y);
         this.width = width;
         this.height = height;
+        this.name = "Canvas";
+        this.tag = "UI";
     }
 
     public void setColor(Color color) {

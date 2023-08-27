@@ -6,6 +6,7 @@ public class Test {
         Debug.setDebugMod(true);
         GameEngine gameEngine = GameEngine.getGameEngine();
         gameEngine.setWindowInfo(1400,800,"你好");
+        gameEngine.setFps(60);
         gameEngine.init();
         SceneController.register(new GameTestScene());
         SceneController.register(new GameTestScene1());

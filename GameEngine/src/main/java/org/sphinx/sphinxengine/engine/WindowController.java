@@ -25,7 +25,8 @@ public class WindowController {
         this.windowWidth = windowWidth;
         this.windowHeight = windowHeight;
         this.windowTitle = windowTitle;
-        Debug.log("窗口管理器----设置窗口宽为 : "+windowWidth);
+        Debug.log("窗口管理器----设置窗口");
+        Debug.log("\t宽为 : "+windowWidth);
         Debug.log("\t高为 : "+windowHeight);
         Debug.log("\t标题为 : "+windowTitle);
     }

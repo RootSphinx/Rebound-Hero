@@ -3,6 +3,7 @@ import org.lwjgl.glfw.GLFW;
 
 public class GameEngine {
     public static GameEngine gameEngine = null;
+    private int fps = 30;
     private GameEngine(){}
     public static GameEngine getGameEngine(){
         if (gameEngine==null) {
@@ -15,12 +16,12 @@ public class GameEngine {
 
     /**
      * 设置窗口属性
-     * @param windowSizeX 窗口宽度
-     * @param windowSizeY 窗口高度
+     * @param windowSizeWidth 窗口宽度
+     * @param windowSizeHeight 窗口高度
      * @param windowTitle 窗口标题
      */
-    public void setWindowInfo(int windowSizeX, int windowSizeY, String windowTitle){
-        windowController.setWindowInfo(windowSizeX, windowSizeY, windowTitle);
+    public void setWindowInfo(int windowSizeWidth, int windowSizeHeight, String windowTitle){
+        windowController.setWindowInfo(windowSizeWidth, windowSizeHeight, windowTitle);
     }
 
     /**
@@ -43,12 +44,27 @@ public class GameEngine {
             Renderer.startSpriteRender();     //纹理渲染
             Renderer.startManualRender();   //无纹理渲染
             windowController.swapBuffer();  //交换缓冲区
+            sleep();
         }
     }
     private void cleanup(){
         Debug.log("开始资源释放");
         windowController.windowDestroy();
         SceneController.cleanScene();
+    }
+    private void sleep(){
+        double onceLoopTime = GameTimer.onceLoopTime();
+        double v = (1f / fps - onceLoopTime)*1000;
+        v = v > 0 ? v : 0;
+        try {
+            Thread.sleep((int) v);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void setFps(int fps) {
+        this.fps = fps;
     }
 
     /**
