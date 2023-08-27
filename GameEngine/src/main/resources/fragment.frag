@@ -6,10 +6,11 @@ uniform sampler2D sampler0;
 out vec4 fragColor;
 
 uniform bool UIsign;
+uniform vec4 UIcolor;
 void main(){
 
     if(UIsign){
-        fragColor = vec4(1,1,1,1);
+        fragColor = UIcolor;
     }
     else{
         fragColor = texture(sampler0,outTexCoord);

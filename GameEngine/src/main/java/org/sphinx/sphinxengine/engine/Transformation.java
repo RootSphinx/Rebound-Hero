@@ -28,7 +28,7 @@ public class Transformation {
     }
     public static Matrix4f getUIMatrix(Transform transform, Camera camera){
         return matrix.identity()
-                .ortho2D(0,camera.getWidth(),0,  camera.getHeight())
+                .ortho2D(0,camera.getWidth(),camera.getHeight(), 0 )
                 .translate(transform.position.x,transform.position.y,0)
                 .rotateZ(transform.rotation)
                 .scaleXY(transform.scale,transform.scale);

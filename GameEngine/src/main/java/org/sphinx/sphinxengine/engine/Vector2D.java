@@ -60,6 +60,9 @@ public class Vector2D {
         return tempVector;
 
     }
+    public Vector2D add(Vector2D vector){
+        return new Vector2D(this.x+vector.x,this.y+vector.y);
+    }
     @Override
     public String toString(){
         return this.x+" "+this.y;

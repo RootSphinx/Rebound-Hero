@@ -9,24 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="新增Debug类">
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Drawer.java" afterDir="false" />
+    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="改善了纹理切割，加入了绘画类">
+      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/ui/Canvas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Drawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Drawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/BackGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/BackGround.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/BackGround1.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/BackGround1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/BackGround2.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/BackGround2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/GameCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/GameCamera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/GameTestScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/GameTestScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/GameTestScene1.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/GameTestScene1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/GameTestScene2.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/GameTestScene2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/ShaderProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Transformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Transformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Vector2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/resources/fragment.frag" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/fragment.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/BackGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/BackGround.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/BackGround1.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/BackGround1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/GameTestScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/GameTestScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,8 +89,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -126,22 +122,22 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17 (2)",
-    "last_opened_file_path": "D:/ALiYunPan",
-    "project.structure.last.edited": "工件",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.16206896",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17 (2)&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/ALiYunPan&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;工件&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.16206896&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\PROJECT\Java\Rebound-Hero\GameEngine\src\test\resources" />
@@ -257,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693028992413</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="改善了纹理切割，加入了绘画类">
+      <option name="closed" value="true" />
+      <created>1693107454927</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1693107454927</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -325,7 +329,8 @@
     <MESSAGE value="场景加载器" />
     <MESSAGE value="解决切换场景时资源释放不正常的问题" />
     <MESSAGE value="新增Debug类" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增Debug类" />
+    <MESSAGE value="改善了纹理切割，加入了绘画类" />
+    <option name="LAST_COMMIT_MESSAGE" value="改善了纹理切割，加入了绘画类" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

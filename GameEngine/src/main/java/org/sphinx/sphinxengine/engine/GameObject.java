@@ -9,7 +9,7 @@ public abstract class GameObject {
     private final int Id;
     public String tag;
     public String name;
-    public boolean isEnable = true;
+    private boolean isEnable = true;
     private boolean beforeIsEnable = false;
     public Transform transform = new Transform();
     private GameObject parent = null;
@@ -57,7 +57,12 @@ public abstract class GameObject {
         }
     }
     public boolean isEnable(){
-        return isEnable && beforeIsEnable;
+        if (parent==null){
+            return isEnable && beforeIsEnable;
+        }
+        else {
+            return parent.isEnable() && isEnable && beforeIsEnable;
+        }
     }
     public void destroy(){
         Debug.log("\t当前ID : "+ this.Id+" 名字 : "+name+" 正在释放");
@@ -69,8 +74,25 @@ public abstract class GameObject {
         return GAME_OBJECT_LIST;
     }
     public Vector2D getPosition(){
-        return this.transform.position;
+        if (parent == null){
+            return this.transform.position;
+        }
+        else {
+            return parent.getPosition().add(this.transform.position);
+        }
     }
+
+    public Transform getTransform() {
+        if (parent == null){
+            return transform;
+        }
+        else {
+            Transform transform1 = new Transform();
+            transform1.position = this.transform.position.add(parent.getTransform().position);
+            return transform1;
+        }
+    }
+
     public float getRotation(){
         return this.transform.rotation;
     }

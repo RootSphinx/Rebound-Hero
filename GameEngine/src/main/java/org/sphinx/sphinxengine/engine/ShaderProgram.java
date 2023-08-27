@@ -2,6 +2,7 @@ package org.sphinx.sphinxengine.engine;
 import org.joml.Matrix4f;
 import org.lwjgl.system.MemoryStack;
 
+import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -74,6 +75,9 @@ public class ShaderProgram {
             glUniformMatrix4fv(uniforms.get(name),false , matrix.get(stack.mallocFloat(size)));
         }
     }
+    public void setUniform(String name, Color color){
+        glUniform4f(uniforms.get(name), color.getRed(),color.getGreen(),color.getBlue(),color.getAlpha());
+    }
     public static void defaultShaderInit(){
         defaultShader = new ShaderProgram();
         defaultShader.createVertexShader(Utils.getFileContent("/vertex.vert"));
@@ -81,6 +85,7 @@ public class ShaderProgram {
         defaultShader.link();
         defaultShader.createUniform("matrix");
         defaultShader.createUniform("UIsign");
+        defaultShader.createUniform("UIcolor");
         Debug.log("默认着色器编译成功");
     }
     public static ShaderProgram getDefaultShader(){

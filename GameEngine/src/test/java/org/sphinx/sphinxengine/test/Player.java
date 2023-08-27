@@ -19,7 +19,6 @@ public class Player extends GameObject {
     Animator animator;
     @Override
     public void start(){
-
         //System.out.println("player.start()");
         tag = "org.sphinx.sphinxengine.test.Player";
         name = "org.sphinx.sphinxengine.test.Player";

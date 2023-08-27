@@ -1,5 +1,6 @@
 package org.sphinx.sphinxengine.engine;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -63,14 +64,17 @@ public class Renderer {
         ShaderProgram.defaultShader.bind();
 
         ShaderProgram.defaultShader.setUniform("UIsign", 1);
-        for (Drawer drawer : DRAWER_LIST){
-            switch (drawer.type){
-                case UI ->
-                        ShaderProgram.defaultShader.setUniform("matrix", Transformation.getUIMatrix(new Transform(),activeCamera),16);
-                case Item ->
-                        ShaderProgram.defaultShader.setUniform("matrix", Transformation.getWorldMatrix(new Transform(),activeCamera),16);
+        for (Drawer drawer : DRAWER_LIST) {
+            if (drawer.getGameObject().isEnable()) {
+                switch (drawer.type) {
+                    case UI ->
+                            ShaderProgram.defaultShader.setUniform("matrix", Transformation.getUIMatrix(new Transform(), activeCamera), 16);
+                    case Item ->
+                            ShaderProgram.defaultShader.setUniform("matrix", Transformation.getWorldMatrix(new Transform(), activeCamera), 16);
+                }
+                ShaderProgram.defaultShader.setUniform("UIcolor", drawer.getColor());
+                drawer.draw();
             }
-            drawer.draw();
         }
         ShaderProgram.defaultShader.unbind();
     }
@@ -80,9 +84,9 @@ public class Renderer {
         sprite.getTexture().bind();
         switch (sprite.type){
             case UI ->
-                sprite.getShaderProgram().setUniform("matrix", Transformation.getUIMatrix(sprite.getGameObject().transform,activeCamera),16);
+                sprite.getShaderProgram().setUniform("matrix", Transformation.getUIMatrix(sprite.getGameObject().getTransform(),activeCamera),16);
             case Item ->
-                sprite.getShaderProgram().setUniform("matrix", Transformation.getWorldMatrix(sprite.getGameObject().transform,activeCamera),16);
+                sprite.getShaderProgram().setUniform("matrix", Transformation.getWorldMatrix(sprite.getGameObject().getTransform(),activeCamera),16);
         }
         ShaderProgram.defaultShader.setUniform("UIsign", 0);
         glDrawArrays(GL_QUADS, 0,sprite.getMesh().getVertexCount());
