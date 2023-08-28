@@ -2,6 +2,7 @@ package org.sphinx.sphinxengine.engine;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class GameObject {
     private static final List<GameObject> GAME_OBJECT_LIST = new ArrayList<>();
@@ -110,6 +111,31 @@ public abstract class GameObject {
     }
     public GameObject getParent(){
         return parent;
+    }
+    public static GameObject findGameObject(int id){
+        for (GameObject gameObject : GAME_OBJECT_LIST){
+            if (gameObject.Id == id){
+                return gameObject;
+            }
+        }
+        return null;
+    }
+    public static GameObject findGameObject(String name){
+        for (GameObject gameObject : GAME_OBJECT_LIST){
+            if (Objects.equals(gameObject.name, name)){
+                return gameObject;
+            }
+        }
+        return null;
+    }
+    public static List<GameObject>  findGameObjects(String tag){
+        List<GameObject> gameObjects = new ArrayList<>();
+        for (GameObject gameObject : GAME_OBJECT_LIST){
+            if (Objects.equals(gameObject.tag, tag)){
+                gameObjects.add(gameObject);
+            }
+        }
+        return gameObjects;
     }
 
     public int getId() {

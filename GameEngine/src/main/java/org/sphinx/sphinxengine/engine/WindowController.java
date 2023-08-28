@@ -59,11 +59,11 @@ public class WindowController {
         Debug.log("窗口管理器----窗口显示");
     }
 
-    public int getWindowSizeX() {
+    public int getWindowWidth() {
         return windowWidth;
     }
 
-    public int getWindowSizeY() {
+    public int getWindowHeight() {
         return windowHeight;
     }
     public void swapBuffer(){

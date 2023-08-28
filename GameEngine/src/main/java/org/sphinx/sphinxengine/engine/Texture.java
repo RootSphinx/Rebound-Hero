@@ -19,6 +19,7 @@ import static org.lwjgl.opengl.GL40.*;
 
 public class Texture {
     private static final List<Integer> TEXTURE_LIST = new ArrayList<>();
+    private static final List<Integer> GLOBAL_TEXTURE_LIST = new ArrayList<>();
     private int textureId;
     private int width;
     private int height;
@@ -28,9 +29,11 @@ public class Texture {
      * @param path 图片的路径
      */
     public Texture(String path){
-        createTexture(path,1,1,0);
+        createTexture(path,1,1,0,false);
     }
-
+    public Texture(String path,boolean globalSign){
+        createTexture(path,1,1,0,globalSign);
+    }
     /**
      * 创建一个纹理
      * @param path 图片的路径
@@ -39,11 +42,14 @@ public class Texture {
      * @param index 返回切割后第几个纹理
      */
     public Texture(String path,int row, int col, int index){
-        createTexture(path,row,col,index);
+        createTexture(path,row,col,index,false);
     }
-    private void createTexture(String path,int row, int col, int index){
+    public Texture(String path,int row, int col, int index,boolean globalSign){
+        createTexture(path,row,col,index,globalSign);
+    }
+    private void createTexture(String path,int row, int col, int index, boolean globalSign){
         ByteBuffer buffer = null;
-
+        System.out.println(path);
         try {
             BufferedImage image = ImageIO.read(Objects.requireNonNull(Texture.class.getResource(path)));
             int imageWidth = image.getWidth();
@@ -71,11 +77,15 @@ public class Texture {
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, buffer);
-            TEXTURE_LIST.add(textureId);
+            if (globalSign)
+                GLOBAL_TEXTURE_LIST.add(textureId);
+            else {
+                TEXTURE_LIST.add(textureId);
+            }
         }
         catch (IOException | NullPointerException e){
-            e.printStackTrace();
             glDeleteTextures(textureId);
+            e.printStackTrace();
         }
         finally {
             MemoryUtil.memFree(buffer);
@@ -119,5 +129,4 @@ public class Texture {
             TEXTURE_LIST.remove(0);
         }
     }
-
 }

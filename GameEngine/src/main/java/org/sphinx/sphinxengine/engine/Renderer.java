@@ -12,7 +12,7 @@ public class Renderer {
     private static Camera activeCamera = null;
     private static final List<Sprite> SPRITE_LIST = new ArrayList<>();
     private static final List<Drawer> DRAWER_LIST = new ArrayList<>();
-
+    private static Texture loadTexture;
     /**
      * 设置当前渲染器的活动摄像机
      * @param activeCamera 指定摄像机
@@ -32,23 +32,31 @@ public class Renderer {
     protected static void init(){
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        loadTexture = new Texture("/load.png",true);
         Debug.log("渲染器----初始化成功");
     }
-
-    protected static void startSpriteRender(){
+    protected static void render(){
+        if(!SceneController.isLoadingNextScene){
+            if (Objects.isNull(activeCamera)){return;}
+            skyboxDraw();
+            startSpriteRender();
+            startManualRender();
+        }
+        else {
+            loadingDraw();
+        }
+    }
+    private static void startSpriteRender(){
         //Debug.log("渲染器----开始精灵渲染");
-        if (Objects.isNull(activeCamera)){return;}
-        skyboxDraw();
         for (int i = 0; i< 10; i++){
             for (Sprite sprite : SPRITE_LIST){
                 if (sprite.getLayout() == i && sprite.getGameObject().isEnable())
-                    render(sprite);
+                    renderSprite(sprite);
             }
         }
     }
 
-    protected static void startManualRender(){
-        if (Objects.isNull(activeCamera)){return;}
+    private static void startManualRender(){
         glLineWidth(3);
         glBegin(GL_LINE_LOOP);
         glColor4f(1,1,0,1);
@@ -68,7 +76,7 @@ public class Renderer {
             if (drawer.getGameObject().isEnable()) {
                 switch (drawer.type) {
                     case UI ->
-                            ShaderProgram.defaultShader.setUniform("matrix", Transformation.getUIMatrix(new Transform(), activeCamera), 16);
+                            ShaderProgram.defaultShader.setUniform("matrix", Transformation.getUIMatrix(new Transform()), 16);
                     case Item ->
                             ShaderProgram.defaultShader.setUniform("matrix", Transformation.getWorldMatrix(new Transform(), activeCamera), 16);
                 }
@@ -78,17 +86,17 @@ public class Renderer {
         }
         ShaderProgram.defaultShader.unbind();
     }
-    private static void render(Sprite sprite){
+    private static void renderSprite(Sprite sprite){
         sprite.getMesh().bind();
         sprite.getShaderProgram().bind();
         sprite.getTexture().bind();
         switch (sprite.type){
             case UI ->
-                sprite.getShaderProgram().setUniform("matrix", Transformation.getUIMatrix(sprite.getGameObject().getTransform(),activeCamera),16);
+                sprite.getShaderProgram().setUniform("matrix", Transformation.getUIMatrix(sprite.getGameObject().getTransform()),16);
             case Item ->
                 sprite.getShaderProgram().setUniform("matrix", Transformation.getWorldMatrix(sprite.getGameObject().getTransform(),activeCamera),16);
         }
-        ShaderProgram.defaultShader.setUniform("UIsign", 0);
+        sprite.getShaderProgram().setUniform("UIsign", 0);
         glDrawArrays(GL_QUADS, 0,sprite.getMesh().getVertexCount());
 
         sprite.getTexture().unbind();
@@ -125,5 +133,21 @@ public class Renderer {
         glColor4f(0.2f,0.5f,0.5f,1);
         glVertex2d(1f,-1);
         glEnd();
+    }
+    private static void loadingDraw(){
+        loadTexture.bind();
+        glBegin(GL_QUADS);
+        float v1 = (2f / WindowController.getInstance().getWindowWidth() * loadTexture.getWidth()) / 2;
+        float v2 = (2f / WindowController.getInstance().getWindowHeight() * loadTexture.getHeight()) / 2;
+        glTexCoord2f(0,1);
+        glVertex2f(-v1,-v2);
+        glTexCoord2f(1,1);
+        glVertex2f(v1,-v2);
+        glTexCoord2f(1,0);
+        glVertex2f(v1,v2);
+        glTexCoord2f(0,0);
+        glVertex2f(-v1,v2);
+        glEnd();
+        loadTexture.unbind();
     }
 }

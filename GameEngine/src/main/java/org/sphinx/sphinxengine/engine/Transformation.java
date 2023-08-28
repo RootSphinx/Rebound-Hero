@@ -1,10 +1,6 @@
 package org.sphinx.sphinxengine.engine;
 
 import org.joml.Matrix4f;
-import org.lwjgl.opengl.GL30;
-
-import static org.lwjgl.opengl.GL11.glVertex2f;
-import static org.lwjgl.opengl.GL11.glViewport;
 
 public class Transformation {
     private static final Matrix4f matrix = new Matrix4f();
@@ -26,9 +22,9 @@ public class Transformation {
                 .scaleXY(transform.scale,transform.scale);
 
     }
-    public static Matrix4f getUIMatrix(Transform transform, Camera camera){
+    public static Matrix4f getUIMatrix(Transform transform){
         return matrix.identity()
-                .ortho2D(0,camera.getWidth(),camera.getHeight(), 0 )
+                .ortho2D(0,WindowController.getInstance().getWindowWidth(), WindowController.getInstance().getWindowHeight(), 0 )
                 .translate(transform.position.x,transform.position.y,0)
                 .rotateZ(transform.rotation)
                 .scaleXY(transform.scale,transform.scale);

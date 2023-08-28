@@ -38,11 +38,10 @@ public class GameEngine {
         while (!GLFW.glfwWindowShouldClose(windowController.window)){
             GLFW.glfwPollEvents();
             GameTimer.timerUpdate();
-            GameObject.gameObjectStatusUpdate();    //对象更新
             GameObject.gameObjectsUpdate();     //对象状态更新
+            GameObject.gameObjectStatusUpdate();    //对象更新
             Animator.animatorsUpdate();         //动画更新
-            Renderer.startSpriteRender();     //纹理渲染
-            Renderer.startManualRender();   //无纹理渲染
+            Renderer.render();                  //渲染器渲染
             windowController.swapBuffer();  //交换缓冲区
             sleep();
         }
@@ -54,7 +53,7 @@ public class GameEngine {
     }
     private void sleep(){
         double onceLoopTime = GameTimer.onceLoopTime();
-        double v = (1f / fps - onceLoopTime)*1000;
+        double v = (1d / fps - onceLoopTime)*1000;
         v = v > 0 ? v : 0;
         try {
             Thread.sleep((int) v);
@@ -72,7 +71,7 @@ public class GameEngine {
      */
     public void start() {
        try {
-           SceneController.loadScene(0);
+           SceneController.loadSceneIndex(0);
            loop();
        }
        catch (Exception e){

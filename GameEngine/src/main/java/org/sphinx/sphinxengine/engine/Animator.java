@@ -3,10 +3,11 @@ package org.sphinx.sphinxengine.engine;
 import java.util.*;
 
 public class Animator {
+
     public enum Type{
         instant,finished
     }
-    private static final List<Animator> ANIMATOR_LIST = new ArrayList<>();
+    private static final List<Animator> ANIMATORS = new ArrayList<>();
     private final GameObject gameObject;
     private final Sprite currentSprite;
 
@@ -22,7 +23,7 @@ public class Animator {
     public Animator(GameObject gameObject,Sprite sprite){
         this.gameObject = gameObject;
         this.currentSprite = sprite;
-        ANIMATOR_LIST.add(this);
+        ANIMATORS.add(this);
     }
     public void createAction(String name, double timeInterval,Type type){
         texturesMap.put(name,new ArrayList<>());
@@ -54,7 +55,7 @@ public class Animator {
         }
     }
     protected static void animatorsUpdate(){
-        for (Animator animator : ANIMATOR_LIST){
+        for (Animator animator : ANIMATORS){
             animator.update();
         }
     }
@@ -78,14 +79,18 @@ public class Animator {
     }
     protected static void destroyAllAnimator(){
         Debug.log("动画器----正在释放动画器");
-        while (!ANIMATOR_LIST.isEmpty()){
-            ANIMATOR_LIST.remove(0);
+        while (!ANIMATORS.isEmpty()){
+            ANIMATORS.remove(0);
         }
     }
     public void destroy(){
-        ANIMATOR_LIST.remove(this);
+        ANIMATORS.remove(this);
     }
     public GameObject getGameObject() {
         return gameObject;
+    }
+
+    public List<Animator> getComponents() {
+        return null;
     }
 }

@@ -12,17 +12,16 @@ public class BackGround1 extends GameObject {
         //this.transform.position = new Vector2D(1000,0);
         sprite = new Sprite(this, "/background.jpg", Sprite.Type.Item);
         sprite.setLayout(1);
-
     }
 
     @Override
     public void update() {
+/*        fps++;
         if (gameTimer.time > 1){
             System.out.println(fps / gameTimer.time);
-            gameTimer.reset();
+            gameTimer.time-=1;
             fps = 0;
-        }
-        fps++;
+        }*/
     }
 
     @Override

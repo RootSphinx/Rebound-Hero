@@ -12,20 +12,21 @@ public class SceneController {
         SCENE_LIST.add(scene);
         Debug.log("场景加载器----场景注册成功,当前场景总数 : "+SCENE_LIST.size());
     }
-    public static void loadScene(int sceneId){
+    public static void loadSceneIndex(int sceneId){
         isLoadingNextScene = true;
         activeScene = SCENE_LIST.get(sceneId);
-        cleanScene();
         Debug.log("场景加载器----加载场景ID : "+sceneId);
-        activeScene.initScene();
         activeSceneId = sceneId;
+        startLoadScene();
     }
     public static void loadNextScene(){
         isLoadingNextScene = true;
         activeScene = SCENE_LIST.get(++activeSceneId);
-        Debug.log("正在加载场景 : "+activeSceneId);
-        cleanScene();
         Debug.log("场景加载器----加载下一个场景，ID : "+activeSceneId);
+        startLoadScene();
+    }
+    private static void startLoadScene(){
+        cleanScene();
         activeScene.initScene();
     }
     public static void cleanScene(){
