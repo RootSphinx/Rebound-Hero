@@ -4,6 +4,8 @@ import org.sphinx.sphinxengine.engine.*;
 import org.sphinx.sphinxengine.ui.Canvas;
 import org.sphinx.sphinxengine.ui.Lable;
 
+import java.awt.*;
+
 import static org.lwjgl.opengl.GL30.*;
 
 public class BackGround extends GameObject {
@@ -16,7 +18,7 @@ public class BackGround extends GameObject {
     public void start() {
         canvas = new Canvas(800,100,400,50);
         lable = new Lable(canvas,400,50);
-        lable.setText("你好，世界!",50);
+        lable.setText("你好，世界!",50, Color.black);
         canvas.setLayout(1);
         lable.setLayout(2);
     }

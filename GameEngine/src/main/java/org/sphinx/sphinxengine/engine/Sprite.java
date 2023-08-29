@@ -4,7 +4,6 @@ public class Sprite extends Render{
     public enum Type{
         UI,Item
     }
-    private GameObject gameObject;
     private Mesh mesh;
     private ShaderProgram shaderProgram = ShaderProgram.defaultShader;
     private Texture texture;
@@ -25,17 +24,16 @@ public class Sprite extends Render{
         1, 0,
     };
     public Sprite(GameObject gameObject, Texture texture,Type type){
-        super(Render.Type.sprite);
+        super(gameObject,Render.Type.sprite);
         this.texture = texture;
         mSprite(gameObject,type);
     }
     public Sprite(GameObject gameObject, String path, Type type){
-        super(Render.Type.sprite);
+        super(gameObject,Render.Type.sprite);
         this.texture = new Texture(path);
         mSprite(gameObject,type);
     }
     private void mSprite(GameObject gameObject, Type type){
-        this.gameObject = gameObject;
         Renderer.spriteListAdd(this);
         vertices = new float[]{
                 texture.getWidth()/2f, texture.getHeight()/2f,
@@ -65,9 +63,6 @@ public class Sprite extends Render{
 
     public void setTexture(Texture texture) {
         this.texture = texture;
-    }
-    public GameObject getGameObject(){
-        return gameObject;
     }
     public void setShaderProgram(ShaderProgram shaderProgram){
         this.shaderProgram = shaderProgram;

@@ -9,11 +9,9 @@ public abstract class Drawer extends Render{
         UI,Item
     }
     Type type = Type.UI;
-    private final GameObject gameObject;
     private Color color = new Color(1,1,1,1);
     public Drawer(GameObject gameObject){
-        super(Render.Type.drawer);
-        this.gameObject = gameObject;
+        super(gameObject,Render.Type.drawer);
         Renderer.drawerListAdd(this);
     }
     public abstract void draw();
@@ -37,7 +35,4 @@ public abstract class Drawer extends Render{
         return color;
     }
 
-    public GameObject getGameObject() {
-        return gameObject;
-    }
 }

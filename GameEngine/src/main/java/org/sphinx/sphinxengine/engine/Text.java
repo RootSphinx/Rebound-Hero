@@ -26,16 +26,19 @@ public class Text {
         }
     }
     public void setStr(String str, float size, int x, int y) {
-        texture.updateTexture(width,height,getBuffer(str,size,x,y,width,height));
+        texture.updateTexture(width,height,getBuffer(str,size,x,y,width,height,Color.WHITE,Color.black));
     }
-    private static ByteBuffer getBuffer(String str,float size,int x,int y,int width,int height){
+    public void setStr(String str, float size, int x, int y,Color frontColor,Color backColor) {
+        texture.updateTexture(width,height,getBuffer(str,size,x,y,width,height,frontColor,backColor));
+    }
+    private static ByteBuffer getBuffer(String str,float size,int x,int y,int width,int height,Color frontColor,Color backColor){
         Font font = customFont.deriveFont(size); // 设置字体大小和样式
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2d = (Graphics2D) image.getGraphics();
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setFont(font);
-        g2d.setColor(Color.WHITE);
-        g2d.setBackground(Color.BLACK);
+        g2d.setColor(frontColor);
+        g2d.setBackground(backColor);
         g2d.drawString(str, x, (int)(y*0.8));
         int[] pixels = image.getRGB(0, 0, width, height, null, 0, width);
         ByteBuffer buffer = ByteBuffer.allocateDirect(width * height * 4);
@@ -55,6 +58,9 @@ public class Text {
         return texture;
     }
     public static ByteBuffer getCharBuffer(String str,int size){
-        return getBuffer(str,size,0,size,size,size);
+        return getBuffer(str,size,0,size,size,size,Color.WHITE,Color.black);
+    }
+    public static ByteBuffer getCharBuffer(String str,int size,Color color){
+        return getBuffer(str,size,0,size,size,size,color,Color.black);
     }
 }

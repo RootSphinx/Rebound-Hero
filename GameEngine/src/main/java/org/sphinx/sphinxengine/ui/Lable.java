@@ -2,6 +2,8 @@ package org.sphinx.sphinxengine.ui;
 
 import org.sphinx.sphinxengine.engine.*;
 
+import java.awt.*;
+
 
 public class Lable extends GameObject {
     public Text text;
@@ -20,6 +22,10 @@ public class Lable extends GameObject {
 
     public void setText(String str,int size) {
         this.text.setStr(str,size,0,size);
+        sprite.offset = new Vector2D(text.getTexture().getWidth()/2f,text.getTexture().getHeight()/2f+20);
+    }
+    public void setText(String str, int size, Color color) {
+        this.text.setStr(str,size,0,size,color,Color.black);
         sprite.offset = new Vector2D(text.getTexture().getWidth()/2f,text.getTexture().getHeight()/2f);
     }
     public void setLayout(int layout){

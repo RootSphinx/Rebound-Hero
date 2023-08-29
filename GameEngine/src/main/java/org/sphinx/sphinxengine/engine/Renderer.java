@@ -39,24 +39,24 @@ public class Renderer {
         if(!SceneController.isLoadingNextScene){
             if (Objects.isNull(activeCamera)){return;}
             skyboxDraw();
-            startSpriteRender();
-            startDrawerRender();
+            for (int i = 0; i < 10; i++){
+                for(Render render : RENDER_LIST){
+                    if (render.getLayout() == i && render.getGameObject().isEnable()){
+                        switch (render.type){
+                            case drawer -> renderDrawer((Drawer) render);
+                            case sprite -> renderSprite((Sprite) render);
+                        }
+                    }
+                }
+            }
+            viewportRender();
         }
         else {
             loadingDraw();
         }
     }
-    private static void startSpriteRender(){
-        //Debug.log("渲染器----开始精灵渲染");
-        for (int i = 0; i< 10; i++){
-            for (Sprite sprite : SPRITE_LIST){
-                if (sprite.getLayout() == i && sprite.getGameObject().isEnable())
-                    renderSprite(sprite);
-            }
-        }
-    }
 
-    private static void startDrawerRender(){
+    private static void viewportRender(){
         glLineWidth(3);
         glBegin(GL_LINE_LOOP);
         glColor4f(1,1,0,1);
@@ -68,22 +68,18 @@ public class Renderer {
         glColor4f(0,1,1,1);
         glVertex2d(0.5f,-0.5f);
         glEnd();
-
+    }
+    private static void renderDrawer(Drawer drawer){
         ShaderProgram.defaultShader.bind();
-
         ShaderProgram.defaultShader.setUniform("UIsign", 1);
-        for (Drawer drawer : DRAWER_LIST) {
-            if (drawer.getGameObject().isEnable()) {
-                switch (drawer.type) {
-                    case UI ->
-                            ShaderProgram.defaultShader.setUniform("matrix", Transformation.getUIMatrix(new Transform()), 16);
-                    case Item ->
-                            ShaderProgram.defaultShader.setUniform("matrix", Transformation.getWorldMatrix(new Transform(), activeCamera), 16);
-                }
-                ShaderProgram.defaultShader.setUniform("UIcolor", drawer.getColor());
-                drawer.draw();
-            }
+        switch (drawer.type) {
+            case UI ->
+                    ShaderProgram.defaultShader.setUniform("matrix", Transformation.getUIMatrix(new Transform()), 16);
+            case Item ->
+                    ShaderProgram.defaultShader.setUniform("matrix", Transformation.getWorldMatrix(new Transform(), activeCamera), 16);
         }
+        ShaderProgram.defaultShader.setUniform("UIcolor", drawer.getColor());
+        drawer.draw();
         ShaderProgram.defaultShader.unbind();
     }
     private static void renderSprite(Sprite sprite){
