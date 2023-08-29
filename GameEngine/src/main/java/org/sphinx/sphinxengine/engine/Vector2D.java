@@ -13,10 +13,7 @@ public class Vector2D {
         this.x = x;
         this.y = y;
     }
-    /**
-     * todo 向量归一化
-     *
-     */
+
     public void normalize(){
         float rad = (float)atan2(y,x);
         x = x!=0?(float)cos(rad):0;
@@ -27,10 +24,7 @@ public class Vector2D {
         tempVector.normalize();
         return tempVector;
     }
-    /**
-     * todo 向量旋转
-     *
-     */
+
     public void multiply(float num){
         this.x *= num;
         this.y *= num;

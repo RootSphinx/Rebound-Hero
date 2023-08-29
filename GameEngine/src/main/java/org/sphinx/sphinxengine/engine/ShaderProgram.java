@@ -17,9 +17,6 @@ public class ShaderProgram {
 
     protected static ShaderProgram defaultShader;
 
-    /**
-     * todo 创建gl程序加载器
-     */
     ShaderProgram(){
         programId = glCreateProgram();
     }

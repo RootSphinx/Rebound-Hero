@@ -1,6 +1,6 @@
 package org.sphinx.sphinxengine.engine;
 
-public class Sprite {
+public class Sprite extends Render{
     public enum Type{
         UI,Item
     }
@@ -8,8 +8,8 @@ public class Sprite {
     private Mesh mesh;
     private ShaderProgram shaderProgram = ShaderProgram.defaultShader;
     private Texture texture;
-    private int layout = 0;
     public Type type;
+    public Vector2D offset = new Vector2D();
     float[] vertices;
     float[] texCoords = new float[]{
             0, 0,
@@ -17,12 +17,20 @@ public class Sprite {
             -1, 1,
             0, 1
     };
+    float[] uiTexCoords = new float[]{
 
+        1, 1,
+         0, 1,
+         0, 0,
+        1, 0,
+    };
     public Sprite(GameObject gameObject, Texture texture,Type type){
+        super(Render.Type.sprite);
         this.texture = texture;
         mSprite(gameObject,type);
     }
     public Sprite(GameObject gameObject, String path, Type type){
+        super(Render.Type.sprite);
         this.texture = new Texture(path);
         mSprite(gameObject,type);
     }
@@ -35,7 +43,11 @@ public class Sprite {
                 -texture.getWidth()/2f, -texture.getHeight()/2f,
                 texture.getWidth()/2f, -texture.getHeight()/2f,
         };
-        this.mesh = new Mesh(vertices, texCoords);
+
+        if (type == Type.UI)
+            this.mesh = new Mesh(vertices, uiTexCoords);
+        else
+            this.mesh = new Mesh(vertices, texCoords);
         Mesh.MESH_MAP.put(gameObject.getId(),mesh);
         this.type = type;
     }
@@ -45,14 +57,6 @@ public class Sprite {
 
     public ShaderProgram getShaderProgram() {
         return shaderProgram;
-    }
-
-    public int getLayout() {
-        return layout;
-    }
-
-    public void setLayout(int layout) {
-        this.layout = layout;
     }
 
     public Texture getTexture() {

@@ -5,10 +5,6 @@ import org.joml.Matrix4f;
 public class Transformation {
     private static final Matrix4f matrix = new Matrix4f();
 
-    /**
-     *
-     * todo 摄像机旋转
-     */
     public static Matrix4f getWorldMatrix(Transform transform,Camera camera){
         Vector2D topLeft = new Vector2D(camera.getPosition().x - camera.getWidth()/2f * camera.zoom,
                 camera.getPosition().y + camera.getHeight()/2f * camera.zoom);

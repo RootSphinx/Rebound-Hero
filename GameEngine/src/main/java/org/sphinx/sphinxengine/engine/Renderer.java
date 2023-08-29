@@ -1,6 +1,5 @@
 package org.sphinx.sphinxengine.engine;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -12,6 +11,7 @@ public class Renderer {
     private static Camera activeCamera = null;
     private static final List<Sprite> SPRITE_LIST = new ArrayList<>();
     private static final List<Drawer> DRAWER_LIST = new ArrayList<>();
+    private static final List<Render> RENDER_LIST = new ArrayList<>();
     private static Texture loadTexture;
     /**
      * 设置当前渲染器的活动摄像机
@@ -40,7 +40,7 @@ public class Renderer {
             if (Objects.isNull(activeCamera)){return;}
             skyboxDraw();
             startSpriteRender();
-            startManualRender();
+            startDrawerRender();
         }
         else {
             loadingDraw();
@@ -56,7 +56,7 @@ public class Renderer {
         }
     }
 
-    private static void startManualRender(){
+    private static void startDrawerRender(){
         glLineWidth(3);
         glBegin(GL_LINE_LOOP);
         glColor4f(1,1,0,1);
@@ -92,9 +92,9 @@ public class Renderer {
         sprite.getTexture().bind();
         switch (sprite.type){
             case UI ->
-                sprite.getShaderProgram().setUniform("matrix", Transformation.getUIMatrix(sprite.getGameObject().getTransform()),16);
+                sprite.getShaderProgram().setUniform("matrix", Transformation.getUIMatrix(sprite.getGameObject().getTransform().addedVector(sprite.offset)),16);
             case Item ->
-                sprite.getShaderProgram().setUniform("matrix", Transformation.getWorldMatrix(sprite.getGameObject().getTransform(),activeCamera),16);
+                sprite.getShaderProgram().setUniform("matrix", Transformation.getWorldMatrix(sprite.getGameObject().getTransform().addedVector(sprite.offset),activeCamera),16);
         }
         sprite.getShaderProgram().setUniform("UIsign", 0);
         glDrawArrays(GL_QUADS, 0,sprite.getMesh().getVertexCount());
@@ -108,6 +108,9 @@ public class Renderer {
     }
     public static void drawerListAdd(Drawer drawer){
         DRAWER_LIST.add(drawer);
+    }
+    public static void renderListAdd(Render render){
+        RENDER_LIST.add(render);
     }
     protected static void destroyAllSprite(){
         Debug.log("渲染器----开始释放精灵");

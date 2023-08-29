@@ -4,7 +4,7 @@ import static org.lwjgl.opengl.GL30.*;
 
 import java.awt.*;
 
-public abstract class Drawer {
+public abstract class Drawer extends Render{
     public enum Type{
         UI,Item
     }
@@ -12,6 +12,7 @@ public abstract class Drawer {
     private final GameObject gameObject;
     private Color color = new Color(1,1,1,1);
     public Drawer(GameObject gameObject){
+        super(Render.Type.drawer);
         this.gameObject = gameObject;
         Renderer.drawerListAdd(this);
     }

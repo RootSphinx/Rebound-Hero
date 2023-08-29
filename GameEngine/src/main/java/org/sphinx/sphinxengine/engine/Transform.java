@@ -8,4 +8,10 @@ public class Transform {
         this.position.x += vector.x;
         this.position.y += vector.y;
     }
+    public Transform addedVector(Vector2D vector){
+        Transform transform = new Transform();
+        transform.position.x = this.position.x + vector.x;
+        transform.position.y = this.position.y + vector.y;
+        return transform;
+    }
 }

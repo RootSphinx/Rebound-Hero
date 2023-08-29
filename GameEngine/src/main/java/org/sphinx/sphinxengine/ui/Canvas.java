@@ -29,6 +29,9 @@ public class Canvas extends GameObject {
     public void setColor(float red, float green, float blue, float alpha) {
         this.color = new Color(red, green, blue, alpha);
     }
+    public void setLayout(int layout){
+        drawer.setLayout(layout);
+    }
     @Override
     public void start() {
         drawer = new Drawer(this) {

@@ -31,6 +31,7 @@ public class GameEngine {
         windowController.glInit();
         ShaderProgram.defaultShaderInit();
         Renderer.init();
+        Text.init();
         Debug.log("引擎初始化成功");
     }
     private void loop(){
