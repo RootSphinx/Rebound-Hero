@@ -15,7 +15,7 @@ public abstract class Render {
         this.gameObject = gameObject;
     }
     public void setLayout(int layout){
-        if (layout<10 && layout >0){
+        if (layout <= 20 && layout > 0){
             this.layout = layout;
         }
     }

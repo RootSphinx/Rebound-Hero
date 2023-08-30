@@ -9,8 +9,7 @@ import org.sphinx.sphinxengine.engine.Vector2D;
 import java.awt.*;
 
 public class Button extends Canvas {
-    Canvas canvas;
-    Lable lable;
+    public Lable lable;
     private int width,height;
     private boolean isFocus = false;
     private boolean isHightLight = false;
@@ -21,16 +20,14 @@ public class Button extends Canvas {
     public Button(Canvas canvas,int width,int height){
         super(canvas,0,0,width,height);
         this.canvas = canvas;
-        setParent(canvas);
         this.width = width;
         this.height = height;
         this.name = "Button";
-        this.tag = "UI";
         setOutLine(true);
         setOutLineColor(0,0,0,1);
         lable = new Lable(this,width,height);
         lable.setText("按钮",60,Color.black,true);
-        lable.setLayout(4);
+        setLayout(layout);
     }
 
     public void setEvent(Runnable event) {

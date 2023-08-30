@@ -39,7 +39,7 @@ public class Renderer {
         if(!SceneController.isLoadingNextScene){
             if (Objects.isNull(activeCamera)){return;}
             skyboxDraw();
-            for (int i = 0; i < 10; i++){
+            for (int i = 0; i <= 20; i++){
                 for(Render render : RENDER_LIST){
                     if (render.getLayout() == i && render.getGameObject().isEnable()){
                         switch (render.type){

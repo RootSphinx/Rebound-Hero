@@ -16,7 +16,6 @@ public class Transformation {
                 .translate(transform.position.x,transform.position.y,0)
                 .rotateZ(transform.rotation)
                 .scaleXY(transform.scale,transform.scale);
-
     }
     public static Matrix4f getUIMatrix(Transform transform){
         return matrix.identity()
