@@ -73,7 +73,7 @@ public class ShaderProgram {
         }
     }
     public void setUniform(String name, Color color){
-        glUniform4f(uniforms.get(name), color.getRed(),color.getGreen(),color.getBlue(),color.getAlpha());
+        glUniform4f(uniforms.get(name), color.getRed()/255f,color.getGreen()/255f,color.getBlue()/255f,color.getAlpha()/255f);
     }
     public static void defaultShaderInit(){
         defaultShader = new ShaderProgram();

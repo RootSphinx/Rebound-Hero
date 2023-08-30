@@ -78,7 +78,6 @@ public class Renderer {
             case Item ->
                     ShaderProgram.defaultShader.setUniform("matrix", Transformation.getWorldMatrix(new Transform(), activeCamera), 16);
         }
-        ShaderProgram.defaultShader.setUniform("UIcolor", drawer.getColor());
         drawer.draw();
         ShaderProgram.defaultShader.unbind();
     }

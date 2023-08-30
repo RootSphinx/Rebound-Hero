@@ -25,8 +25,8 @@ public class Text {
             e.printStackTrace();
         }
     }
-    public void setStr(String str, float size, int x, int y) {
-        texture.updateTexture(width,height,getBuffer(str,size,x,y,width,height,Color.WHITE,Color.black));
+    public void setStr(String str, float size,Color color) {
+        texture.updateTexture(width,height,getBuffer(str,size,0,(int) size,width,height,color,Color.black));
     }
     public void setStr(String str, float size, int x, int y,Color frontColor,Color backColor) {
         texture.updateTexture(width,height,getBuffer(str,size,x,y,width,height,frontColor,backColor));

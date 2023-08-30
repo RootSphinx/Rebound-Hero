@@ -10,7 +10,9 @@ public class Canvas extends GameObject {
     private Drawer drawer;
     private int width = 0;
     private int height = 0;
-    public Color color =new Color(1,1,1,1);
+    public Color fillColor =new Color(1,1,1,1);
+    public Color outLineColor =new Color(0,0,0,1);
+    private boolean isOutLine = false;
     public Canvas(int x, int y, int width, int height){
         this(null,x,y,width,height);
     }
@@ -24,21 +26,33 @@ public class Canvas extends GameObject {
     }
 
     public void setColor(Color color) {
-        this.color = color;
+        this.fillColor = color;
     }
-    public void setColor(float red, float green, float blue, float alpha) {
-        this.color = new Color(red, green, blue, alpha);
+    public void setFillColor(float red, float green, float blue, float alpha) {
+        this.fillColor = new Color(red, green, blue, alpha);
+    }
+    public void setOutLineColor(float red, float green, float blue, float alpha) {
+        this.outLineColor = new Color(red, green, blue, alpha);
     }
     public void setLayout(int layout){
         drawer.setLayout(layout);
     }
+
+    public void setOutLine(boolean outLine) {
+        isOutLine = outLine;
+    }
+
     @Override
     public void start() {
         drawer = new Drawer(this) {
             @Override
             public void draw() {
-                this.setColor(color);
+                this.setFillColor(fillColor);
+                this.setOutLineColor(outLineColor);
                 drawQuads(getPosition().x, getPosition().y, width, height);
+                if (isOutLine){
+                    drawQuadsOutLine(getPosition().x, getPosition().y, width, height);
+                }
             }
         };
     }

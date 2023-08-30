@@ -13,20 +13,22 @@ public class Lable extends GameObject {
         this.canvas = canvas;
         setParent(canvas);
         text = new Text(width,height);
-        text.setStr("",80,0,80);
+        text.setStr("",80,Color.black);
         sprite = new Sprite(this,text.getTexture(), Sprite.Type.UI);
         sprite.offset = new Vector2D(text.getTexture().getWidth()/2f,text.getTexture().getHeight()/2f);
         this.name = "Lable";
         this.tag = "UI";
     }
-
-    public void setText(String str,int size) {
-        this.text.setStr(str,size,0,size);
-        sprite.offset = new Vector2D(text.getTexture().getWidth()/2f,text.getTexture().getHeight()/2f+20);
-    }
     public void setText(String str, int size, Color color) {
         this.text.setStr(str,size,0,size,color,Color.black);
-        sprite.offset = new Vector2D(text.getTexture().getWidth()/2f,text.getTexture().getHeight()/2f);
+    }
+    public void setText(String str, int size, Color color,boolean isCenter) {
+
+        if (isCenter)
+            this.text.setStr(str,size, text.getTexture().getWidth()/2 - str.length()* size+size,
+                    text.getTexture().getHeight()/2+size/2,color,Color.black);
+        else
+            this.text.setStr(str,size,0,size,color,Color.black);
     }
     public void setLayout(int layout){
         sprite.setLayout(layout);

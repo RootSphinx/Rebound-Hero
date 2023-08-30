@@ -29,6 +29,7 @@ public class GameEngine {
      */
     public void init(){
         windowController.glInit();
+        EventSystem.init();
         ShaderProgram.defaultShaderInit();
         Renderer.init();
         Text.init();

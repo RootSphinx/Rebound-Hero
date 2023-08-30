@@ -1,5 +1,6 @@
 package org.sphinx.sphinxengine.engine;
 
+import org.lwjgl.glfw.GLFWCursorPosCallback;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
 
@@ -69,6 +70,9 @@ public class WindowController {
     public void swapBuffer(){
         glfwSwapBuffers(window);
     }
+
+
+
     public void windowDestroy(){
         glfwTerminate();
         Debug.log("窗口管理器----窗口销毁");
