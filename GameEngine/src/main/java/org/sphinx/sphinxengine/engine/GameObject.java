@@ -138,6 +138,11 @@ public abstract class GameObject {
         return gameObjects;
     }
 
+    public static <T> T getComponent(){
+        //Class<T> tClass = T.class;
+        return null;
+    };
+
     public int getId() {
         return Id;
     }

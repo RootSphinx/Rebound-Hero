@@ -34,7 +34,6 @@ public class Sprite extends Render{
         mSprite(gameObject,type);
     }
     private void mSprite(GameObject gameObject, Type type){
-        Renderer.spriteListAdd(this);
         vertices = new float[]{
                 texture.getWidth()/2f, texture.getHeight()/2f,
                 -texture.getWidth()/2f, texture.getHeight()/2f,

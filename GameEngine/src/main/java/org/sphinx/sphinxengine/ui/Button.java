@@ -26,14 +26,13 @@ public class Button extends Canvas {
         setOutLine(true);
         setOutLineColor(0,0,0,1);
         lable = new Lable(this,width,height);
-        lable.setText("按钮",60,Color.black,true);
+        lable.setText("",60,Color.black,true);
         setLayout(layout);
     }
 
     public void setEvent(Runnable event) {
         this.event = event;
     }
-
     @Override
     public void update() {
         Point pos = EventSystem.getCursorPos();

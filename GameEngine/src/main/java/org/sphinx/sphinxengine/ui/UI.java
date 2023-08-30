@@ -4,7 +4,7 @@ import org.sphinx.sphinxengine.engine.GameObject;
 
 public abstract class UI extends GameObject {
     Canvas canvas;
-    public int layout = 0;
+    public int layout = 15;
     UI(Canvas canvas){
         this.canvas = canvas;
         setParent(canvas);

@@ -12,6 +12,7 @@ public class BackGround1 extends GameObject {
         //this.transform.position = new Vector2D(1000,0);
         sprite = new Sprite(this, "/background.jpg", Sprite.Type.Item);
         sprite.setLayout(1);
+        this.name = "BackGround1";
     }
 
     @Override

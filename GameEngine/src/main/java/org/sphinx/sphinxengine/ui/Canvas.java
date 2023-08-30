@@ -22,6 +22,7 @@ public class Canvas extends UI {
         this.height = height;
         this.name = "Canvas";
         resetLayout();
+        drawer.setLayout(this.layout);
     }
 
     public void setColor(Color color) {
@@ -41,7 +42,9 @@ public class Canvas extends UI {
     public void setOutLine(boolean outLine) {
         isOutLine = outLine;
     }
-
+    public Point getSize(){
+        return new Point(width,height);
+    }
     @Override
     public void start() {
         drawer = new Drawer(this) {

@@ -14,7 +14,7 @@ void main(){
     }
     else{
         fragColor = texture(sampler0,outTexCoord);
-        //fragColor = vec4(1,0,0,texture(sampler0,outTexCoord).a+0.1);
+        //fragColor = vec4(1,0,0,texture(sampler0,outTexCoord).a+0.3);
     }
 
 }

@@ -14,7 +14,6 @@ public abstract class Drawer extends Render{
 
     public Drawer(GameObject gameObject){
         super(gameObject,Render.Type.drawer);
-        Renderer.drawerListAdd(this);
     }
     public abstract void draw();
 

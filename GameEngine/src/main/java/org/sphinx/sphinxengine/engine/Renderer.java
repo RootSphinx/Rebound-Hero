@@ -9,8 +9,6 @@ import static org.lwjgl.opengl.GL40.*;
 
 public class Renderer {
     private static Camera activeCamera = null;
-    private static final List<Sprite> SPRITE_LIST = new ArrayList<>();
-    private static final List<Drawer> DRAWER_LIST = new ArrayList<>();
     private static final List<Render> RENDER_LIST = new ArrayList<>();
     private static Texture loadTexture;
     /**
@@ -49,7 +47,7 @@ public class Renderer {
                     }
                 }
             }
-            viewportRender();
+            //viewportRender();
         }
         else {
             loadingDraw();
@@ -98,26 +96,25 @@ public class Renderer {
         sprite.getShaderProgram().unbind();
         sprite.getMesh().unbind();
     }
-    public static void spriteListAdd(Sprite sprite){
-        SPRITE_LIST.add(sprite);
-    }
-    public static void drawerListAdd(Drawer drawer){
-        DRAWER_LIST.add(drawer);
-    }
     public static void renderListAdd(Render render){
         RENDER_LIST.add(render);
     }
-    protected static void destroyAllSprite(){
+    protected static void destroyAllRender(){
         Debug.log("渲染器----开始释放精灵");
-        while (!SPRITE_LIST.isEmpty()){
-            Sprite sprite = SPRITE_LIST.get(0);
-            sprite.getMesh().destroy();
-            SPRITE_LIST.remove(sprite);
+        while (!RENDER_LIST.isEmpty()){
+            Render render = RENDER_LIST.get(0);
+            switch (render.type){
+                case sprite -> {
+                    ((Sprite) render).getMesh().destroy();
+                    RENDER_LIST.remove(render);
+                }
+                case drawer -> RENDER_LIST.remove(render);
+            }
         }
     }
-    protected static void destroySprite(Sprite sprite){
+    protected static void destroyRender(Sprite sprite){
         sprite.getMesh().destroy();
-        SPRITE_LIST.remove(sprite);
+        RENDER_LIST.remove(sprite);
     }
     private static void skyboxDraw(){
         //Debug.log("渲染器----开始绘制天空盒");

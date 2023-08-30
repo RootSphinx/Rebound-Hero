@@ -1,6 +1,8 @@
 package org.sphinx.sphinxengine.engine;
 
 import java.awt.*;
+import java.awt.font.FontRenderContext;
+import java.awt.font.LineMetrics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -9,6 +11,7 @@ import java.nio.ByteBuffer;
 public class Text {
     static File fontFile;
     static Font customFont;
+    static FontMetrics fontMetrics;
     int width ,height;
     Texture texture;
     public Text(int width, int height){
@@ -62,5 +65,10 @@ public class Text {
     }
     public static ByteBuffer getCharBuffer(String str,int size,Color color){
         return getBuffer(str,size,0,size,size,size,color,Color.black);
+    }
+    public static int getCharWidth(char str,int size){
+        Font font = new Font("ha",Font.PLAIN,30);
+        fontMetrics = Toolkit.getDefaultToolkit().getFontMetrics(font);
+        return fontMetrics.charWidth(str);
     }
 }

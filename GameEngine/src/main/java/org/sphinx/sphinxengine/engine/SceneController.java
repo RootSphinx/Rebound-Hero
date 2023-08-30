@@ -34,7 +34,7 @@ public class SceneController {
         Renderer.setActiveCamera(null);
         GameObject.gameObjectsRemoveAll();
         Texture.destroyAllTexture();
-        Renderer.destroyAllSprite();
+        Renderer.destroyAllRender();
         GameTimer.destroyAllGameTimer();
         Animator.destroyAllAnimator();
         System.gc();
