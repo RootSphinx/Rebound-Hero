@@ -2,6 +2,8 @@ plugins {
     id 'java'
 }
 
+apply plugin: 'application'
+
 group = 'org.sphinx.GameEngine'
 version = '1.0-SNAPSHOT'
 
@@ -14,7 +16,6 @@ repositories {
     //mavenLocal()
     mavenCentral()
 }
-
 
 
 dependencies {
@@ -38,7 +39,11 @@ dependencies {
     implementation "org.joml:joml:${jomlVersion}"
 }
 
+
 test {
     useJUnitPlatform()
 }
+
+
+mainClassName = 'Test'
 

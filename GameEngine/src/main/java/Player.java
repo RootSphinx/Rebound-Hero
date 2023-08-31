@@ -1,5 +1,3 @@
-package org.sphinx.sphinxengine.test;
-
 import org.lwjgl.glfw.GLFW;
 import org.sphinx.sphinxengine.engine.*;
 
@@ -20,8 +18,8 @@ public class Player extends GameObject {
     @Override
     public void start(){
         //System.out.println("player.start()");
-        tag = "org.sphinx.sphinxengine.test.Player";
-        name = "org.sphinx.sphinxengine.test.Player";
+        tag = "Player";
+        name = "Player";
         transform.scale = 3;
         sprite = new Sprite(this, "/图片包/image0.png", Sprite.Type.Item);
         sprite.setLayout(2);

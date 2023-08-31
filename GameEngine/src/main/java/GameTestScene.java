@@ -1,5 +1,3 @@
-package org.sphinx.sphinxengine.test;
-
 import org.sphinx.sphinxengine.engine.Renderer;
 import org.sphinx.sphinxengine.engine.Scene;
 
@@ -10,6 +8,6 @@ public class GameTestScene implements Scene {
         Renderer.setActiveCamera(gameCamera);
         BackGround backGround = new BackGround();
         BackGround1 backGround1 = new BackGround1();
-        //Player player = new Player();
+        Player player = new Player();
     }
 }

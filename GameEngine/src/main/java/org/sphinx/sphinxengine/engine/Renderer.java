@@ -47,7 +47,6 @@ public class Renderer {
                     }
                 }
             }
-            //viewportRender();
         }
         else {
             loadingDraw();
@@ -129,7 +128,7 @@ public class Renderer {
         glVertex2d(1f,-1);
         glEnd();
     }
-    private static void loadingDraw(){
+    static void loadingDraw(){
         loadTexture.bind();
         glBegin(GL_QUADS);
         float v1 = (2f / WindowController.getInstance().getWindowWidth() * loadTexture.getWidth()) / 2;

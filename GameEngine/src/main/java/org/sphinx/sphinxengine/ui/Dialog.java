@@ -6,10 +6,9 @@ import org.sphinx.sphinxengine.engine.Text;
 import java.awt.*;
 
 public class Dialog extends Canvas{
-    private Color fillColor = new Color(0,0,0,0);
     private Color wordColor = new Color(255,255,255,255);
     Lable lable;
-    int size = 30;
+    public int size = 30;
     int index = 0,indexX = 0,line = 0;
     double timeInterval = 0.1;
     String str = "";
@@ -17,16 +16,17 @@ public class Dialog extends Canvas{
     public Dialog(Canvas canvas,int width, int height) {
         super(canvas,0, 0, width, height);
         this.name = "Dialog";
+        fillColor = new Color(0,0,0,0);
         setColor(fillColor);
-        lable = new Lable(this,width,height);
-        lable.setText("你好Hello",30,Color.white);
+        lable = new Lable(this,width+10,height);
     }
-    public void setText(String str){
+    public void setText(String str,int size){
         this.str = str;
+        this.size = size;
         index = 0;
         indexX = 0;
         line = 0;
-        lable.setText("",30,Color.white);
+        lable.setText("",1,Color.white);
     }
     public void setColor(Color wordColor,Color fillColor){
         this.wordColor = wordColor;
@@ -41,12 +41,11 @@ public class Dialog extends Canvas{
         if (timer.time > timeInterval){
             timer.reset();
             if (index < str.length()){
-                String ch = str.substring(index,++index);
-                if (indexX + Text.getCharWidth(ch.toCharArray()[0], size) >= getSize().x-5){
+                char ch = str.charAt(index++);
+                if (indexX + Text.getCharWidth(ch, size) >= getSize().x)
                     newLine();
-                }
-                lable.text.getTexture().updateTexture(indexX,line * size,size,size,Text.getCharBuffer(ch,size,wordColor));
-                indexX+=Text.getCharWidth(ch.toCharArray()[0], size);
+                lable.text.getTexture().updateTexture(indexX,line * size,Text.getCharWidth(ch, size),size,Text.getCharBuffer(ch,size,wordColor));
+                indexX+=Text.getCharWidth(ch, size);
             }
         }
     }

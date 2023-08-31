@@ -14,6 +14,7 @@ public class SceneController {
     }
     public static void loadSceneIndex(int sceneId){
         isLoadingNextScene = true;
+        Renderer.render();
         activeScene = SCENE_LIST.get(sceneId);
         Debug.log("场景加载器----加载场景ID : "+sceneId);
         activeSceneId = sceneId;

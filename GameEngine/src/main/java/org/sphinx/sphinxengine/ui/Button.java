@@ -1,16 +1,10 @@
 package org.sphinx.sphinxengine.ui;
 
-import org.lwjgl.glfw.GLFW;
 import org.sphinx.sphinxengine.engine.EventSystem;
-import org.sphinx.sphinxengine.engine.GameObject;
-import org.sphinx.sphinxengine.engine.Text;
-import org.sphinx.sphinxengine.engine.Vector2D;
-
 import java.awt.*;
 
 public class Button extends Canvas {
     public Lable lable;
-    private int width,height;
     private boolean isFocus = false;
     private boolean isHightLight = false;
     private Color color = new Color(255,153,51);
@@ -63,5 +57,9 @@ public class Button extends Canvas {
         else {
             setColor(color);
         }
+    }
+
+    public static void main(String[] args) {
+
     }
 }

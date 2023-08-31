@@ -1,28 +1,35 @@
-package org.sphinx.sphinxengine.test;
-
 import org.sphinx.sphinxengine.engine.*;
+import org.sphinx.sphinxengine.ui.Canvas;
+import org.sphinx.sphinxengine.ui.Lable;
+
+import java.awt.*;
 
 public class BackGround1 extends GameObject {
     Sprite sprite;
+    Lable lable;
+    Canvas canvas;
     GameTimer gameTimer = new GameTimer();
-    int fps = 0;
+    int frame = 0;
 
     @Override
     public void start() {
-        //this.transform.position = new Vector2D(1000,0);
         sprite = new Sprite(this, "/background.jpg", Sprite.Type.Item);
         sprite.setLayout(1);
         this.name = "BackGround1";
+        canvas = new Canvas(0,0,30,30);
+        canvas.setColor(new Color(0,0,0,0));
+        lable = new Lable(canvas,100,20);
     }
 
     @Override
     public void update() {
-/*        fps++;
+        frame++;
         if (gameTimer.time > 1){
-            System.out.println(fps / gameTimer.time);
+            lable.setText("FPS : "+ (int)(frame / gameTimer.time),20, Color.white);
+            System.out.println("FPS : "+ (int)(frame / gameTimer.time));
             gameTimer.time-=1;
-            fps = 0;
-        }*/
+            frame = 0;
+        }
     }
 
     @Override

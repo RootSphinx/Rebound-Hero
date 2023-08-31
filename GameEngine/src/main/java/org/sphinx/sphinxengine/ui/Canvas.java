@@ -7,8 +7,8 @@ import java.awt.*;
 
 public class Canvas extends UI {
     private Drawer drawer;
-    private int width = 0;
-    private int height = 0;
+    protected int width;
+    protected int height;
     public Color fillColor =new Color(1,1,1,1);
     public Color outLineColor =new Color(0,0,0,1);
     private boolean isOutLine = false;

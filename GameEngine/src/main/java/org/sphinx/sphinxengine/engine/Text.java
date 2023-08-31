@@ -1,8 +1,6 @@
 package org.sphinx.sphinxengine.engine;
 
 import java.awt.*;
-import java.awt.font.FontRenderContext;
-import java.awt.font.LineMetrics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -21,8 +19,10 @@ public class Text {
     }
     public static void init() {
         try {
-            fontFile = new File(Text.class.getResource("/STKAITI.TTF").getPath().toString().substring(1));
+            fontFile = new File(Text.class.getResource("/STKAITI.TTF").getFile());
+            //fontFile = new File("../resources/STKAITI.TTF");
             customFont = Font.createFont(Font.TRUETYPE_FONT, fontFile);
+            Text.getCharBuffer(' ',1,Color.white);
         }
         catch (IOException | FontFormatException e){
             e.printStackTrace();
@@ -60,14 +60,14 @@ public class Text {
     public Texture getTexture() {
         return texture;
     }
-    public static ByteBuffer getCharBuffer(String str,int size){
-        return getBuffer(str,size,0,size,size,size,Color.WHITE,Color.black);
-    }
     public static ByteBuffer getCharBuffer(String str,int size,Color color){
         return getBuffer(str,size,0,size,size,size,color,Color.black);
     }
+    public static ByteBuffer getCharBuffer(char str,int size,Color color){
+        return getBuffer(String.valueOf(str),size,0,size,getCharWidth(str,size),size,color,Color.black);
+    }
     public static int getCharWidth(char str,int size){
-        Font font = new Font("ha",Font.PLAIN,30);
+        Font font = new Font("ha",Font.PLAIN,size);
         fontMetrics = Toolkit.getDefaultToolkit().getFontMetrics(font);
         return fontMetrics.charWidth(str);
     }

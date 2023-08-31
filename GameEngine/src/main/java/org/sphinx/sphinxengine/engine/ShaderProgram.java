@@ -36,7 +36,7 @@ public class ShaderProgram {
         glShaderSource(shaderId, shaderCode);
         glCompileShader(shaderId);
         if (glGetShaderi(shaderId, GL_COMPILE_STATUS) == 0) {
-            System.out.println(("Error compiling Shader code: " + glGetShaderInfoLog(shaderId, 1024)));
+            Debug.err(("Error compiling Shader code: " + glGetShaderInfoLog(shaderId, 1024)));
         }
         glAttachShader(programId, shaderId);
     }
@@ -44,7 +44,7 @@ public class ShaderProgram {
     public void link(){
         glLinkProgram(programId);
         if (glGetProgrami(programId, GL_LINK_STATUS) == 0) {
-            System.out.println(("Error linking Shader code: " + glGetProgramInfoLog(programId, 1024)));
+            Debug.err(("Error linking Shader code: " + glGetProgramInfoLog(programId, 1024)));
         }
         if (vertexShaderId != 0) {
             glDetachShader(programId, vertexShaderId);
@@ -54,7 +54,7 @@ public class ShaderProgram {
         }
         glValidateProgram(programId);
         if (glGetProgrami(programId, GL_VALIDATE_STATUS) == 0) {
-            System.out.println("Warning validating Shader code: " + glGetProgramInfoLog(programId, 1024));
+            Debug.err("Warning validating Shader code: " + glGetProgramInfoLog(programId, 1024));
         }
     }
 

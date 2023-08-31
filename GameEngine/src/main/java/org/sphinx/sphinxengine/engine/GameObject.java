@@ -31,7 +31,6 @@ public abstract class GameObject {
             if (gameObject.isEnable()){
                 gameObject.update();
                 if (SceneController.isLoadingNextScene){
-                    SceneController.isLoadingNextScene = false;
                     break;
                 }
             }

@@ -8,6 +8,7 @@ public class Animator {
         instant,finished
     }
     private static final List<Animator> ANIMATORS = new ArrayList<>();
+    private static final Map<Integer,Animator> ANIMATOR_MAP = new HashMap<>();
     private final GameObject gameObject;
     private final Sprite currentSprite;
 
@@ -90,7 +91,13 @@ public class Animator {
         return gameObject;
     }
 
-    public List<Animator> getComponents() {
-        return null;
+    public static List<Animator> getComponents(int id) {
+        List<Animator>animators = new ArrayList<>();
+        ANIMATOR_MAP.forEach((tId,tAnimator)->{
+            if (id == tId){
+                animators.add(tAnimator);
+            }
+        });
+        return animators;
     }
 }
