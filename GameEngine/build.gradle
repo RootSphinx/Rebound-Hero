@@ -4,6 +4,10 @@ plugins {
 
 apply plugin: 'application'
 
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "utf-8"
+}
+
 group = 'org.sphinx.GameEngine'
 version = '1.0-SNAPSHOT'
 
@@ -43,6 +47,7 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
 
 
 mainClassName = 'Test'

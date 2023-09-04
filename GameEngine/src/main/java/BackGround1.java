@@ -26,7 +26,7 @@ public class BackGround1 extends GameObject {
         frame++;
         if (gameTimer.time > 1){
             lable.setText("FPS : "+ (int)(frame / gameTimer.time),20, Color.white);
-            System.out.println("FPS : "+ (int)(frame / gameTimer.time));
+            //System.out.println("FPS : "+ (int)(frame / gameTimer.time));
             gameTimer.time-=1;
             frame = 0;
         }

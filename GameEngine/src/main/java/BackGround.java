@@ -16,6 +16,7 @@ public class BackGround extends GameObject {
     Lable lable;
     Dialog dialog;
     Button button;
+    Canvas canvas3;
 
     static class TestEvent implements Runnable{
         static Dialog dialog;
@@ -57,6 +58,7 @@ public class BackGround extends GameObject {
         button.lable.setText("开始",30,Color.black,true);
         button.setEvent(new TestEvent(canvas ,dialog));
         canvas.setActive(false);
+
     }
 
     @Override

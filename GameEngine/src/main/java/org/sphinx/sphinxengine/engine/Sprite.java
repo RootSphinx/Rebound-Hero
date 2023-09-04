@@ -9,7 +9,7 @@ public class Sprite extends Render{
     private Texture texture;
     public Type type;
     public Vector2D offset = new Vector2D();
-    float[] vertices;
+    float[] vertices = null;
     float[] texCoords = new float[]{
             0, 0,
             -1, 0,
@@ -33,13 +33,19 @@ public class Sprite extends Render{
         this.texture = new Texture(path);
         mSprite(gameObject,type);
     }
+    public Sprite(GameObject gameObject,float[] vertices, Type type){
+        super(gameObject,Render.Type.sprite);
+        this.vertices = vertices;
+        mSprite(gameObject,type);
+    }
     private void mSprite(GameObject gameObject, Type type){
-        vertices = new float[]{
-                texture.getWidth()/2f, texture.getHeight()/2f,
-                -texture.getWidth()/2f, texture.getHeight()/2f,
-                -texture.getWidth()/2f, -texture.getHeight()/2f,
-                texture.getWidth()/2f, -texture.getHeight()/2f,
-        };
+        if (vertices == null)
+            vertices = new float[]{
+                    texture.getWidth()/2f, texture.getHeight()/2f,
+                    -texture.getWidth()/2f, texture.getHeight()/2f,
+                    -texture.getWidth()/2f, -texture.getHeight()/2f,
+                    texture.getWidth()/2f, -texture.getHeight()/2f,
+            };
 
         if (type == Type.UI)
             this.mesh = new Mesh(vertices, uiTexCoords);

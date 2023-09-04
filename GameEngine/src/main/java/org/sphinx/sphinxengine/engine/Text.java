@@ -19,10 +19,10 @@ public class Text {
     }
     public static void init() {
         try {
-            fontFile = new File(Text.class.getResource("/STKAITI.TTF").getFile());
+            //fontFile = new File(.getFile());
             //fontFile = new File("../resources/STKAITI.TTF");
-            customFont = Font.createFont(Font.TRUETYPE_FONT, fontFile);
-            Text.getCharBuffer(' ',1,Color.white);
+            customFont = Font.createFont(Font.TRUETYPE_FONT, Text.class.getResourceAsStream("/STKAITI.TTF"));
+            Text.getCharBuffer(' ',10,Color.white);
         }
         catch (IOException | FontFormatException e){
             e.printStackTrace();

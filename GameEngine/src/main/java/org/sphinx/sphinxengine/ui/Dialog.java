@@ -6,11 +6,11 @@ import org.sphinx.sphinxengine.engine.Text;
 import java.awt.*;
 
 public class Dialog extends Canvas{
-    private Color wordColor = new Color(255,255,255,255);
+    public Color wordColor = new Color(255,255,255,255);
     Lable lable;
     public int size = 30;
     int index = 0,indexX = 0,line = 0;
-    double timeInterval = 0.1;
+    double timeInterval = 0.05;
     String str = "";
     GameTimer timer = new GameTimer();
     public Dialog(Canvas canvas,int width, int height) {
@@ -27,10 +27,6 @@ public class Dialog extends Canvas{
         indexX = 0;
         line = 0;
         lable.setText("",1,Color.white);
-    }
-    public void setColor(Color wordColor,Color fillColor){
-        this.wordColor = wordColor;
-        this.fillColor = fillColor;
     }
     public void newLine(){
         indexX = 0;

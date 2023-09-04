@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Rebound-Hero.test:jar" />
+      <artifact name="Rebound-Hero.GameEngine.main:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,49 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="对话框功能实现">
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/BackGround.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Rebound_Hero_test_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Rebound_Hero_GameEngine_main_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Animator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Animator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Scene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/ShaderProgram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/BackGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/BackGround.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/BackGround1.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/BackGround1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Sprite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Text.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Text.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/ui/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/ui/Button.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/ui/Canvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/ui/Canvas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/ui/Dialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/ui/Dialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/BackGround.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/BackGround1.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/BackGround1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/BackGround2.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/BackGround2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/GameCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/GameCamera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/GameTestScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/GameTestScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/GameTestScene1.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/GameTestScene1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/GameTestScene2.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/GameTestScene2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/java/org/sphinx/sphinxengine/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/background.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/sound.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/sound.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/sprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/sprite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image0.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image0.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image0.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image1.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image10.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image11.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image12.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image13.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image14.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image15.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image2.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image3.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image4.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image5.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image6.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image7.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image8.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/test/resources/图片包/image9.png" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/图片包/image9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +90,21 @@
                 <item name="Rebound-Hero" type="f1a62948:ProjectNode" />
                 <item name="GameEngine" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Rebound-Hero" type="f1a62948:ProjectNode" />
+                <item name="GameEngine" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="distribution" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Rebound-Hero" type="f1a62948:ProjectNode" />
+                <item name="GameEngine" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="documentation" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -191,11 +175,11 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17 (2)&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/PROJECT/Java/Rebound-Hero/GameEngine/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PROJECT/Java/Rebound-Hero/GameEngine/out/production/resources/META-INF/MANIFEST.MF&quot;,
     &quot;project.structure.last.edited&quot;: &quot;工件&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.16206896&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.gutterIcons&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -226,10 +210,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Rebound-Hero [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Rebound-Hero:GameEngine [installDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/GameEngine" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="installDist" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="Rebound-Hero:GameEngine [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/GameEngine" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -248,29 +254,7 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="Rebound-Hero [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="Rebound-Hero:GameEngine [distZip]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Rebound-Hero:GameEngine [javadoc]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/GameEngine" />
@@ -281,29 +265,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="distZip" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="Rebound-Hero:GameEngine [installDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/GameEngine" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="installDist" />
+            <option value="javadoc" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -336,13 +298,35 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
+    <configuration name="Rebound-Hero:GameEngine [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/GameEngine" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Rebound-Hero:GameEngine [test]" />
+        <item itemvalue="Gradle.Rebound-Hero:GameEngine [jar]" />
         <item itemvalue="Gradle.Rebound-Hero:GameEngine [installDist]" />
-        <item itemvalue="Gradle.Rebound-Hero:GameEngine [distZip]" />
-        <item itemvalue="Gradle.Rebound-Hero [run]" />
+        <item itemvalue="Gradle.Rebound-Hero:GameEngine [javadoc]" />
         <item itemvalue="Gradle.Rebound-Hero:GameEngine [run]" />
-        <item itemvalue="Gradle.Rebound-Hero [jar]" />
       </list>
     </recent_temporary>
   </component>
