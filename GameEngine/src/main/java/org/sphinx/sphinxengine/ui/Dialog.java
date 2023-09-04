@@ -38,7 +38,7 @@ public class Dialog extends Canvas{
             timer.reset();
             if (index < str.length()){
                 char ch = str.charAt(index++);
-                if (indexX + Text.getCharWidth(ch, size) >= getSize().x)
+                if (indexX + Text.getCharWidth(ch, size) >= getSize()[0])
                     newLine();
                 lable.text.getTexture().updateTexture(indexX,line * size,Text.getCharWidth(ch, size),size,Text.getCharBuffer(ch,size,wordColor));
                 indexX+=Text.getCharWidth(ch, size);

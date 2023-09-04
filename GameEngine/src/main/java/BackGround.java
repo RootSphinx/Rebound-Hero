@@ -1,8 +1,9 @@
+import org.lwjgl.glfw.GLFW;
 import org.sphinx.sphinxengine.engine.*;
+import org.sphinx.sphinxengine.ui.*;
 import org.sphinx.sphinxengine.ui.Button;
 import org.sphinx.sphinxengine.ui.Canvas;
 import org.sphinx.sphinxengine.ui.Dialog;
-import org.sphinx.sphinxengine.ui.Lable;
 
 import java.awt.*;
 
@@ -16,7 +17,7 @@ public class BackGround extends GameObject {
     Lable lable;
     Dialog dialog;
     Button button;
-    Canvas canvas3;
+    ProgressBar progressBar;
 
     static class TestEvent implements Runnable{
         static Dialog dialog;
@@ -59,11 +60,19 @@ public class BackGround extends GameObject {
         button.setEvent(new TestEvent(canvas ,dialog));
         canvas.setActive(false);
 
+        progressBar = new ProgressBar(100,100,400,100);
+        progressBar.setDirection(ProgressBar.Direction.vertical);
+        progressBar.setColor(Color.green, Color.white);
     }
 
     @Override
     public void update() {
-
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_U)== GLFW.GLFW_PRESS){
+            progressBar.addValue(-1);
+        }
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_I)== GLFW.GLFW_PRESS){
+            progressBar.addValue(1);
+        }
     }
 
     @Override

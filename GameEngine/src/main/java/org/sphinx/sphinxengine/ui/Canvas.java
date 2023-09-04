@@ -10,11 +10,12 @@ public class Canvas extends UI {
     }
     Type type;
     public Render render;
-    protected int width;
-    protected int height;
-    public Color fillColor =new Color(1,1,1,1);
-    public Color outLineColor =new Color(0,0,0,1);
+    protected float width;
+    protected float height;
+    public Color fillColor =new Color(255,255,255,255 );
+    public Color outLineColor =new Color(0,0,0,255);
     private boolean isOutLine = false;
+
     public Canvas(int x, int y, int width, int height){
         this(null,x,y,width,height,Type.drawer,null,null);
     }
@@ -33,7 +34,7 @@ public class Canvas extends UI {
     public Canvas(Canvas canvas, int x, int y, int width, int height, Texture texture){
         this(canvas,x,y,width,height,Type.sprite,null,texture);
     }
-    private Canvas(Canvas canvas, int x, int y, int width, int height,Type type,String path,Texture texture){
+    private Canvas(Canvas canvas, int x, int y, float width, float height,Type type,String path,Texture texture){
         super(canvas);
         this.transform.position = new Vector2D(x, y);
         this.type = type;
@@ -46,9 +47,9 @@ public class Canvas extends UI {
                 public void draw() {
                     this.setFillColor(fillColor);
                     this.setOutLineColor(outLineColor);
-                    drawQuads(getPosition().x, getPosition().y, width, height);
+                    drawQuads(getPosition().x, getPosition().y, Canvas.this.width, Canvas.this.height);
                     if (isOutLine){
-                        drawQuadsOutLine(getPosition().x, getPosition().y, width, height);
+                        drawQuadsOutLine(getPosition().x, getPosition().y, Canvas.this.width, Canvas.this.height);
                     }
                 }
             };
@@ -72,6 +73,7 @@ public class Canvas extends UI {
     public void setOutLineColor(float red, float green, float blue, float alpha) {
         this.outLineColor = new Color(red, green, blue, alpha);
     }
+
     public void setLayout(int layout){
         this.layout = layout;
         render.setLayout(this.layout);
@@ -80,8 +82,12 @@ public class Canvas extends UI {
     public void setOutLine(boolean outLine) {
         isOutLine = outLine;
     }
-    public Point getSize(){
-        return new Point(width,height);
+    public float[] getSize(){
+        return new float[]{width,height};
+    }
+    public void setSize(float width,float height){
+        this.width = width;
+        this.height = height;
     }
     @Override
     public void start() {

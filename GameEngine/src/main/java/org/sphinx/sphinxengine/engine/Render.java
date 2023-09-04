@@ -27,4 +27,10 @@ public abstract class Render {
     public GameObject getGameObject() {
         return gameObject;
     }
+    public Drawer toDrawer(){
+        return this instanceof Drawer ? (Drawer) this : null;
+    }
+    public Sprite toSprite(){
+        return this instanceof Sprite ? (Sprite) this : null;
+    }
 }

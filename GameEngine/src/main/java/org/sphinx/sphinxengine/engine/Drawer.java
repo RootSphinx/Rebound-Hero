@@ -11,13 +11,14 @@ public abstract class Drawer extends Render{
     Type type = Type.UI;
     private Color fillColor = new Color(1,1,1,1);
     private Color outLineColor = new Color(0,0,0,1);
+    private int outLineWidth = 2;
 
     public Drawer(GameObject gameObject){
         super(gameObject,Render.Type.drawer);
     }
     public abstract void draw();
 
-    protected void drawQuads(float x, float y, int width, int height){
+    protected void drawQuads(float x, float y, float width, float height){
         setColor(fillColor);
         glBegin(GL_QUADS);
         glVertex2f(x,y);
@@ -26,9 +27,9 @@ public abstract class Drawer extends Render{
         glVertex2f(x,y + height);
         glEnd();
     }
-    protected void drawQuadsOutLine(float x, float y, int width, int height){
+    protected void drawQuadsOutLine(float x, float y, float width, float height){
         setColor(outLineColor);
-        glLineWidth(2);
+        glLineWidth(outLineWidth);
         glBegin(GL_LINE_LOOP);
         glVertex2f(x,y);
         glVertex2f(x + width,y);
@@ -44,6 +45,14 @@ public abstract class Drawer extends Render{
         this.fillColor = new Color(red, green, blue, alpha);
 
     }
+    public void setOutLineWidth(int width){
+        this.outLineWidth = width;
+    }
+
+    public int getOutLineWidth() {
+        return outLineWidth;
+    }
+
     public void setOutLineColor(Color color) {
         this.outLineColor = color;
     }
