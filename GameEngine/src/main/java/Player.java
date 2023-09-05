@@ -5,7 +5,7 @@ public class Player extends GameObject {
     enum VectorType{
         left ("left") ,right("right"),back("back"),front("front");
         public final String value;
-        private VectorType(String value) {
+        VectorType(String value) {
             this.value = value;
         }
         public String value() {
@@ -21,7 +21,7 @@ public class Player extends GameObject {
         tag = "Player";
         name = "Player";
         transform.scale = 3;
-        sprite = new Sprite(this, "/图片包/image0.png", Sprite.Type.Item);
+        sprite = new Sprite(this, "/图片包/image0.png", Sprite.UsageType.Item);
         sprite.setLayout(2);
         SplitTexture textures = new SplitTexture("/sprite.png", 4, 4);
         animator = new Animator(this,sprite);
@@ -42,7 +42,7 @@ public class Player extends GameObject {
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_K)== GLFW.GLFW_PRESS){
             System.out.println("K");
             GameObject backGround2 = GameObject.findGameObject("BackGround2");
-            Sprite component = backGround2.getComponent(Sprite.class).get(0);
+            Render component = backGround2.getComponent(Render.class).get(0);
             System.out.println(component.getGameObject().name);
         }
     }

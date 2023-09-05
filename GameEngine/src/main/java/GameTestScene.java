@@ -1,6 +1,5 @@
 import org.sphinx.sphinxengine.engine.Renderer;
 import org.sphinx.sphinxengine.engine.Scene;
-import org.sphinx.sphinxengine.engine.Utils;
 
 public class GameTestScene implements Scene {
     @Override

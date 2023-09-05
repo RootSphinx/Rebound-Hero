@@ -1,13 +1,11 @@
 package org.sphinx.sphinxengine.engine;
 
 public class Sprite extends Render {
-    public enum Type{
-        UI,Item
-    }
+
     private Mesh mesh;
     private ShaderProgram shaderProgram = ShaderProgram.defaultShader;
     private Texture texture;
-    public Type type;
+    public UsageType type;
     public Vector2D offset = new Vector2D();
     float[] vertices = null;
     float[] texCoords = new float[]{
@@ -23,22 +21,22 @@ public class Sprite extends Render {
          0, 0,
         1, 0,
     };
-    public Sprite(GameObject gameObject, Texture texture,Type type){
+    public Sprite(GameObject gameObject, Texture texture,UsageType type){
         super(gameObject,Render.Type.sprite);
         this.texture = texture;
         mSprite(gameObject,type);
     }
-    public Sprite(GameObject gameObject, String path, Type type){
+    public Sprite(GameObject gameObject, String path, UsageType type){
         super(gameObject,Render.Type.sprite);
         this.texture = new Texture(path);
         mSprite(gameObject,type);
     }
-    public Sprite(GameObject gameObject,float[] vertices, Type type){
+    public Sprite(GameObject gameObject,float[] vertices, UsageType type){
         super(gameObject,Render.Type.sprite);
         this.vertices = vertices;
         mSprite(gameObject,type);
     }
-    private void mSprite(GameObject gameObject, Type type){
+    private void mSprite(GameObject gameObject, UsageType type){
         if (vertices == null)
             vertices = new float[]{
                     texture.getWidth()/2f, texture.getHeight()/2f,
@@ -47,7 +45,7 @@ public class Sprite extends Render {
                     texture.getWidth()/2f, -texture.getHeight()/2f,
             };
 
-        if (type == Type.UI)
+        if (type == UsageType.UI)
             this.mesh = new Mesh(vertices, uiTexCoords);
         else
             this.mesh = new Mesh(vertices, texCoords);

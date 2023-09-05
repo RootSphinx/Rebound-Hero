@@ -1,6 +1,10 @@
 package org.sphinx.sphinxengine.engine;
 import org.lwjgl.glfw.GLFW;
+import org.sphinx.sphinxengine.util.Debug;
 
+/**
+ * 游戏引擎
+ */
 public class GameEngine {
     public static GameEngine gameEngine = null;
     private int fps = 30;

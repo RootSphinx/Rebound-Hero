@@ -1,4 +1,5 @@
 import org.sphinx.sphinxengine.engine.*;
+import org.sphinx.sphinxengine.util.Debug;
 
 public class Test {
     public static void main(String[] args) {

@@ -6,10 +6,10 @@ public class Transformation {
     private static final Matrix4f matrix = new Matrix4f();
 
     public static Matrix4f getWorldMatrix(Transform transform,Camera camera){
-        Vector2D topLeft = new Vector2D(camera.getPosition().x - camera.getWidth()/2f * camera.zoom,
-                camera.getPosition().y + camera.getHeight()/2f * camera.zoom);
-        Vector2D bottomRight = new Vector2D(camera.getPosition().x + camera.getWidth()/2f * camera.zoom,
-                camera.getPosition().y - camera.getHeight()/2f * camera.zoom);
+        Vector2D topLeft = new Vector2D(camera.getPosition().x - camera.getWidth()/2f * camera.getZoom(),
+                camera.getPosition().y + camera.getHeight()/2f * camera.getZoom());
+        Vector2D bottomRight = new Vector2D(camera.getPosition().x + camera.getWidth()/2f * camera.getZoom(),
+                camera.getPosition().y - camera.getHeight()/2f * camera.getZoom());
         Vector2D d = camera.transform.position.normalized();
         return matrix.identity()
                 .ortho2D(topLeft.x,bottomRight.x,bottomRight.y,topLeft.y)

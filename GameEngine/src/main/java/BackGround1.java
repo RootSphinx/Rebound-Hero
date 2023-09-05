@@ -13,7 +13,7 @@ public class BackGround1 extends GameObject {
 
     @Override
     public void start() {
-        sprite = new Sprite(this, "/background.jpg", Sprite.Type.Item);
+        sprite = new Sprite(this, "/background.jpg", Render.UsageType.Item);
         sprite.setLayout(1);
         this.name = "BackGround1";
         canvas = new Canvas(0,0,30,30);

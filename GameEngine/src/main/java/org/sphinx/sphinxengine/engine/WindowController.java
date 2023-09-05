@@ -1,8 +1,8 @@
 package org.sphinx.sphinxengine.engine;
 
-import org.lwjgl.glfw.GLFWCursorPosCallback;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
+import org.sphinx.sphinxengine.util.Debug;
 
 import static org.lwjgl.glfw.GLFW.*;
 

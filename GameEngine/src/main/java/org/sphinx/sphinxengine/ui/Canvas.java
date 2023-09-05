@@ -55,9 +55,9 @@ public class Canvas extends UI {
             };
             case sprite -> {
                 if (path != null)
-                    render = new Sprite(this,path, Sprite.Type.UI);
+                    render = new Sprite(this,path, Render.UsageType.UI);
                 else if (texture != null)
-                    render = new Sprite(this,texture, Sprite.Type.UI);
+                    render = new Sprite(this,texture, Render.UsageType.UI);
             }
         }
         resetLayout();

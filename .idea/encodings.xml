@@ -3,7 +3,6 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Animator.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Camera.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Debug.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Drawer.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/EventSystem.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/GameEngine.java" charset="UTF-8" />
@@ -21,8 +20,9 @@
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Texture.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Transform.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Transformation.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Utils.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/Vector2D.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/engine/WindowController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/util/Debug.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/sphinxengine/util/Utils.java" charset="UTF-8" />
   </component>
 </project>

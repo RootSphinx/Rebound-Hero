@@ -8,6 +8,9 @@ import java.awt.*;
 
 import static org.lwjgl.glfw.GLFW.*;
 
+/**
+ * 事件系统
+ */
 public class EventSystem {
     private static final Point cursorPos = new Point();
     static GLFWCursorPosCallback cursorPosCallback;
@@ -45,12 +48,25 @@ public class EventSystem {
         });
     }
 
+    /**
+     * 获得鼠标所在位置
+     * @return 鼠标所在位置
+     */
     public static Point getCursorPos() {
         return cursorPos;
     }
+
+    /**
+     * 获得鼠标左键状态
+     * @return 鼠标左键状态
+     */
     public static boolean getMouseButton1(){
         return mouseButton1;
     }
+    /**
+     * 获得鼠标右键状态
+     * @return 鼠标右键状态
+     */
     public static boolean getMouseButton2(){
         return mouseButton2;
     }

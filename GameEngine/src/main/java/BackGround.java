@@ -72,7 +72,6 @@ public class BackGround extends GameObject {
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_I)== GLFW.GLFW_PRESS){
             progressBar.addValue(1);
         }
-        System.out.println(progressBar.getValue());
     }
 
     @Override

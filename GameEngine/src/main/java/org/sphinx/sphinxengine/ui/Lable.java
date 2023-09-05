@@ -12,7 +12,7 @@ public class Lable extends UI {
         super(canvas);
         text = new Text(width,height);
         text.setStr("",80,Color.black);
-        sprite = new Sprite(this,text.getTexture(), Sprite.Type.UI);
+        sprite = new Sprite(this,text.getTexture(), Render.UsageType.UI);
         sprite.offset = new Vector2D(text.getTexture().getWidth()/2f,text.getTexture().getHeight()/2f);
         this.name = "Lable";
         resetLayout();

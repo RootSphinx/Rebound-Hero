@@ -15,7 +15,7 @@ public class BackGround2 extends GameObject {
         this.name = "BackGround2";
         random = new Random();
         this.transform.position = new Vector2D(random.nextFloat(-100,100),random.nextInt(-100,100));
-        sprite = new Sprite(this, "/sprite.png", Sprite.Type.Item);
+        sprite = new Sprite(this, "/sprite.png", Sprite.UsageType.Item);
         sprite.setLayout(1);
     }
 

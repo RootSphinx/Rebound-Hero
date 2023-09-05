@@ -1,11 +1,16 @@
 package org.sphinx.sphinxengine.engine;
 
+import org.sphinx.sphinxengine.util.Debug;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * 游戏对象
+ */
 public abstract class GameObject {
     private static final List<GameObject> GAME_OBJECT_LIST = new ArrayList<>();
     public static int gameObjectCount = 0;
@@ -16,18 +21,39 @@ public abstract class GameObject {
     private boolean beforeIsEnable = false;
     public Transform transform = new Transform();
     private GameObject parent = null;
+
+    /**
+     * 创建一个游戏对象
+     */
     public GameObject(){
         this.Id = gameObjectCount;
         gameObjectCount++;
         GAME_OBJECT_LIST.add(this);
         start();
     }
-    public abstract void start();
 
+    /**
+     * 当对象被创建时执行
+     */
+    public abstract void start();
+    /**
+     * 游戏对象被启用时每一帧被执行
+     */
     public abstract void update();
+
+    /**
+     * 当游戏对象被启用时执行
+     */
     public abstract void enable();
+
+    /**
+     * 当游戏对象被禁用时执行
+     */
     public abstract void disable();
 
+    /**
+     * 游戏对象更新
+     */
     protected static void gameObjectsUpdate(){
         for (GameObject gameObject : GAME_OBJECT_LIST){
             if (gameObject.isEnable()){
@@ -39,6 +65,9 @@ public abstract class GameObject {
         }
     }
 
+    /**
+     * 游戏对象状态更新
+     */
     protected static void gameObjectStatusUpdate(){
         for(GameObject gameObject : GAME_OBJECT_LIST){
             if (gameObject.isEnable != gameObject.beforeIsEnable){
@@ -72,9 +101,6 @@ public abstract class GameObject {
         Mesh.destroy(Id);
     }
 
-    public static List<GameObject> getGameObjects() {
-        return GAME_OBJECT_LIST;
-    }
     public Vector2D getPosition(){
         if (parent == null){
             return this.transform.position;
