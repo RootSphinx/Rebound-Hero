@@ -139,25 +139,15 @@ public abstract class GameObject {
         return gameObjects;
     }
 
-    public<T extends Component> T getComponent(Class<T> clazz) {
-        T t = null;
+    public<T extends Component> List<T> getComponent(Class<T> clazz) {
+        List<T> tList = null;
         try {
             Method method = clazz.getMethod("getComponent",int.class);
-            t = (T) method.invoke(null,this.Id);
+            tList = (List<T>) method.invoke(null,this.Id);
         } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
             e.printStackTrace();
         }
-        return t;
-    }
-    public static  <T extends Component> T getComponent(Class<T> clazz,int id) {
-        T t = null;
-        try {
-            Method method = clazz.getMethod("getComponent",int.class);
-            t = (T) method.invoke(null,id);
-        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return t;
+        return tList;
     }
 
     public int getId() {

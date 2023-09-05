@@ -10,7 +10,7 @@ public class Animator implements Component{
         instant,finished
     }
     //private static final List<Animator> ANIMATORS = new ArrayList<>();
-    private static final Map<Integer,Animator> ANIMATOR_MAP = new HashMap<>();
+    private static final Map<Integer,List<Animator>> ANIMATOR_MAP = new HashMap<>();
     private final GameObject gameObject;
     private final Sprite currentSprite;
 
@@ -26,8 +26,8 @@ public class Animator implements Component{
     public Animator(GameObject gameObject,Sprite sprite){
         this.gameObject = gameObject;
         this.currentSprite = sprite;
-        ANIMATOR_MAP.put(gameObject.getId(),this);
-        //ANIMATORS.add(this);
+        ANIMATOR_MAP.computeIfAbsent(gameObject.getId(), k -> new ArrayList<>());
+        ANIMATOR_MAP.get(gameObject.getId()).add(this);
     }
     public void createAction(String name, double timeInterval,Type type){
         texturesMap.put(name,new ArrayList<>());
@@ -59,8 +59,10 @@ public class Animator implements Component{
         }
     }
     protected static void animatorsUpdate(){
-        for (Animator animator : ANIMATOR_MAP.values()){
-            animator.update();
+        for (List<Animator> animators : ANIMATOR_MAP.values()){
+            for (Animator animator : animators){
+                animator.update();
+            }
         }
     }
     private void update(){
@@ -93,7 +95,7 @@ public class Animator implements Component{
         return gameObject;
     }
 
-    public static Animator getComponent(int id) {
+    public static List<Animator> getComponent(int id) {
         return ANIMATOR_MAP.get(id);
     }
 }

@@ -61,6 +61,7 @@ public class BackGround extends GameObject {
         progressBar = new ProgressBar(100,100,400,100);
         progressBar.setDirection(ProgressBar.Direction.vertical);
         progressBar.setColor(Color.green, Color.white);
+        progressBar.setThreshold(100,1000);
     }
 
     @Override
@@ -71,6 +72,7 @@ public class BackGround extends GameObject {
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_I)== GLFW.GLFW_PRESS){
             progressBar.addValue(1);
         }
+        System.out.println(progressBar.getValue());
     }
 
     @Override

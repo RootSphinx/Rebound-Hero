@@ -31,8 +31,10 @@ public class ProgressBar extends UI{
         foregroundCanvas.setColor(Color.black);
     }
     public void setThreshold(float minValue,float maxValue) {
+        if (minValue > maxValue) return;
         this.minValue = minValue;
         this.maxValue = maxValue;
+        this.mValue = minValue;
     }
     public void setColor(Color foreColor,Color backColor){
         foregroundCanvas.setColor(foreColor);
@@ -64,11 +66,11 @@ public class ProgressBar extends UI{
         switch (direction) {
             case horizontal -> {
                 foregroundCanvas.transform.position = new Vector2D(outLineWidth / 2f, outLineWidth / 2f);
-                foregroundCanvas.setSize(((width - outLineWidth) / (maxValue - minValue) * mValue), height - outLineWidth);
+                foregroundCanvas.setSize((width - outLineWidth) / (maxValue - minValue) * (mValue-minValue), height - outLineWidth);
             }
             case vertical -> {
-                foregroundCanvas.transform.position = new Vector2D(outLineWidth / 2f, (height - outLineWidth/2f) - ((height - outLineWidth) / (maxValue - minValue) * mValue));
-                foregroundCanvas.setSize(width - outLineWidth, ((height - outLineWidth) / (maxValue - minValue) * mValue));
+                foregroundCanvas.transform.position = new Vector2D(outLineWidth / 2f, (height - outLineWidth/2f) - ((height - outLineWidth) / (maxValue - minValue) * (mValue-minValue)));
+                foregroundCanvas.setSize(width - outLineWidth, (height - outLineWidth) / (maxValue - minValue) * (mValue-minValue));
             }
         }
     }

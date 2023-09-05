@@ -38,11 +38,13 @@ public class Renderer {
             if (Objects.isNull(activeCamera)){return;}
             skyboxDraw();
             for (int i = 0; i <= 20; i++){
-                for(Render render : Render.RENDER_MAP.values()){
-                    if (render.getLayout() == i && render.getGameObject().isEnable()){
-                        switch (render.type){
-                            case drawer -> renderDrawer((Drawer) render);
-                            case sprite -> renderSprite((Sprite) render);
+                for(List<Render> renderList : Render.RENDER_MAP.values()){
+                    for (Render render : renderList){
+                        if (render.getLayout() == i && render.getGameObject().isEnable()){
+                            switch (render.type){
+                                case drawer -> renderDrawer((Drawer) render);
+                                case sprite -> renderSprite((Sprite) render);
+                            }
                         }
                     }
                 }
