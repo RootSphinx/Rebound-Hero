@@ -39,6 +39,12 @@ public class Player extends GameObject {
     @Override
     public void update(){
         move();
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_K)== GLFW.GLFW_PRESS){
+            System.out.println("K");
+            GameObject backGround2 = GameObject.findGameObject("BackGround2");
+            Sprite component = backGround2.getComponent(Sprite.class);
+            System.out.println(component.getGameObject().name);
+        }
     }
 
     @Override

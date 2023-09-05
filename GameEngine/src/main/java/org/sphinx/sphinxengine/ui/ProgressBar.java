@@ -5,8 +5,8 @@ import org.sphinx.sphinxengine.engine.Vector2D;
 import java.awt.*;
 
 public class ProgressBar extends UI{
-    private int width;
-    private int height;
+    private final int width;
+    private final int height;
     private float mValue = 0;
     private float minValue = 0;
     private float maxValue = 100;
@@ -24,6 +24,7 @@ public class ProgressBar extends UI{
         super(canvas);
         this.width = width;
         this.height = height;
+        this.name = "ProgressBar";
         backGroundCanvas = new Canvas(x, y, width, height);
         foregroundCanvas = new Canvas(backGroundCanvas,0,0,0,0);
         backGroundCanvas.setOutLine(true);

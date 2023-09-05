@@ -10,8 +10,6 @@ import java.awt.*;
 
 
 public class BackGround extends GameObject {
-    //Sprite sprite;
-    GameTimer gameTimer = new GameTimer();
     Canvas canvas;
     Canvas canvas1;
     Lable lable;

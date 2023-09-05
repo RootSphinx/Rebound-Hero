@@ -9,7 +9,7 @@ import static org.lwjgl.opengl.GL40.*;
 
 public class Renderer {
     private static Camera activeCamera = null;
-    private static final List<Render> RENDER_LIST = new ArrayList<>();
+
     private static Texture loadTexture;
     /**
      * 设置当前渲染器的活动摄像机
@@ -38,7 +38,7 @@ public class Renderer {
             if (Objects.isNull(activeCamera)){return;}
             skyboxDraw();
             for (int i = 0; i <= 20; i++){
-                for(Render render : RENDER_LIST){
+                for(Render render : Render.RENDER_MAP.values()){
                     if (render.getLayout() == i && render.getGameObject().isEnable()){
                         switch (render.type){
                             case drawer -> renderDrawer((Drawer) render);
@@ -95,26 +95,7 @@ public class Renderer {
         sprite.getShaderProgram().unbind();
         sprite.getMesh().unbind();
     }
-    public static void renderListAdd(Render render){
-        RENDER_LIST.add(render);
-    }
-    protected static void destroyAllRender(){
-        Debug.log("渲染器----开始释放精灵");
-        while (!RENDER_LIST.isEmpty()){
-            Render render = RENDER_LIST.get(0);
-            switch (render.type){
-                case sprite -> {
-                    ((Sprite) render).getMesh().destroy();
-                    RENDER_LIST.remove(render);
-                }
-                case drawer -> RENDER_LIST.remove(render);
-            }
-        }
-    }
-    protected static void destroyRender(Sprite sprite){
-        sprite.getMesh().destroy();
-        RENDER_LIST.remove(sprite);
-    }
+
     private static void skyboxDraw(){
         //Debug.log("渲染器----开始绘制天空盒");
         glBegin(GL_POLYGON);

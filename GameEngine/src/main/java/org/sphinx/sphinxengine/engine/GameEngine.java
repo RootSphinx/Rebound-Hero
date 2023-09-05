@@ -20,7 +20,7 @@ public class GameEngine {
      * @param windowSizeHeight 窗口高度
      * @param windowTitle 窗口标题
      */
-    public void setWindowInfo(int windowSizeWidth, int windowSizeHeight, String windowTitle){
+    public void setWindowAttribute(int windowSizeWidth, int windowSizeHeight, String windowTitle){
         windowController.setWindowInfo(windowSizeWidth, windowSizeHeight, windowTitle);
     }
 
@@ -40,8 +40,8 @@ public class GameEngine {
         while (!GLFW.glfwWindowShouldClose(windowController.window)){
             GLFW.glfwPollEvents();
             GameTimer.timerUpdate();
-            GameObject.gameObjectsUpdate();     //对象状态更新
-            GameObject.gameObjectStatusUpdate();    //对象更新
+            GameObject.gameObjectsUpdate();     //对象更新
+            GameObject.gameObjectStatusUpdate();    //对象状态更新
             Animator.animatorsUpdate();         //动画更新
             Renderer.render();                  //渲染器渲染
             windowController.swapBuffer();  //交换缓冲区
@@ -60,6 +60,8 @@ public class GameEngine {
         v = v > 0 ? v : 0;
         try {
             Thread.sleep((int) v);
+            //System.out.println(v>1?1000/(int) v:0);
+            //System.out.println(onceLoopTime);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

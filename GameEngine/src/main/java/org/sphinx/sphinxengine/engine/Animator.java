@@ -2,12 +2,14 @@ package org.sphinx.sphinxengine.engine;
 
 import java.util.*;
 
-public class Animator {
+public class Animator implements Component{
+
+
 
     public enum Type{
         instant,finished
     }
-    private static final List<Animator> ANIMATORS = new ArrayList<>();
+    //private static final List<Animator> ANIMATORS = new ArrayList<>();
     private static final Map<Integer,Animator> ANIMATOR_MAP = new HashMap<>();
     private final GameObject gameObject;
     private final Sprite currentSprite;
@@ -24,7 +26,8 @@ public class Animator {
     public Animator(GameObject gameObject,Sprite sprite){
         this.gameObject = gameObject;
         this.currentSprite = sprite;
-        ANIMATORS.add(this);
+        ANIMATOR_MAP.put(gameObject.getId(),this);
+        //ANIMATORS.add(this);
     }
     public void createAction(String name, double timeInterval,Type type){
         texturesMap.put(name,new ArrayList<>());
@@ -56,7 +59,7 @@ public class Animator {
         }
     }
     protected static void animatorsUpdate(){
-        for (Animator animator : ANIMATORS){
+        for (Animator animator : ANIMATOR_MAP.values()){
             animator.update();
         }
     }
@@ -80,24 +83,17 @@ public class Animator {
     }
     protected static void destroyAllAnimator(){
         Debug.log("动画器----正在释放动画器");
-        while (!ANIMATORS.isEmpty()){
-            ANIMATORS.remove(0);
-        }
+        ANIMATOR_MAP.clear();
     }
     public void destroy(){
-        ANIMATORS.remove(this);
+        //ANIMATORS.remove(this);
+        ANIMATOR_MAP.remove(gameObject.getId());
     }
     public GameObject getGameObject() {
         return gameObject;
     }
 
-    public static List<Animator> getComponents(int id) {
-        List<Animator>animators = new ArrayList<>();
-        ANIMATOR_MAP.forEach((tId,tAnimator)->{
-            if (id == tId){
-                animators.add(tAnimator);
-            }
-        });
-        return animators;
+    public static Animator getComponent(int id) {
+        return ANIMATOR_MAP.get(id);
     }
 }

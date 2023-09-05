@@ -32,7 +32,7 @@ public class WindowController {
         Debug.log("\t标题为 : "+windowTitle);
     }
     public void glInit(){
-        Debug.log("窗口管理器----实初始化中……");
+        Debug.log("窗口管理器----开始初始化");
         GLFWErrorCallback.createPrint(System.err).set();
         if (!glfwInit()){
             throw new RuntimeException("glfw初始化失败");
@@ -44,7 +44,6 @@ public class WindowController {
         }
         context();
         glfwSwapInterval(1);
-        Debug.log("窗口管理器----实初始化完毕");
     }
     public void context(){
         glfwMakeContextCurrent(window);
@@ -70,9 +69,6 @@ public class WindowController {
     public void swapBuffer(){
         glfwSwapBuffers(window);
     }
-
-
-
     public void windowDestroy(){
         glfwTerminate();
         Debug.log("窗口管理器----窗口销毁");

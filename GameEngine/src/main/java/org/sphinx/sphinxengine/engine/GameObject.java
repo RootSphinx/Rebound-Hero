@@ -1,5 +1,7 @@
 package org.sphinx.sphinxengine.engine;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -137,10 +139,26 @@ public abstract class GameObject {
         return gameObjects;
     }
 
-    public static <T> T getComponent(){
-        //Class<T> tClass = T.class;
-        return null;
-    };
+    public<T extends Component> T getComponent(Class<T> clazz) {
+        T t = null;
+        try {
+            Method method = clazz.getMethod("getComponent",int.class);
+            t = (T) method.invoke(null,this.Id);
+        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return t;
+    }
+    public static  <T extends Component> T getComponent(Class<T> clazz,int id) {
+        T t = null;
+        try {
+            Method method = clazz.getMethod("getComponent",int.class);
+            t = (T) method.invoke(null,id);
+        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return t;
+    }
 
     public int getId() {
         return Id;

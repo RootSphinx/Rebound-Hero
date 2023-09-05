@@ -1,6 +1,6 @@
 package org.sphinx.sphinxengine.engine;
 
-public class Sprite extends Render{
+public class Sprite extends Render {
     public enum Type{
         UI,Item
     }

@@ -33,11 +33,11 @@ public class SceneController {
     public static void cleanScene(){
         Debug.log("场景资源释放中");
         Renderer.setActiveCamera(null);
-        GameObject.gameObjectsRemoveAll();
         Texture.destroyAllTexture();
-        Renderer.destroyAllRender();
+        Render.destroyAllRender();
         GameTimer.destroyAllGameTimer();
         Animator.destroyAllAnimator();
+        GameObject.gameObjectsRemoveAll();
         System.gc();
     }
 }
