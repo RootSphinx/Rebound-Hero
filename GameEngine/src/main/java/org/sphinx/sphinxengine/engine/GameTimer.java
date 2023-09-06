@@ -32,7 +32,7 @@ public class GameTimer {
     /**
      * 计时器更新
      */
-    protected static void timerUpdate(){
+    static void timerUpdate(){
         deltaTime = glfwGetTime() - lastTimer;
         lastTimer = glfwGetTime();
         for (GameTimer gameTimer : GAME_TIMER_LIST){
@@ -40,7 +40,7 @@ public class GameTimer {
                 gameTimer.time += deltaTime;
         }
     }
-    protected static double onceLoopTime(){
+    static double onceLoopTime(){
         return glfwGetTime() -lastTimer;
     }
 

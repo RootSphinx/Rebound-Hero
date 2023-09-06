@@ -97,7 +97,7 @@ public class Animator implements Component{
     /**
      * 动画器更新
      */
-    protected static void animatorsUpdate(){
+    static void animatorsUpdate(){
         for (List<Animator> animators : ANIMATOR_MAP.values()){
             for (Animator animator : animators){
                 animator.update();
@@ -126,7 +126,7 @@ public class Animator implements Component{
     /**
      * 销毁所有动画器
      */
-    protected static void destroyAllAnimator(){
+    static void destroyAllAnimator(){
         Debug.log("动画器----正在释放动画器");
         ANIMATOR_MAP.clear();
     }

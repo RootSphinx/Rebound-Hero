@@ -174,7 +174,7 @@ public class Texture {
         glBindTexture(GL_TEXTURE_2D, 0);
     }
 
-    protected static void destroyAllTexture(){
+    static void destroyAllTexture(){
         Debug.log("纹理----正在释放纹理");
         while (!TEXTURE_LIST.isEmpty()){
             glDeleteTextures(TEXTURE_LIST.get(0));

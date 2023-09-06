@@ -69,7 +69,7 @@ public class WindowController {
     public void swapBuffer(){
         glfwSwapBuffers(window);
     }
-    public void windowDestroy(){
+    void windowDestroy(){
         glfwTerminate();
         Debug.log("窗口管理器----窗口销毁");
     }

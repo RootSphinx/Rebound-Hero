@@ -54,7 +54,7 @@ public abstract class GameObject {
     /**
      * 游戏对象更新
      */
-    protected static void gameObjectsUpdate(){
+    static void gameObjectsUpdate(){
         for (GameObject gameObject : GAME_OBJECT_LIST){
             if (gameObject.isEnable()){
                 gameObject.update();
@@ -68,7 +68,7 @@ public abstract class GameObject {
     /**
      * 游戏对象状态更新
      */
-    protected static void gameObjectStatusUpdate(){
+    static void gameObjectStatusUpdate(){
         for(GameObject gameObject : GAME_OBJECT_LIST){
             if (gameObject.isEnable != gameObject.beforeIsEnable){
                 if (gameObject.isEnable){
@@ -81,7 +81,7 @@ public abstract class GameObject {
             }
         }
     }
-    protected static void gameObjectsRemoveAll(){
+    static void gameObjectsRemoveAll(){
         Debug.log("游戏对象----正在释放游戏对象");
         while (!GAME_OBJECT_LIST.isEmpty()){
             GAME_OBJECT_LIST.get(0).destroy();

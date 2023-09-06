@@ -66,7 +66,7 @@ public abstract class Render implements Component{
     /**
      * 销毁所有渲染对象
      */
-    protected static void destroyAllRender(){
+    static void destroyAllRender(){
         Debug.log("渲染----开始释放渲染对象");
         RENDER_MAP.forEach((id,renderList)->{
             renderList.forEach(render->{

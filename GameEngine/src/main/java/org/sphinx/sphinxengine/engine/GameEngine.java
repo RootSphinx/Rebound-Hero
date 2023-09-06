@@ -49,7 +49,7 @@ public class GameEngine {
             Animator.animatorsUpdate();         //动画更新
             Renderer.render();                  //渲染器渲染
             windowController.swapBuffer();  //交换缓冲区
-            Scene.finsh();
+            Scene.finish();
             sleep();
         }
     }

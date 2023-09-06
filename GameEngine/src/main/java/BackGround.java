@@ -59,7 +59,7 @@ public class BackGround extends GameObject {
         canvas.setActive(false);
 
         progressBar = new ProgressBar(100,100,400,100);
-        progressBar.setDirection(ProgressBar.Direction.vertical);
+        progressBar.setDirection(ProgressBar.Direction.horizontal);
         progressBar.setColor(Color.green, Color.white);
         progressBar.setThreshold(100,1000);
     }

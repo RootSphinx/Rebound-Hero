@@ -62,13 +62,13 @@ public class Player extends GameObject {
             moveVector.y = 1;
             vector = VectorType.back;
         }
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_A)==GLFW.GLFW_PRESS){
-            moveVector.x = -1;
-            vector = VectorType.left;
-        }
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_S)==GLFW.GLFW_PRESS){
             moveVector.y = -1;
             vector = VectorType.front;
+        }
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_A)==GLFW.GLFW_PRESS){
+            moveVector.x = -1;
+            vector = VectorType.left;
         }
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_D)==GLFW.GLFW_PRESS){
             moveVector.x = 1;
@@ -88,6 +88,5 @@ public class Player extends GameObject {
         else {
             animator.setAction(vector.value);
         }
-
     }
 }
