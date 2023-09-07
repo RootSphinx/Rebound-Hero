@@ -69,6 +69,7 @@ public class Text {
     public static int getCharWidth(char str,int size){
         Font font = new Font("ha",Font.PLAIN,size);
         fontMetrics = Toolkit.getDefaultToolkit().getFontMetrics(font);
+        //System.out.println("hahahah"+fontMetrics.charWidth(str)+" "+str);
         return fontMetrics.charWidth(str);
     }
 }

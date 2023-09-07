@@ -29,7 +29,16 @@ public class BackGround extends GameObject {
         public void run() {
             if (!sign){
                 canvas.setActive(true);
-                dialog.setText("你好，世界。just monika just monika just monika just monika just monika just monika just monika just monika just monika .",30);
+                //dialog.setText("你好，世界。just monika just monika just monika just monika just monika just monika just monika just monika just monika .",30);
+                dialog.setText("""
+                       
+                        %80%#30#@ffffff@这真是美好的一天，%300%%100%鸟儿在歌唱，%400%%110%花朵绽放。 $wait$%100%
+                        
+                        在像这样美丽的日子里，$wait$%200%你这样的孩子%250%......
+                        %400%%250%#40#@ff2400@     $shake/10/0.25$就 $shake/10/0.25$应 $shake/10/0.25$该 $shake/10/0.25$在 $shake/10/0.25$地 $shake/10/0.25$狱 $shake/10/0.25$里 $shake/10/0.25$焚 $shake/10/0.25$烧
+                        %300%$stop$
+                        
+                        """);
             }
             else {
                 canvas.setActive(false);
@@ -51,6 +60,7 @@ public class BackGround extends GameObject {
         dialog = new Dialog(canvas,WindowController.getInstance().getWindowWidth() - 120,280);
         dialog.transform.position = new Vector2D(30,50);
         dialog.setText("你好,世界",30);
+        dialog.setGameEvent(TestGameEvent.class);
 
         canvas1 = new Canvas(1000,20,100,100);
         button = new Button(canvas1,300,100);

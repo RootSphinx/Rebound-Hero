@@ -1,5 +1,7 @@
 import org.lwjgl.glfw.GLFW;
 import org.sphinx.sphinxengine.engine.*;
+import org.sphinx.sphinxengine.util.Debug;
+import org.sphinx.sphinxengine.util.Utils;
 
 public class Player extends GameObject {
     enum VectorType{
@@ -15,6 +17,7 @@ public class Player extends GameObject {
     VectorType vector = VectorType.front;
     Sprite sprite;
     Animator animator;
+    Utils.ObjectPool objectPool = new Utils.ObjectPool(BackGround2.class,10);
     @Override
     public void start(){
         //System.out.println("player.start()");
@@ -44,6 +47,7 @@ public class Player extends GameObject {
             GameObject backGround2 = GameObject.findGameObject("BackGround2");
             Render component = backGround2.getComponent(Render.class).get(0);
             System.out.println(component.getGameObject().name);
+            objectPool.get();
         }
     }
 

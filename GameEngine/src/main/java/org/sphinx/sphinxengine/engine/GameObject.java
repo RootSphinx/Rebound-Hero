@@ -55,9 +55,10 @@ public abstract class GameObject {
      * 游戏对象更新
      */
     static void gameObjectsUpdate(){
-        for (GameObject gameObject : GAME_OBJECT_LIST){
-            if (gameObject.isEnable()){
-                gameObject.update();
+        int size = GAME_OBJECT_LIST.size();
+        for (int i = 0; i < size; i++){
+            if (GAME_OBJECT_LIST.get(i).isEnable()){
+                GAME_OBJECT_LIST.get(i).update();
                 if (SceneController.isLoadingNextScene){
                     break;
                 }

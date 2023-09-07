@@ -3,7 +3,7 @@ package org.sphinx.sphinxengine.ui;
 import org.sphinx.sphinxengine.engine.GameObject;
 
 public abstract class UI extends GameObject {
-    UI canvas;
+    Canvas canvas;
     public int layout = 15;
     UI(Canvas canvas){
         this.canvas = canvas;
@@ -15,5 +15,8 @@ public abstract class UI extends GameObject {
         if (canvas != null){
             this.layout = Math.min(canvas.layout + 1, 20);
         }
+    }
+    public Canvas getCanvas(){
+        return canvas;
     }
 }

@@ -3,8 +3,11 @@ package org.sphinx.sphinxengine.engine;
 import org.lwjgl.glfw.GLFWCharModsCallback;
 import org.lwjgl.glfw.GLFWCursorPosCallback;
 import org.lwjgl.glfw.GLFWMouseButtonCallback;
+import org.sphinx.sphinxengine.util.Debug;
 
 import java.awt.*;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -69,5 +72,13 @@ public class EventSystem {
      */
     public static boolean getMouseButton2(){
         return mouseButton2;
+    }
+    public static void execute(Class<?> clazz,GameObject gameObject,String ... strings){
+        try {
+            Method method = clazz.getMethod(strings[0],GameObject.class,String[].class);
+            method.invoke(null, gameObject, strings);
+        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+            Debug.err("NoMethod",e);
+        }
     }
 }
