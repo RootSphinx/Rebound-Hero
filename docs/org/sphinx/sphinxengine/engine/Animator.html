@@ -72,7 +72,7 @@ loadScripts(document, 'script');</script>
 <h1 title="类 Animator" class="title">类 Animator</h1>
 </div>
 <div class="inheritance" title="继承树"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="java.lang中的类或接口" class="external-link">java.lang.Object</a>
-<div class="inheritance">org.sphinx.sphinxengine.engine.Animator</div>
+<div class="inheritance">engine.org.sphinx.Animator</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
@@ -112,7 +112,7 @@ implements <a href="Component.html" title="org.sphinx.sphinxengine.engine中的�
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">构造器</div>
 <div class="table-header col-last">说明</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.sphinx.sphinxengine.engine.GameObject,org.sphinx.sphinxengine.engine.Sprite)" class="member-name-link">Animator</a><wbr>(<a href="GameObject.html" title="org.sphinx.sphinxengine.engine中的类">GameObject</a>&nbsp;gameObject,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(engine.org.sphinx.GameObject,engine.org.sphinx.Sprite)" class="member-name-link">Animator</a><wbr>(<a href="GameObject.html" title="org.sphinx.sphinxengine.engine中的类">GameObject</a>&nbsp;gameObject,
  <a href="Sprite.html" title="org.sphinx.sphinxengine.engine中的类">Sprite</a>&nbsp;sprite)</code></div>
 <div class="col-last even-row-color">
 <div class="block">创建一个动画器</div>
@@ -132,7 +132,7 @@ implements <a href="Component.html" title="org.sphinx.sphinxengine.engine中的�
 <div class="table-header col-second">方法</div>
 <div class="table-header col-last">说明</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addTexture(java.lang.String,org.sphinx.sphinxengine.engine.Texture)" class="member-name-link">addTexture</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a>&nbsp;name,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addTexture(java.lang.String,engine.org.sphinx.Texture)" class="member-name-link">addTexture</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a>&nbsp;name,
  <a href="Texture.html" title="org.sphinx.sphinxengine.engine中的类">Texture</a>&nbsp;texture)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">为动作添加一个纹理</div>
@@ -143,14 +143,14 @@ implements <a href="Component.html" title="org.sphinx.sphinxengine.engine中的�
 <div class="block">动画器更新</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createAction(java.lang.String,double,org.sphinx.sphinxengine.engine.Animator.Type)" class="member-name-link">createAction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a>&nbsp;name,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createAction(java.lang.String,double,engine.org.sphinx.Animator.Type)" class="member-name-link">createAction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a>&nbsp;name,
  double&nbsp;timeInterval,
  <a href="Animator.Type.html" title="enum class in org.sphinx.sphinxengine.engine">Animator.Type</a>&nbsp;type)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">创建一个动作</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createAction(java.lang.String,double,org.sphinx.sphinxengine.engine.Animator.Type,java.util.List)" class="member-name-link">createAction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a>&nbsp;name,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createAction(java.lang.String,double,engine.org.sphinx.Animator.Type,java.util.List)" class="member-name-link">createAction</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a>&nbsp;name,
  double&nbsp;timeInterval,
  <a href="Animator.Type.html" title="enum class in org.sphinx.sphinxengine.engine">Animator.Type</a>&nbsp;type,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="Texture.html" title="org.sphinx.sphinxengine.engine中的类">Texture</a>&gt;&nbsp;textures)</code></div>
@@ -200,7 +200,7 @@ implements <a href="Component.html" title="org.sphinx.sphinxengine.engine中的�
 <h2>构造器详细资料</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(org.sphinx.sphinxengine.engine.GameObject,org.sphinx.sphinxengine.engine.Sprite)">
+<section class="detail" id="&lt;init&gt;(engine.org.sphinx.GameObject,engine.org.sphinx.Sprite)">
 <h3>Animator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Animator</span><wbr><span class="parameters">(<a href="GameObject.html" title="org.sphinx.sphinxengine.engine中的类">GameObject</a>&nbsp;gameObject,
  <a href="Sprite.html" title="org.sphinx.sphinxengine.engine中的类">Sprite</a>&nbsp;sprite)</span></div>
@@ -221,7 +221,7 @@ implements <a href="Component.html" title="org.sphinx.sphinxengine.engine中的�
 <h2>方法详细资料</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="createAction(java.lang.String,double,org.sphinx.sphinxengine.engine.Animator.Type)">
+<section class="detail" id="createAction(java.lang.String,double,engine.org.sphinx.Animator.Type)">
 <h3>createAction</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createAction</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a>&nbsp;name,
  double&nbsp;timeInterval,
@@ -236,7 +236,7 @@ implements <a href="Component.html" title="org.sphinx.sphinxengine.engine中的�
 </section>
 </li>
 <li>
-<section class="detail" id="createAction(java.lang.String,double,org.sphinx.sphinxengine.engine.Animator.Type,java.util.List)">
+<section class="detail" id="createAction(java.lang.String,double,engine.org.sphinx.Animator.Type,java.util.List)">
 <h3>createAction</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createAction</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a>&nbsp;name,
  double&nbsp;timeInterval,
@@ -253,7 +253,7 @@ implements <a href="Component.html" title="org.sphinx.sphinxengine.engine中的�
 </section>
 </li>
 <li>
-<section class="detail" id="addTexture(java.lang.String,org.sphinx.sphinxengine.engine.Texture)">
+<section class="detail" id="addTexture(java.lang.String,engine.org.sphinx.Texture)">
 <h3>addTexture</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addTexture</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a>&nbsp;name,
  <a href="Texture.html" title="org.sphinx.sphinxengine.engine中的类">Texture</a>&nbsp;texture)</span></div>

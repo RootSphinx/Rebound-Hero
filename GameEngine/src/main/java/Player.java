@@ -1,7 +1,6 @@
 import org.lwjgl.glfw.GLFW;
-import org.sphinx.sphinxengine.engine.*;
-import org.sphinx.sphinxengine.util.Debug;
-import org.sphinx.sphinxengine.util.Utils;
+import org.sphinx.engine.*;
+import org.sphinx.util.Utils;
 
 public class Player extends GameObject {
     enum VectorType{

@@ -1,7 +1,7 @@
-import org.sphinx.sphinxengine.engine.GameObject;
-import org.sphinx.sphinxengine.engine.GameTimer;
-import org.sphinx.sphinxengine.engine.Sprite;
-import org.sphinx.sphinxengine.engine.Vector2D;
+import org.sphinx.engine.GameObject;
+import org.sphinx.engine.GameTimer;
+import org.sphinx.engine.Sprite;
+import org.sphinx.engine.Vector2D;
 
 import java.util.Random;
 

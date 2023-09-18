@@ -1,9 +1,11 @@
 import org.lwjgl.glfw.GLFW;
-import org.sphinx.sphinxengine.engine.*;
-import org.sphinx.sphinxengine.ui.*;
-import org.sphinx.sphinxengine.ui.Button;
-import org.sphinx.sphinxengine.ui.Canvas;
-import org.sphinx.sphinxengine.ui.Dialog;
+import org.sphinx.engine.GameObject;
+import org.sphinx.engine.Vector2D;
+import org.sphinx.engine.WindowController;
+import org.sphinx.ui.*;
+import org.sphinx.ui.Button;
+import org.sphinx.ui.Canvas;
+import org.sphinx.ui.Dialog;
 
 import java.awt.*;
 
@@ -51,7 +53,7 @@ public class BackGround extends GameObject {
     public void start() {
         this.name = "BackGround";
 
-        canvas = new Canvas(30,450,WindowController.getInstance().getWindowWidth() - 60, 330);
+        canvas = new Canvas(30,450, WindowController.getInstance().getWindowWidth() - 60, 330);
         canvas.setColor(new Color(0,0,0,180));
 
         lable = new Lable(canvas,200,40);

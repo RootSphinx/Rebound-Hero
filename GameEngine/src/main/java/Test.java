@@ -1,5 +1,6 @@
-import org.sphinx.sphinxengine.engine.*;
-import org.sphinx.sphinxengine.util.Debug;
+import org.sphinx.engine.GameEngine;
+import org.sphinx.engine.SceneController;
+import org.sphinx.util.Debug;
 
 public class Test {
     public static void main(String[] args) {

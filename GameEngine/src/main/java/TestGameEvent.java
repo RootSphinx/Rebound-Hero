@@ -1,8 +1,8 @@
-import org.sphinx.sphinxengine.engine.EventSystem;
-import org.sphinx.sphinxengine.engine.GameEvent;
-import org.sphinx.sphinxengine.engine.GameObject;
-import org.sphinx.sphinxengine.ui.Dialog;
-import org.sphinx.sphinxengine.util.Utils;
+import org.sphinx.engine.EventSystem;
+import org.sphinx.engine.GameEvent;
+import org.sphinx.engine.GameObject;
+import org.sphinx.ui.Dialog;
+import org.sphinx.util.Utils;
 
 public class TestGameEvent implements GameEvent {
     public TestGameEvent(){
@@ -27,7 +27,7 @@ public class TestGameEvent implements GameEvent {
     }
     public static void shake(GameObject gameObject,String[] args){
         Dialog dialog = (Dialog) gameObject;
-        Utils.createShaker(dialog.lable.transform,10,0.15);
+        Utils.createShaker(dialog.getCanvas().transform,10,0.15);
     }
     public static void stop(GameObject gameObject,String[]args){
         Dialog dialog = (Dialog) gameObject;

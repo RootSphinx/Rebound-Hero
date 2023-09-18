@@ -1,6 +1,9 @@
-import org.sphinx.sphinxengine.engine.*;
-import org.sphinx.sphinxengine.ui.Canvas;
-import org.sphinx.sphinxengine.ui.Lable;
+import org.sphinx.engine.GameObject;
+import org.sphinx.engine.GameTimer;
+import org.sphinx.engine.Render;
+import org.sphinx.engine.Sprite;
+import org.sphinx.ui.Canvas;
+import org.sphinx.ui.Lable;
 
 import java.awt.*;
 

@@ -1,10 +1,6 @@
-import org.joml.Vector2d;
 import org.lwjgl.glfw.GLFW;
-import org.sphinx.sphinxengine.engine.Camera;
-import org.sphinx.sphinxengine.engine.Vector2D;
-import org.sphinx.sphinxengine.engine.WindowController;
-
-import java.util.Vector;
+import org.sphinx.engine.Camera;
+import org.sphinx.engine.WindowController;
 
 public class GameCamera extends Camera {
     public GameCamera(int width, int height) {
