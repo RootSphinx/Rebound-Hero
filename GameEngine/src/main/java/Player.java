@@ -44,7 +44,7 @@ public class Player extends GameObject {
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_K)== GLFW.GLFW_PRESS){
             System.out.println("K");
             GameObject backGround2 = GameObject.findGameObject("BackGround2");
-            Render component = backGround2.getComponent(Render.class).get(0);
+            Render component = (Render) backGround2.getComponent("Render").get(0);
             System.out.println(component.getGameObject().name);
             objectPool.get();
         }

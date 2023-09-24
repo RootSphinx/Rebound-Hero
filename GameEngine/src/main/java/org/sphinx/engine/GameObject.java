@@ -156,7 +156,7 @@ public abstract class GameObject {
         }
         return null;
     }
-    public static List<GameObject>  findGameObjects(String tag){
+    public static List<GameObject> findGameObjects(String tag){
         List<GameObject> gameObjects = new ArrayList<>();
         for (GameObject gameObject : GAME_OBJECT_LIST){
             if (Objects.equals(gameObject.tag, tag)){
@@ -166,7 +166,7 @@ public abstract class GameObject {
         return gameObjects;
     }
 
-    public<T extends Component> List<T> getComponent(Class<T> clazz) {
+/*    public<T extends Component> List<T> getComponent(Class<T> clazz) {
         List<T> tList = null;
         try {
             Method method = clazz.getMethod("getComponent",int.class);
@@ -175,8 +175,10 @@ public abstract class GameObject {
             e.printStackTrace();
         }
         return tList;
+    }*/
+    public List<Component> getComponent(String typeName) {
+        return Component.getComponent(this, typeName);
     }
-
     public int getId() {
         return Id;
     }

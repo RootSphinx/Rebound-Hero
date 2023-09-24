@@ -4,7 +4,6 @@ import org.sphinx.engine.Render;
 import org.sphinx.engine.Sprite;
 import org.sphinx.engine.Text;
 import org.sphinx.engine.Vector2D;
-import org.sphinx.sphinxengine.engine.*;
 
 import java.awt.*;
 

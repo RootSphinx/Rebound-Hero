@@ -7,15 +7,14 @@ import java.util.*;
 /**
  * 动画器
  */
-public class Animator implements Component{
+public class Animator extends Component{
     /**
      * 动作切换类型
      */
     public enum Type{
         instant,finished
     }
-    private static final Map<Integer,List<Animator>> ANIMATOR_MAP = new HashMap<>();
-    private final GameObject gameObject;
+
     private final Sprite currentSprite;
 
     private final Map<String,List<Texture>> texturesMap = new HashMap<>();
@@ -33,10 +32,8 @@ public class Animator implements Component{
      * @param sprite 动画器需要控制的精灵
      */
     public Animator(GameObject gameObject,Sprite sprite){
-        this.gameObject = gameObject;
+        super(gameObject, "Animator");
         this.currentSprite = sprite;
-        ANIMATOR_MAP.computeIfAbsent(gameObject.getId(), k -> new ArrayList<>());
-        ANIMATOR_MAP.get(gameObject.getId()).add(this);
     }
 
     /**
@@ -98,9 +95,9 @@ public class Animator implements Component{
      * 动画器更新
      */
     static void animatorsUpdate(){
-        for (List<Animator> animators : ANIMATOR_MAP.values()){
-            for (Animator animator : animators){
-                animator.update();
+        for (List<Component> animators : components.get("Animator").values()){
+            for (Component animator : animators){
+                ((Animator)animator).update();
             }
         }
     }
@@ -128,14 +125,14 @@ public class Animator implements Component{
      */
     static void destroyAllAnimator(){
         Debug.log("动画器----正在释放动画器");
-        ANIMATOR_MAP.clear();
+        components.get("Animator").clear();
     }
 
     /**
      * 销毁当前动画器
      */
     public void destroy(){
-        ANIMATOR_MAP.remove(gameObject.getId());
+        components.get("Animator").remove(gameObject.getId());
     }
 
     /**
@@ -146,12 +143,4 @@ public class Animator implements Component{
         return gameObject;
     }
 
-    /**
-     * 获得指定游戏对象加载的所有动画器
-     * @param id 加载动画器的游戏对象id
-     * @return 指定游戏对象加载的所有动画器
-     */
-    public static List<Animator> getComponent(int id) {
-        return ANIMATOR_MAP.get(id);
-    }
 }

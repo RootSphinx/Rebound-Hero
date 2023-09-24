@@ -39,8 +39,9 @@ public class Renderer {
             if (Objects.isNull(activeCamera)){return;}
             skyboxDraw();
             for (int i = 0; i <= 20; i++){
-                for(List<Render> renderList : Render.RENDER_MAP.values()){
-                    for (Render render : renderList){
+                for(List<Component> renderList : Render.components.get("Render").values()){
+                    for (Component component : renderList){
+                        Render render = (Render) component;
                         if (render.getLayout() == i && render.getGameObject().isEnable()){
                             switch (render.type){
                                 case drawer -> renderDrawer((Drawer) render);

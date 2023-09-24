@@ -1,7 +1,6 @@
 package org.sphinx.ui;
 
 import org.sphinx.engine.*;
-import org.sphinx.sphinxengine.engine.*;
 
 import java.awt.*;
 
