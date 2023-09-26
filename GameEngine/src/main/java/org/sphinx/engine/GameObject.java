@@ -104,10 +104,10 @@ public abstract class GameObject {
 
     public Vector2D getPosition(){
         if (parent == null){
-            return this.transform.position;
+            return new Vector2D(this.transform.position);
         }
         else {
-            return parent.getPosition().add(this.transform.position);
+            return parent.getPosition().added(this.transform.position);
         }
     }
 
@@ -117,7 +117,7 @@ public abstract class GameObject {
         }
         else {
             Transform transform1 = new Transform();
-            transform1.position = this.transform.position.add(parent.getTransform().position);
+            transform1.position = this.transform.position.added(parent.getTransform().position);
             return transform1;
         }
     }

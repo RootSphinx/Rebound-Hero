@@ -1,8 +1,10 @@
 import org.lwjgl.glfw.GLFW;
 import org.sphinx.engine.Camera;
+import org.sphinx.engine.GameObject;
 import org.sphinx.engine.WindowController;
 
 public class GameCamera extends Camera {
+    public GameObject target;
     public GameCamera(int width, int height) {
         super(width, height);
     }
@@ -34,5 +36,6 @@ public class GameCamera extends Camera {
         }
 /*      System.out.println("Camera.update()");
         System.out.println("    Camera.transform.position = "+transform.position);*/
+        this.transform.position = target.getPosition();
     }
 }

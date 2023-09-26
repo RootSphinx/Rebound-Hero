@@ -8,7 +8,7 @@ import java.awt.*;
  * 绘画器
  */
 public abstract class Drawer extends Render{
-    UsageType type = UsageType.UI;
+    public UsageType type = UsageType.UI;
     private Color fillColor = new Color(1,1,1,1);
     private Color outLineColor = new Color(0,0,0,1);
     private int outLineWidth = 2;
@@ -60,7 +60,23 @@ public abstract class Drawer extends Render{
         glVertex2f(x,y + height);
         glEnd();
     }
-
+    protected void drawCircle(float x, float y,float r){
+        setColor(fillColor);
+        glBegin(GL_POLYGON);
+        for (int i = 0; i < 80; i++) {
+            glVertex2d(r*Math.cos(2 * Math.PI*i / 80), r*Math.sin(2 *  Math.PI*i / 80));
+        }
+        glEnd();
+    }
+    protected void drawCircleOutLine(float x, float y,float r){
+        setColor(outLineColor);
+        glLineWidth(outLineWidth);
+        glBegin(GL_LINE_LOOP);
+        for (int i = 0; i < 80; i++) {
+            glVertex2d(r*Math.cos(2 * Math.PI*i / 80)+x, r*Math.sin(2 *  Math.PI*i / 80)+y);
+        }
+        glEnd();
+    }
     /**
      * 设置绘画器的填充色
      * @param color 填充色

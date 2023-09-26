@@ -40,7 +40,7 @@ public class GameEngine {
         Component.register("Render");
         Component.register("Animator");
         Component.register("Rigidbody");
-
+        Component.register("Collider");
         Debug.log("引擎初始化成功");
     }
     private void loop(){
@@ -48,6 +48,9 @@ public class GameEngine {
         while (!GLFW.glfwWindowShouldClose(windowController.window)){
             GLFW.glfwPollEvents();
             GameTimer.timerUpdate();
+            Rigidbody.rigidbodyUpdate();
+            Collider.colliderUpdate();
+            Rigidbody.rigidbodyMove();
             GameObject.gameObjectsUpdate();     //对象更新
             GameObject.gameObjectStatusUpdate();    //对象状态更新
             Animator.animatorsUpdate();         //动画更新

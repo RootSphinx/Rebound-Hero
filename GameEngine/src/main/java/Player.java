@@ -2,7 +2,9 @@ import org.lwjgl.glfw.GLFW;
 import org.sphinx.engine.*;
 import org.sphinx.util.Utils;
 
-public class Player extends GameObject {
+public class Player extends GameObject implements Collision{
+
+
     enum VectorType{
         left ("left") ,right("right"),back("back"),front("front");
         public final String value;
@@ -16,7 +18,10 @@ public class Player extends GameObject {
     VectorType vector = VectorType.front;
     Sprite sprite;
     Animator animator;
+    Rigidbody rigidbody;
     Utils.ObjectPool objectPool = new Utils.ObjectPool(BackGround2.class,10);
+    CircleCollider collider;
+    CircleCollider collider1;
     @Override
     public void start(){
         //System.out.println("player.start()");
@@ -26,6 +31,15 @@ public class Player extends GameObject {
         sprite = new Sprite(this, "/图片包/image0.png", Sprite.UsageType.Item);
         sprite.setLayout(2);
         SplitTexture textures = new SplitTexture("/sprite.png", 4, 4);
+
+        rigidbody = new Rigidbody(this);
+        rigidbody.setGravity(false);
+
+        collider = new CircleCollider(this,rigidbody,30);
+        collider.setOffset(new Vector2D(0,20));
+
+/*        collider1 = new CircleCollider(this,rigidbody,30);
+        collider1.setOffset(new Vector2D(0,-10));*/
         animator = new Animator(this,sprite);
         animator.createAction("left-idle", 0.2f, Animator.Type.instant,textures.getTextureIndex(4));
         animator.createAction("right-idle", 0.2f, Animator.Type.instant,textures.getTextureIndex(8));
@@ -40,7 +54,7 @@ public class Player extends GameObject {
 
     @Override
     public void update(){
-        move();
+        move1();
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_K)== GLFW.GLFW_PRESS){
             System.out.println("K");
             GameObject backGround2 = GameObject.findGameObject("BackGround2");
@@ -91,5 +105,58 @@ public class Player extends GameObject {
         else {
             animator.setAction(vector.value);
         }
+    }
+    void move1(){
+        Vector2D moveVector = new Vector2D();
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_W)==GLFW.GLFW_PRESS){
+            moveVector.y = 1;
+            vector = VectorType.back;
+        }
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_S)==GLFW.GLFW_PRESS){
+            moveVector.y = -1;
+            vector = VectorType.front;
+        }
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_A)==GLFW.GLFW_PRESS){
+            moveVector.x = -1;
+            vector = VectorType.left;
+        }
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_D)==GLFW.GLFW_PRESS){
+            moveVector.x = 1;
+            vector = VectorType.right;
+        }
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_Q)==GLFW.GLFW_PRESS){
+            addRotation(0.01f);
+        }
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_E)==GLFW.GLFW_PRESS){
+            addRotation(-0.01f);
+        }
+        moveVector.normalize();
+        if (moveVector.getLength() != 0)
+            rigidbody.velocity = new Vector2D(moveVector.multiplied(8));
+        if (moveVector.getLength() < 0.1f){
+            animator.setAction(vector.value+"-idle");
+        }
+        else {
+            animator.setAction(vector.value);
+        }
+    }
+    @Override
+    public void onTriggerEnter(Collider collider) {
+
+    }
+
+    @Override
+    public void onTriggerUpdate(Collider collider) {
+
+    }
+
+    @Override
+    public void onTriggerExit(Collider collider) {
+
+    }
+
+    @Override
+    public void onCollisionEnter(Collider collider) {
+        //System.out.println("Player");
     }
 }

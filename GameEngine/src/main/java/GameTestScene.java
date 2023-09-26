@@ -10,5 +10,6 @@ public class GameTestScene implements Scene {
         BackGround1 backGround1 = new BackGround1();
         BackGround2 backGround2 = new BackGround2();
         Player player = new Player();
+        gameCamera.target = player;
     }
 }

@@ -13,7 +13,10 @@ public class Vector2D {
         this.x = x;
         this.y = y;
     }
-
+    public Vector2D(Vector2D vector2D){
+        this.x = vector2D.x;
+        this.y = vector2D.y;
+    }
     public void normalize(){
         float rad = (float)atan2(y,x);
         x = x!=0?(float)cos(rad):0;
@@ -54,8 +57,12 @@ public class Vector2D {
         return tempVector;
 
     }
-    public Vector2D add(Vector2D vector){
-        return new Vector2D(this.x+vector.x,this.y+vector.y);
+    public void add(Vector2D vector) {
+        this.x += vector.x;
+        this.y += vector.y;
+    }
+    public Vector2D added(Vector2D vector) {
+        return new Vector2D(this.x + vector.x, this.y + vector.y);
     }
     @Override
     public String toString(){
