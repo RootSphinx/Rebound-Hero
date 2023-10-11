@@ -37,6 +37,13 @@ public class Vector2D {
         tempVector.multiply(num);
         return tempVector;
     }
+    public Vector2D lengthModify(float length){
+        return this.normalized().multiplied(length);
+    }
+    public void reverse() {
+        this.x = -this.x;
+        this.y = -this.y;
+    }
     public float getDistance(Vector2D vec){
         return (float) sqrt(pow(vec.x-x, 2)+pow(vec.y-y, 2));
     }

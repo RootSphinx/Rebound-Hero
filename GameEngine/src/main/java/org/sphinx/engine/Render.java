@@ -10,7 +10,7 @@ public abstract class Render extends Component{
     }
     private int layout = 0;
     enum Type{
-        sprite,drawer
+        sprite, painter
     }
     Type type;
     Render(GameObject gameObject,Type type){
@@ -48,8 +48,8 @@ public abstract class Render extends Component{
      * 将当前渲染对象转化为绘画器
      * @return 转化后的绘画器
      */
-    public Drawer toDrawer(){
-        return this instanceof Drawer ? (Drawer) this : null;
+    public Painter toPainter(){
+        return this instanceof Painter ? (Painter) this : null;
     }
     /**
      * 将当前渲染对象转化为精灵

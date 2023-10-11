@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * 绘画器
  */
-public abstract class Drawer extends Render{
+public abstract class Painter extends Render{
     public UsageType type = UsageType.UI;
     private Color fillColor = new Color(1,1,1,1);
     private Color outLineColor = new Color(0,0,0,1);
@@ -17,8 +17,8 @@ public abstract class Drawer extends Render{
      * 创建一个绘画器
      * @param gameObject 加载该绘画器的游戏对象
      */
-    public Drawer(GameObject gameObject){
-        super(gameObject,Render.Type.drawer);
+    public Painter(GameObject gameObject){
+        super(gameObject,Render.Type.painter);
     }
 
     /**

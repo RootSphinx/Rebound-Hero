@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class Canvas extends UI {
     public enum Type{
-        sprite,drawer
+        sprite, painter
     }
     Type type;
     public Render render;
@@ -17,7 +17,7 @@ public class Canvas extends UI {
     private boolean isOutLine = false;
 
     public Canvas(int x, int y, int width, int height){
-        this(null,x,y,width,height,Type.drawer,null,null);
+        this(null,x,y,width,height,Type.painter,null,null);
     }
     public Canvas(int x, int y, int width, int height,String path){
         this(null,x,y,width,height,Type.sprite,path,null);
@@ -26,7 +26,7 @@ public class Canvas extends UI {
         this(null,x,y,width,height,Type.sprite,null,texture);
     }
     public Canvas(Canvas canvas, int x, int y, int width, int height){
-        this(canvas,x,y,width,height,Type.drawer,null,null);
+        this(canvas,x,y,width,height,Type.painter,null,null);
     }
     public Canvas(Canvas canvas, int x, int y, int width, int height,String path){
         this(canvas,x,y,width,height,Type.sprite,path,null);
@@ -42,7 +42,7 @@ public class Canvas extends UI {
         this.height = height;
         this.name = "Canvas";
         switch (type){
-            case drawer -> render = new Drawer(this) {
+            case painter -> render = new Painter(this) {
                 @Override
                 public void draw() {
                     this.setFillColor(fillColor);

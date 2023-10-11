@@ -18,6 +18,7 @@ public class BackGround1 extends GameObject {
     public void start() {
         sprite = new Sprite(this, "/background.jpg", Render.UsageType.Item);
         sprite.setLayout(1);
+        transform.scale = 3;
         this.name = "BackGround1";
         canvas = new Canvas(0,0,30,30);
         canvas.setColor(new Color(0,0,0,0));

@@ -44,7 +44,7 @@ public class Renderer {
                         Render render = (Render) component;
                         if (render.getLayout() == i && render.getGameObject().isEnable()){
                             switch (render.type){
-                                case drawer -> renderDrawer((Drawer) render);
+                                case painter -> renderPainter((Painter) render);
                                 case sprite -> renderSprite((Sprite) render);
                             }
                         }
@@ -70,16 +70,16 @@ public class Renderer {
         glVertex2d(0.5f,-0.5f);
         glEnd();
     }
-    private static void renderDrawer(Drawer drawer){
+    private static void renderPainter(Painter painter){
         ShaderProgram.defaultShader.bind();
         ShaderProgram.defaultShader.setUniform("UIsign", 1);
-        switch (drawer.type) {
+        switch (painter.type) {
             case UI ->
                     ShaderProgram.defaultShader.setUniform("matrix", Transformation.getUIMatrix(new Transform()), 16);
             case Item ->
                     ShaderProgram.defaultShader.setUniform("matrix", Transformation.getWorldMatrix(new Transform(), activeCamera), 16);
         }
-        drawer.draw();
+        painter.draw();
         ShaderProgram.defaultShader.unbind();
     }
     private static void renderSprite(Sprite sprite){

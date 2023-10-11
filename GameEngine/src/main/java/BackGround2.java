@@ -7,20 +7,23 @@ public class BackGround2 extends GameObject implements Collision{
     GameTimer gameTimer = new GameTimer();
     Rigidbody rigidbody;
     CircleCollider collider;
+    BoxCollider boxCollider;
     Random random;
 
     @Override
     public void start() {
         this.name = "BackGround2";
         random = new Random();
-        this.transform.position = new Vector2D(random.nextFloat(-100,100),random.nextInt(-100,100));
+        this.transform.position = new Vector2D(random.nextFloat(20,200),random.nextInt(20,200));
         sprite = new Sprite(this, "/sprite.png", Sprite.UsageType.Item);
         sprite.setLayout(1);
 
         rigidbody = new Rigidbody(this);
         rigidbody.setGravity(false);
 
-        collider = new CircleCollider(this,rigidbody,60);
+        //collider = new CircleCollider(this,rigidbody,60);
+        //collider.isTrigger = true;
+        boxCollider = new BoxCollider(this,rigidbody,getPosition(),800,10);
     }
 
     @Override

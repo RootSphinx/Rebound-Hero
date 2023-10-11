@@ -1,16 +1,18 @@
 package org.sphinx.engine;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Collider extends Component {
     protected Rigidbody rigidbody;
     protected Collision collision;
-    protected boolean isTrigger = false;
+    public boolean isTrigger = false;
     protected String currentType;
     protected Vector2D offset = new Vector2D();
     protected List<Collider> colliderInTriggerList = new ArrayList<>();
-    public Drawer drawer;
+    public Painter painter;
+    Color color = Color.GREEN;
 
     protected Collider(Collision collision,Rigidbody rigidbody,String currentType) {
         super(rigidbody.gameObject, "Collider");
@@ -44,8 +46,10 @@ public abstract class Collider extends Component {
         }
     }
     protected void shakeOff(Collider collider){
-        colliderInTriggerList.remove(collider);
-        collision.onTriggerExit(collider);
+        if (colliderInTriggerList.contains(collider)){
+            colliderInTriggerList.remove(collider);
+            collision.onTriggerExit(collider);
+        }
     }
     public void setOffset(Vector2D offset) {
         this.offset = offset;

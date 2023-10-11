@@ -3,12 +3,12 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Animator.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Camera.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Drawer.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/EventSystem.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/GameEngine.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/GameObject.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/GameTimer.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Mesh.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Painter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Render.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Renderer.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Scene.java" charset="UTF-8" />

@@ -62,7 +62,7 @@ public class ProgressBar extends UI{
 
     @Override
     public void update() {
-        int outLineWidth = backGroundCanvas.render.toDrawer().getOutLineWidth();
+        int outLineWidth = backGroundCanvas.render.toPainter().getOutLineWidth();
         switch (direction) {
             case horizontal -> {
                 foregroundCanvas.transform.position = new Vector2D(outLineWidth / 2f, outLineWidth / 2f);

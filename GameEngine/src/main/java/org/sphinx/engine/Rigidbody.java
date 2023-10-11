@@ -15,7 +15,7 @@ public class Rigidbody extends Component{
     }
 
     public void setMass(float mass) {
-        Mass = (float) Math.max(1,Math.min(mass,1000));//10000
+        Mass = Math.max(1,Math.min(mass,1000));//10000
     }
 
 
@@ -29,19 +29,18 @@ public class Rigidbody extends Component{
         if (!gameObject.isEnable())
             return;
 
-        if (isGravity)
-            addForce(Gravity);
+
+    }
+    private void move(){
+        gameObject.transform.position.add(velocity);
         if (Math.abs(velocity.getLength()) > 0.001){
-            velocity.add(velocity.multiplied(-1f/(Mass+1)));
-            //System.out.println(velocity.multiplied(-Mass));
+            velocity.add(velocity.multiplied(-1/Mass));
         }
         else {
             velocity = new Vector2D(0,0);
         }
-        //System.out.println(this.velocity);
-    }
-    private void move(){
-        gameObject.transform.position.add(velocity);
+        if (isGravity)
+            addForce(Gravity);
     }
     static void rigidbodyUpdate(){
         for (List<Component> componentList : components.get("Rigidbody").values()){
