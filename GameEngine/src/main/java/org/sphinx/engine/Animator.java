@@ -11,18 +11,23 @@ public class Animator extends Component{
     /**
      * 动作切换类型
      */
-    public enum Type{
+    public enum Policy {
         instant,finished
     }
-
+    public enum Type{
+        loop,once
+    }
     private final Sprite currentSprite;
 
     private final Map<String,List<Texture>> texturesMap = new HashMap<>();
     private final Map<String,Double> timeIntervalMap = new HashMap<>();
-    private final Map<String,Type> typeMap = new HashMap<>();
-    private String nextAction = null;
+    private final Map<String, Policy> policyMap = new HashMap<>();
+    private final Map<String, Type> typeMap = new HashMap<>();
 
+    private String nextAction = null;
     private String currentAction = null;
+    private String lastAction = null;
+    private boolean isFinished = false;
     private int currentTexture = 0;
     GameTimer timer = new GameTimer();
 
@@ -40,28 +45,29 @@ public class Animator extends Component{
      * 创建一个动作
      * @param name 动作的名字
      * @param timeInterval 动作动画的帧间隔
-     * @param type 动作的切换类型
+     * @param policy 动作的切换类型
      */
-    public void createAction(String name, double timeInterval,Type type){
+    public void createAction(String name, double timeInterval, Policy policy,Type type){
         texturesMap.put(name,new ArrayList<>());
-        mCreateAction(name, timeInterval, type);
+        mCreateAction(name, timeInterval, policy,type);
     }
 
     /**
      * 创建一个动作
      * @param name 动作的名字
      * @param timeInterval 动作动画的帧间隔
-     * @param type 动作的切换类型
+     * @param policy 动作的切换类型
      * @param textures 指定动作动画的纹理列表
      */
-    public void createAction(String name, double timeInterval,Type type, List<Texture> textures){
+    public void createAction(String name, double timeInterval, Policy policy, Type type,List<Texture> textures){
         texturesMap.put(name,textures);
-        mCreateAction(name, timeInterval, type);
+        mCreateAction(name, timeInterval, policy,type);
     }
-    private void mCreateAction(String name, double timeInterval,Type type){
+    private void mCreateAction(String name, double timeInterval, Policy policy,Type type){
         timeIntervalMap.put(name,timeInterval);
+        policyMap.put(name, policy);
         typeMap.put(name,type);
-        if (currentAction == null){ nextAction = name; currentAction = name;}
+        if (currentAction == null){ nextAction = name; currentAction = name;lastAction = name;}
     }
 
     /**
@@ -78,17 +84,22 @@ public class Animator extends Component{
      * @param name 动作的名字
      */
     public void setAction(String name){
-        if (!texturesMap.containsKey(name) || Objects.equals(currentAction, name)) return;
-
-        if (typeMap.get(name) == Type.instant){
+        if(currentAction.equals("sliding")){
+            //System.out.println((timer.time > timeIntervalMap.get(currentAction))+" \t\t"+timer.time +" \t\t"+ timeIntervalMap.get(currentAction));
+            System.out.println(currentAction+"\t\t"+name);
+        }
+        if (!texturesMap.containsKey(name) || currentAction.equals(name)) return;
+        lastAction = currentAction;
+        if (policyMap.get(name) == Policy.instant){
             timer.reset();
             currentTexture = 0;
             currentAction = name;
             nextAction = name;
         }
-        else if (typeMap.get(name) == Type.finished){
+        else if (policyMap.get(name) == Policy.finished){
             nextAction = name;
         }
+        isFinished = false;
     }
 
     /**
@@ -109,11 +120,25 @@ public class Animator extends Component{
                     currentTexture = 0;
                 }
                 else {
-                    currentTexture =(currentTexture+1) % texturesMap.get(currentAction).size();
+                    if (++currentTexture == texturesMap.get(currentAction).size()){
+                        if (typeMap.get(currentAction)==Type.loop){
+                            currentTexture = 0;
+                        }
+                        else if (typeMap.get(currentAction) == Type.once){
+                            currentTexture--;
+                            isFinished = true;
+                        }
+                        System.out.println(currentAction+typeMap.get(currentAction)+isFinished());
+                    }
+                    //currentTexture =(currentTexture+1) % texturesMap.get(currentAction).size();
                 }
                 timer.reset();
             }
+            else {
+
+            }
             currentSprite.setTexture(texturesMap.get(currentAction).get(currentTexture));
+
         }
         catch (NullPointerException e){
             e.printStackTrace();
@@ -135,12 +160,16 @@ public class Animator extends Component{
         components.get("Animator").remove(gameObject.getId());
     }
 
-    /**
-     * 获得加载当前动画器的游戏对象
-     * @return 加载当前动画器的游戏对象
-     */
-    public GameObject getGameObject() {
-        return gameObject;
+
+    public boolean isFinished() {
+        return isFinished;
     }
 
+    public String getCurrentAction() {
+        return currentAction;
+    }
+
+    public String getLastAction() {
+        return lastAction;
+    }
 }

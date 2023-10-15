@@ -1,5 +1,7 @@
 package org.sphinx.engine;
 
+import org.sphinx.util.Debug;
+
 import java.awt.*;
 import java.util.List;
 
@@ -15,6 +17,7 @@ public class BoxCollider extends Collider{
         painter = new Painter(rigidbody.gameObject) {
             @Override
             public void draw() {
+                if (!Debug.isIsDebugging()) return;
                 this.type = UsageType.Item;
                 setOutLineColor(Color.GREEN);
                 this.setLayout(14);

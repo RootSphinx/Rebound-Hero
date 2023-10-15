@@ -1,5 +1,7 @@
 package org.sphinx.engine;
 
+import org.sphinx.util.Debug;
+
 import java.awt.*;
 import java.util.List;
 
@@ -12,6 +14,7 @@ public class CircleCollider extends Collider{
         painter = new Painter(rigidbody.gameObject) {
             @Override
             public void draw() {
+                if (!Debug.isIsDebugging()) return;
                 this.type = UsageType.Item;
                 setOutLineColor(color);
                 this.setLayout(14);
@@ -40,7 +43,7 @@ public class CircleCollider extends Collider{
         float distance = currentColliderVector.getDistance(colliderVector);
         if (distance <= this.r + collider.r) {
             collided(collider);
-            if (!collider.isTrigger) {
+            if (!collider.isTrigger||!isTrigger) {
                 if (currentCollider.added(new Vector2D(this.rigidbody.velocity.x,0)).getDistance(colliderVector) <=this.r + collider.r){
                     rigidbody.velocity.x = 0;
                 }
@@ -77,11 +80,13 @@ public class CircleCollider extends Collider{
 
         if (a < r || b < r || c < r || d < r){
             color = Color.red;
-            if (a1 < r || b1 < r || c1 < r || d1 < r){
-                rigidbody.velocity.x = 0;
-            }
-            if (a2 < r || b2 < r || c2 < r || d2 < r){
-                rigidbody.velocity.y = 0;
+            if (!collider.isTrigger||!isTrigger) {
+                if (a1 < r || b1 < r || c1 < r || d1 < r) {
+                    rigidbody.velocity.x = 0;
+                }
+                if (a2 < r || b2 < r || c2 < r || d2 < r) {
+                    rigidbody.velocity.y = 0;
+                }
             }
             collided(collider);
         }

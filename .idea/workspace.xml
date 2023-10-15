@@ -14,56 +14,126 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="新的贴图">
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/BoxCollider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/BackGround/树.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/BackGround/瓦片.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/BackGround/背景A.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/BackGround/背景B.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/BackGround/背景C.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/BackGround/背景D.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/BackGround/背景E.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Hero/Warrior_Sheet-Effect.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Flying eye/Attack1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Flying eye/Attack2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Flying eye/Death.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Flying eye/Flight.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Flying eye/Take Hit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Goblin/Attack1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Goblin/Attack2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Goblin/Death.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Goblin/Idle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Goblin/Run.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Goblin/Take Hit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Mushroom/Attack1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Mushroom/Attack2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Mushroom/Death.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Mushroom/Idle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Mushroom/Run.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Mushroom/Take Hit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Skeleton/Attack1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Skeleton/Attack2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Skeleton/Death.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Skeleton/Idle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Skeleton/Shield.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Skeleton/Take Hit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/Image/Monster/Skeleton/Walk.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/AnimateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameEngine/src/main/java/FloorCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/FirstScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/BackGround1.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/BackGround1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/BackGround2.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/BackGround2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/GameCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/GameCamera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/GameTestScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/GameTestScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Animator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Animator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/BoxCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/BoxCollider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/CircleCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/CircleCollider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Collider.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Collider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Drawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Painter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Component.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/GameObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Render.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Rigidbody.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Rigidbody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Vector2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/ui/Canvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/ui/Canvas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/ui/ProgressBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/ui/ProgressBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/ui/Canvas.Type.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/ui/Canvas.Type.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Texture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Transform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Transformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Transformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/util/Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/util/Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/BackGround.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/BackGround1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/BackGround2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/GameCamera.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/GameTestScene.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/GameTestScene1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/GameTestScene2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Player.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/allclasses-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-12.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-13.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-14.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-15.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-16.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-17.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-18.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-19.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-20.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-21.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-22.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/jquery-ui.overrides.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/legal/COPYRIGHT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/legal/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/legal/jquery.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/legal/jqueryUI.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/module-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Animator.Type.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Animator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Camera.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Drawer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/EventSystem.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/GameEngine.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/GameObject.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/GameTimer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Mesh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Render.UsageType.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Render.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Renderer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Scene.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/SceneController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/ShaderProgram.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/SplitTexture.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Sprite.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Text.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Texture.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Transform.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Transformation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/Vector2D.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/WindowController.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/engine/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/ui/Button.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/ui/Canvas.Type.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/ui/Canvas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/ui/Dialog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/ui/Lable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/ui/ProgressBar.Direction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/ui/ProgressBar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/ui/UI.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/ui/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/ui/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/util/Debug.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/util/Utils.ObjectPool.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/util/Utils.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/util/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/org/sphinx/sphinxengine/util/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jquery-3.6.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tag-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,6 +289,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TODO_SCOPE": "所有位置",
     "android.gradle.sync.needed": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -239,6 +310,7 @@
       <recent name="D:\PROJECT\Java\Rebound-Hero\GameEngine\src\test\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PROJECT\Java\Rebound-Hero\src\main\java\org\sphinx\game" />
       <recent name="D:\PROJECT\Java\Rebound-Hero\GameEngine\src\main\resources\Image" />
       <recent name="D:\PROJECT\Java\Rebound-Hero\GameEngine\src\main\resources" />
       <recent name="D:\PROJECT\Java\Rebound-Hero\GameEngine\src\main\resources\image\Hero\Hero" />
@@ -607,7 +679,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695699890752</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="新的贴图">
+      <option name="closed" value="true" />
+      <created>1697021004753</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1697021004753</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

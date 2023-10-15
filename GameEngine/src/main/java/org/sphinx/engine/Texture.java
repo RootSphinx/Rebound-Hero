@@ -68,8 +68,8 @@ public class Texture {
     /**
      * 创建一个纹理
      * @param path 图片的路径
-     * @param row   图片切割的行数
-     * @param col   图片切割的列数
+     * @param row   图片切割的列数
+     * @param col   图片切割的行数
      * @param index 返回切割后第几个纹理
      * @param globalSign 是否不会被删除
      */
@@ -84,7 +84,7 @@ public class Texture {
             int imageHeight = image.getHeight();
             width = imageWidth / row;
             height = imageHeight / col;
-            int[] pixels =  image.getRGB((index % row ) * width,(index / col ) * height,width,height,null,0,width);
+            int[] pixels =  image.getRGB((index % row ) * width,(index / row ) * height,width,height,null,0,width);
 
             buffer  = MemoryUtil.memAlloc(width * height * 4);
 

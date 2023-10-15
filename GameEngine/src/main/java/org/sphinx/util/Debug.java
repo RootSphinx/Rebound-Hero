@@ -63,6 +63,11 @@ public class Debug {
     public static void setDebugMod(boolean sign){
         isDebugging = sign;
     }
+
+    public static boolean isIsDebugging() {
+        return isDebugging;
+    }
+
     /**
      * 设置Test模式
      * @param sign bool

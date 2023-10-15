@@ -8,8 +8,11 @@ public class GameTestScene implements Scene {
         Renderer.setActiveCamera(gameCamera);
         BackGround backGround = new BackGround();
         BackGround1 backGround1 = new BackGround1();
+
         BackGround2 backGround2 = new BackGround2();
         Player player = new Player();
+        FloorCheck floorCheck = new FloorCheck(player);
+
         gameCamera.target = player;
     }
 }

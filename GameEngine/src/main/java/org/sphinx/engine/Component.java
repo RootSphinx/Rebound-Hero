@@ -24,4 +24,8 @@ public abstract class Component {
     protected static List<Component> getComponent(GameObject gameObject, String typeName){
         return components.get(typeName).get(gameObject.getId());
     }
+
+    public GameObject getGameObject() {
+        return gameObject;
+    }
 }

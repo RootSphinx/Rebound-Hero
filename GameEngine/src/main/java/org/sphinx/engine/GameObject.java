@@ -128,7 +128,7 @@ public abstract class GameObject {
     public void addRotation(float add){
         this.transform.rotation += add;
     }
-    public float getScale(){
+    public Vector2D getScale(){
         return this.transform.scale;
     }
     public void setActive(boolean bool){

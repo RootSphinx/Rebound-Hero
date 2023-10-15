@@ -13,8 +13,9 @@ public class BackGround2 extends GameObject implements Collision{
     @Override
     public void start() {
         this.name = "BackGround2";
+        this.tag = "floor";
         random = new Random();
-        this.transform.position = new Vector2D(random.nextFloat(20,200),random.nextInt(20,200));
+        this.transform.position = new Vector2D(random.nextFloat(20,200),random.nextInt(-400,-300));
         sprite = new Sprite(this, "/sprite.png", Sprite.UsageType.Item);
         sprite.setLayout(1);
 
@@ -23,7 +24,7 @@ public class BackGround2 extends GameObject implements Collision{
 
         //collider = new CircleCollider(this,rigidbody,60);
         //collider.isTrigger = true;
-        boxCollider = new BoxCollider(this,rigidbody,getPosition(),800,10);
+        boxCollider = new BoxCollider(this,rigidbody,getPosition(),4000,200);
     }
 
     @Override

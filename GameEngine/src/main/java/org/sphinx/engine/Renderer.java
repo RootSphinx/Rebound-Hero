@@ -2,6 +2,7 @@ package org.sphinx.engine;
 
 import org.sphinx.util.Debug;
 
+import java.nio.Buffer;
 import java.util.List;
 import java.util.Objects;
 
@@ -37,6 +38,7 @@ public class Renderer {
     protected static void render(){
         if(!SceneController.isLoadingNextScene){
             if (Objects.isNull(activeCamera)){return;}
+            glClear(GL_COLOR_BUFFER_BIT);
             skyboxDraw();
             for (int i = 0; i <= 20; i++){
                 for(List<Component> renderList : Render.components.get("Render").values()){

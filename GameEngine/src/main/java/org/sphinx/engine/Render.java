@@ -37,14 +37,6 @@ public abstract class Render extends Component{
     }
 
     /**
-     * 获得加载当前渲染对象的游戏对象
-     * @return 加载当前渲染对象的游戏对象
-     */
-    public GameObject getGameObject() {
-        return gameObject;
-    }
-
-    /**
      * 将当前渲染对象转化为绘画器
      * @return 转化后的绘画器
      */

@@ -1,7 +1,4 @@
-import org.sphinx.engine.GameObject;
-import org.sphinx.engine.GameTimer;
-import org.sphinx.engine.Render;
-import org.sphinx.engine.Sprite;
+import org.sphinx.engine.*;
 import org.sphinx.ui.Canvas;
 import org.sphinx.ui.Lable;
 
@@ -18,7 +15,7 @@ public class BackGround1 extends GameObject {
     public void start() {
         sprite = new Sprite(this, "/background.jpg", Render.UsageType.Item);
         sprite.setLayout(1);
-        transform.scale = 3;
+        transform.scale = new Vector2D(8,8);
         this.name = "BackGround1";
         canvas = new Canvas(0,0,30,30);
         canvas.setColor(new Color(0,0,0,0));

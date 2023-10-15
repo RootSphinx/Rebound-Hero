@@ -7,6 +7,7 @@ public class GameCamera extends Camera {
     public GameObject target;
     public GameCamera(int width, int height) {
         super(width, height);
+        setZoom(8);
     }
     @Override
     public void update(){
@@ -37,5 +38,6 @@ public class GameCamera extends Camera {
 /*      System.out.println("Camera.update()");
         System.out.println("    Camera.transform.position = "+transform.position);*/
         this.transform.position = target.getPosition();
+
     }
 }

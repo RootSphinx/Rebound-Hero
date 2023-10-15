@@ -13,15 +13,16 @@ public class Transformation {
         Vector2D d = camera.transform.position.normalized();
         return matrix.identity()
                 .ortho2D(topLeft.x,bottomRight.x,bottomRight.y,topLeft.y)
+                //.ortho(topLeft.x,bottomRight.x,bottomRight.y,topLeft.y,0.1f,100f,true)
                 .translate(transform.position.x,transform.position.y,0)
                 .rotateZ(transform.rotation)
-                .scaleXY(transform.scale,transform.scale);
+                .scaleXY(transform.scale.x,transform.scale.y);
     }
     public static Matrix4f getUIMatrix(Transform transform){
         return matrix.identity()
                 .ortho2D(0,WindowController.getInstance().getWindowWidth(), WindowController.getInstance().getWindowHeight(), 0 )
                 .translate(transform.position.x,transform.position.y,0)
                 .rotateZ(transform.rotation)
-                .scaleXY(transform.scale,transform.scale);
+                .scaleXY(transform.scale.x,transform.scale.y);
     }
 }
