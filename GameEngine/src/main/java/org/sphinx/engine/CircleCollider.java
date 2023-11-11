@@ -43,7 +43,7 @@ public class CircleCollider extends Collider{
         float distance = currentColliderVector.getDistance(colliderVector);
         if (distance <= this.r + collider.r) {
             collided(collider);
-            if (!collider.isTrigger||!isTrigger) {
+            if (!collider.isTrigger&&!isTrigger) {
                 if (currentCollider.added(new Vector2D(this.rigidbody.velocity.x,0)).getDistance(colliderVector) <=this.r + collider.r){
                     rigidbody.velocity.x = 0;
                 }
@@ -80,7 +80,7 @@ public class CircleCollider extends Collider{
 
         if (a < r || b < r || c < r || d < r){
             color = Color.red;
-            if (!collider.isTrigger||!isTrigger) {
+            if (!collider.isTrigger&&!isTrigger) {
                 if (a1 < r || b1 < r || c1 < r || d1 < r) {
                     rigidbody.velocity.x = 0;
                 }

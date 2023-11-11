@@ -7,7 +7,7 @@ public class GameCamera extends Camera {
     public GameObject target;
     public GameCamera(int width, int height) {
         super(width, height);
-        setZoom(8);
+        setZoom(5.8f);
     }
     @Override
     public void update(){

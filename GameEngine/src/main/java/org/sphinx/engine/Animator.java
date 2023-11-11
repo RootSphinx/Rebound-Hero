@@ -84,10 +84,6 @@ public class Animator extends Component{
      * @param name 动作的名字
      */
     public void setAction(String name){
-        if(currentAction.equals("sliding")){
-            //System.out.println((timer.time > timeIntervalMap.get(currentAction))+" \t\t"+timer.time +" \t\t"+ timeIntervalMap.get(currentAction));
-            System.out.println(currentAction+"\t\t"+name);
-        }
         if (!texturesMap.containsKey(name) || currentAction.equals(name)) return;
         lastAction = currentAction;
         if (policyMap.get(name) == Policy.instant){
@@ -128,7 +124,6 @@ public class Animator extends Component{
                             currentTexture--;
                             isFinished = true;
                         }
-                        System.out.println(currentAction+typeMap.get(currentAction)+isFinished());
                     }
                     //currentTexture =(currentTexture+1) % texturesMap.get(currentAction).size();
                 }

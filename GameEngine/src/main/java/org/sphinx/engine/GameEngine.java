@@ -48,7 +48,6 @@ public class GameEngine {
         while (!GLFW.glfwWindowShouldClose(windowController.window)){
             GLFW.glfwPollEvents();
             GameTimer.timerUpdate();
-            Rigidbody.rigidbodyUpdate();
             Collider.colliderUpdate();
             Rigidbody.rigidbodyMove();
             GameObject.gameObjectsUpdate();     //对象更新

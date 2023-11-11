@@ -3,16 +3,12 @@ import org.sphinx.engine.*;
 import org.sphinx.util.Debug;
 import org.sphinx.util.Utils;
 
-import java.util.Objects;
-
 public class Player extends GameObject implements Collision{
 
     Sprite sprite;
     Animator animator;
     Rigidbody rigidbody;
-    Utils.ObjectPool objectPool = new Utils.ObjectPool(BackGround2.class,10);
     CircleCollider collider;
-    CircleCollider collider1;
     Boolean isJumped = false , isMoving = false , isJumping = false, isOnFloor = false,isAttacking = false;
     float speed = 5;
     @Override
@@ -28,7 +24,7 @@ public class Player extends GameObject implements Collision{
         sprite.setLayout(2);
 
         rigidbody = new Rigidbody(this);
-        rigidbody.setGravity(false);
+        rigidbody.setGravity(true);
         rigidbody.setMass(10);
         collider = new CircleCollider(this,rigidbody,90);
         collider.setOffset(new Vector2D(-88,-170));
@@ -54,24 +50,36 @@ public class Player extends GameObject implements Collision{
         attack();
         animateSwitch();
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_K)== GLFW.GLFW_PRESS){
-            System.out.println("K");
-            GameObject backGround2 = GameObject.findGameObject("BackGround2");
-            Render component = (Render) backGround2.getComponent("Render").get(0);
-            System.out.println(component.getGameObject().name);
-            objectPool.get();
+
         } else if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_F1) == GLFW.GLFW_PRESS) {
-            Debug.setDebugMod(false);
+            Debug.setDebugMod(!Debug.isIsDebugging());
         }
+
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_H)==GLFW.GLFW_PRESS){
+            rigidbody.setGravity(true);
+        }
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_J)==GLFW.GLFW_PRESS){
+            rigidbody.setGravity(false);
+        }
+
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_G)==GLFW.GLFW_PRESS){
+            transform.position = new Vector2D(0,0);
+        }
+        LittlePoint.updateA();
     }
 
     private void attack() {
-/*        if (EventSystem.getMouseButton1() && isOnFloor) {
+        if (EventSystem.getMouseButton1()){
+
+        }
+        if (EventSystem.getMouseButton1() && isOnFloor) {
             isAttacking = true;
+
         }
 
         if (isAttacking){
 
-        }*/
+        }
     }
 
     @Override
@@ -99,15 +107,8 @@ public class Player extends GameObject implements Collision{
             isMoving = true;
         }
 
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_H)==GLFW.GLFW_PRESS){
-            rigidbody.setGravity(true);
-        }
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_J)==GLFW.GLFW_PRESS){
-            rigidbody.setGravity(false);
-        }
-
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_G)==GLFW.GLFW_PRESS){
-            transform.position = new Vector2D(0,0);
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_LEFT_SHIFT)==GLFW.GLFW_PRESS) {
+            moveVector.y = -1;
         }
 
         moveVector.normalize();

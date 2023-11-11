@@ -15,8 +15,8 @@ public abstract class GameObject {
     private static final List<GameObject> GAME_OBJECT_LIST = new ArrayList<>();
     public static int gameObjectCount = 0;
     private final int Id;
-    public String tag;
-    public String name;
+    public String tag = "";
+    public String name = "";
     private boolean isEnable = true;
     private boolean beforeIsEnable = false;
     public Transform transform = new Transform();
