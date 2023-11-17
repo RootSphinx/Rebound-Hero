@@ -2,8 +2,6 @@ package org.sphinx.engine;
 
 import org.sphinx.util.Debug;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -21,6 +19,7 @@ public abstract class GameObject {
     private boolean beforeIsEnable = false;
     public Transform transform = new Transform();
     private GameObject parent = null;
+    private final List<GameObject> children = new ArrayList<>();
 
     /**
      * 创建一个游戏对象
@@ -135,10 +134,27 @@ public abstract class GameObject {
         this.isEnable = bool;
     }
     public void setParent(GameObject gameObject){
-        this.parent = gameObject;
+        if (parent != null) {
+            this.parent.children.remove(this);
+        }
+        if (gameObject != null) {
+            this.parent = gameObject;
+            this.parent.children.add(this);
+        }
     }
     public GameObject getParent(){
         return parent;
+    }
+    public List<GameObject> getAncestor(){
+        List<GameObject> gameObjects = new ArrayList<>();
+        if (parent != null) {
+            gameObjects.add(parent);
+            gameObjects.addAll(parent.getAncestor());
+        }
+        return gameObjects;
+    }
+    public List<GameObject> getChildren(){
+        return children;
     }
     public static GameObject findGameObject(int id){
         for (GameObject gameObject : GAME_OBJECT_LIST){
@@ -166,18 +182,8 @@ public abstract class GameObject {
         return gameObjects;
     }
 
-/*    public<T extends Component> List<T> getComponent(Class<T> clazz) {
-        List<T> tList = null;
-        try {
-            Method method = clazz.getMethod("getComponent",int.class);
-            tList = (List<T>) method.invoke(null,this.Id);
-        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return tList;
-    }*/
-    public List<Component> getComponent(String typeName) {
-        return Component.getComponent(this, typeName);
+    public List<Component> getComponent(Class<? extends Component> typeClazz) {
+        return Component.getComponent(this, typeClazz);
     }
     public int getId() {
         return Id;

@@ -5,10 +5,10 @@ import java.util.List;
 public class Rigidbody extends Component{
     private float Mass = 1;
     private boolean isGravity = true;
-    public static Vector2D Gravity = new Vector2D(0,-9.81f);
+    public static Vector2D Gravity = new Vector2D(0,-9.81f/1.5f);
     public Vector2D velocity = new Vector2D();
     public Rigidbody(GameObject gameObject){
-        super(gameObject, "Rigidbody");
+        super(gameObject, Rigidbody.class);
     }
     public void addForce(Vector2D force) {
         velocity.add(force);
@@ -22,34 +22,19 @@ public class Rigidbody extends Component{
     public void setGravity(boolean gravity) {
         isGravity = gravity;
     }
-    private void collide(){
 
-    }
-    private void update(){
-        if (!gameObject.isEnable())
-            return;
-
-
-    }
-    private void move(){
+    private void rigidbodyUpdate(){
         gameObject.transform.position.add(velocity);
-        if (Math.abs(velocity.getLength()) > 0.001){
+        if (Math.abs(velocity.getLength()) > 0.001)
             velocity.add(velocity.multiplied(-1/Mass));
-        }
-        else {
+        else
             velocity = new Vector2D(0,0);
-        }
         if (isGravity)
             addForce(Gravity);
     }
-    static void rigidbodyUpdate(){
-        for (List<Component> componentList : components.get("Rigidbody").values()){
-            ((Rigidbody) componentList.get(0)).update();
-        }
-    }
-    static void rigidbodyMove(){
-        for (List<Component> componentList : components.get("Rigidbody").values()){
-            ((Rigidbody) componentList.get(0)).move();
+    static void update(){
+        for (List<Component> componentList : components.get(Rigidbody.class).values()){
+            ((Rigidbody) componentList.get(0)).rigidbodyUpdate();
         }
     }
 }

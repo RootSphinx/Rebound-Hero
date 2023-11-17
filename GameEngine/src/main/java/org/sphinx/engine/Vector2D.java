@@ -44,6 +44,9 @@ public class Vector2D {
         this.x = -this.x;
         this.y = -this.y;
     }
+    public Vector2D reversed() {
+        return new Vector2D(-this.x,-this.y);
+    }
     public float getDistance(Vector2D vec){
         return (float) sqrt(pow(vec.x-x, 2)+pow(vec.y-y, 2));
     }

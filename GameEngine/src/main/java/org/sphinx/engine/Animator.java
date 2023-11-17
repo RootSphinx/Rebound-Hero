@@ -37,7 +37,7 @@ public class Animator extends Component{
      * @param sprite 动画器需要控制的精灵
      */
     public Animator(GameObject gameObject,Sprite sprite){
-        super(gameObject, "Animator");
+        super(gameObject, Animator.class);
         this.currentSprite = sprite;
     }
 
@@ -101,14 +101,14 @@ public class Animator extends Component{
     /**
      * 动画器更新
      */
-    static void animatorsUpdate(){
-        for (List<Component> animators : components.get("Animator").values()){
+    static void update(){
+        for (List<Component> animators : components.get(Animator.class).values()){
             for (Component animator : animators){
-                ((Animator)animator).update();
+                ((Animator)animator).animatorsUpdate();
             }
         }
     }
-    private void update(){
+    private void animatorsUpdate(){
         try {
             if(timer.time > timeIntervalMap.get(currentAction)){
                 if (!Objects.equals(nextAction, currentAction)){
@@ -145,14 +145,14 @@ public class Animator extends Component{
      */
     static void destroyAllAnimator(){
         Debug.log("动画器----正在释放动画器");
-        components.get("Animator").clear();
+        components.get(Animator.class).clear();
     }
 
     /**
      * 销毁当前动画器
      */
     public void destroy(){
-        components.get("Animator").remove(gameObject.getId());
+        components.get(Animator.class).remove(gameObject.getId());
     }
 
 

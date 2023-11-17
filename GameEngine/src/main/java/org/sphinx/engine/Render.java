@@ -14,7 +14,7 @@ public abstract class Render extends Component{
     }
     Type type;
     Render(GameObject gameObject,Type type){
-        super(gameObject,"Render");
+        super(gameObject,Render.class);
         this.type = type;
     }
 
@@ -27,7 +27,9 @@ public abstract class Render extends Component{
             this.layout = layout;
         }
     }
-
+    static void update(){
+        Renderer.render();
+    }
     /**
      * 获得当前渲染对象的图层
      * @return 当前渲染对象的图层
@@ -57,7 +59,7 @@ public abstract class Render extends Component{
     static void destroyAllRender(){
         Debug.log("渲染----开始释放渲染对象");
 
-        components.get("Render").forEach((id,renderList)->{
+        components.get(Render.class).forEach((id,renderList)->{
             renderList.forEach(component->{
                 Render render = (Render) component;
                 if (Objects.requireNonNull(render.type) == Type.sprite) {
@@ -65,7 +67,7 @@ public abstract class Render extends Component{
                 }
             });
         });
-        components.get("Render").clear();
+        components.get(Render.class).clear();
     }
 
 }

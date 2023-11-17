@@ -19,9 +19,7 @@ public class WindowController {
         }
         return instance;
     }
-    private WindowController() {
-
-    }
+    private WindowController() {}
     public void setWindowInfo(int windowWidth, int windowHeight, String windowTitle){
         this.windowWidth = windowWidth;
         this.windowHeight = windowHeight;

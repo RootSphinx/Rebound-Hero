@@ -15,18 +15,18 @@ public abstract class Collider extends Component {
     Color color = Color.GREEN;
 
     protected Collider(Collision collision,Rigidbody rigidbody,String currentType) {
-        super(rigidbody.gameObject, "Collider");
+        super(rigidbody.gameObject, Collider.class);
         this.rigidbody = rigidbody;
         this.collision = collision;
         this.currentType = currentType;
     }
-    protected abstract void update();
+    protected abstract void colliderUpdate();
 
-    static void colliderUpdate(){
-        for (List<Component> component : components.get("Collider").values()) {
+    static void update(){
+        for (List<Component> component : components.get(Collider.class).values()) {
             for (Component component1 : component) {
                 if (component1.gameObject.isEnable()) {
-                    ((Collider) component1).update();
+                    ((Collider) component1).colliderUpdate();
                     for (Collider collider : ((Collider) component1).colliderInTriggerList) {
                         if (collider.gameObject.isEnable()) {
                             ((Collider) component1).collision.onTriggerUpdate(collider);

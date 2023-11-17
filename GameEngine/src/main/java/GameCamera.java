@@ -1,43 +1,47 @@
 import org.lwjgl.glfw.GLFW;
-import org.sphinx.engine.Camera;
-import org.sphinx.engine.GameObject;
-import org.sphinx.engine.WindowController;
+import org.sphinx.engine.*;
 
 public class GameCamera extends Camera {
     public GameObject target;
+    public Sprite backGround;
+    Rigidbody rigidbody;
     public GameCamera(int width, int height) {
         super(width, height);
-        setZoom(5.8f);
+        setZoom(5.2f);
+    }
+    @Override
+    public void start(){
+        rigidbody = new Rigidbody(this);
+        rigidbody.setGravity(false);
     }
     @Override
     public void update(){
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_UP) == GLFW.GLFW_PRESS){
-            this.transform.position.y+=3;
-        }
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_LEFT) == GLFW.GLFW_PRESS){
-            this.transform.position.x-=3;
-        }
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_RIGHT) == GLFW.GLFW_PRESS){
-            this.transform.position.x+=3;
-        }
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_DOWN) == GLFW.GLFW_PRESS){
-            this.transform.position.y-=3;
-        }
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_O) == GLFW.GLFW_PRESS){
             this.addZoom(0.01f);
         }
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_P) == GLFW.GLFW_PRESS){
             this.addZoom(-0.01f);
         }
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_K) == GLFW.GLFW_PRESS){
-            this.addRotation(0.01f);
+        rigidbody.addForce(target.getPosition().added(new Vector2D(0,400)).added(getPosition().reversed()).multiplied(1/12f));
+        if (this.getPosition().x - getWidth()*getZoom()/2 < backGround.getGameObject()
+                .getPosition().x - backGround.getTexture().getWidth()*backGround.getGameObject().transform.scale.x/2){
+            this.transform.position.x =  (backGround.getGameObject()
+                                .getPosition().x - backGround.getTexture().getWidth()*backGround.getGameObject().transform.scale.x/2 + getWidth()*getZoom()/2);
         }
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_L) == GLFW.GLFW_PRESS){
-            this.addRotation(-0.01f);
+        else if (this.getPosition().x + getWidth()*getZoom()/2 > backGround.getGameObject()
+                .getPosition().x + backGround.getTexture().getWidth()*backGround.getGameObject().transform.scale.x/2){
+            this.transform.position.x = (backGround.getGameObject()
+                    .getPosition().x + backGround.getTexture().getWidth()*backGround.getGameObject().transform.scale.x/2 - getWidth()*getZoom()/2);
         }
-/*      System.out.println("Camera.update()");
-        System.out.println("    Camera.transform.position = "+transform.position);*/
-        this.transform.position = target.getPosition();
-
+        if (this.getPosition().y - getHeight()*getZoom()/2 < backGround.getGameObject()
+                .getPosition().y - backGround.getTexture().getHeight()*backGround.getGameObject().transform.scale.y/2){
+            this.transform.position.y = (backGround.getGameObject()
+                    .getPosition().y - backGround.getTexture().getHeight()*backGround.getGameObject().transform.scale.y/2 + getHeight()*getZoom()/2);
+        }
+        else if (this.getPosition().y + getHeight()*getZoom()/2 > backGround.getGameObject()
+                .getPosition().y + backGround.getTexture().getHeight()*backGround.getGameObject().transform.scale.y/2){
+            this.transform.position.y = (backGround.getGameObject()
+                    .getPosition().y + backGround.getTexture().getHeight()*backGround.getGameObject().transform.scale.y/2 - getHeight()*getZoom()/2);
+        }
     }
 }

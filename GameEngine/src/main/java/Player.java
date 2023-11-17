@@ -3,17 +3,144 @@ import org.sphinx.engine.*;
 import org.sphinx.util.Debug;
 import org.sphinx.util.Utils;
 
+class FloorCheck extends GameObject implements Collision{
+    CircleCollider collider;
+    Rigidbody rigidbody;
+    Player player;
+    FloorCheck(Player player){
+        this.player = player;
+        setParent(player);
+    }
+    @Override
+    public void start() {
+        rigidbody =  new Rigidbody(this);
+        rigidbody.setGravity(false);
+        collider = new CircleCollider(this,rigidbody,50);
+        collider.isTrigger = true;
+        transform.position = new Vector2D(-88,-220);
+    }
+
+    @Override
+    public void update() {
+
+    }
+
+    @Override
+    public void enable() {
+
+    }
+
+    @Override
+    public void disable() {
+
+    }
+
+    @Override
+    public void onTriggerEnter(Collider collider) {
+        if (collider.getGameObject().tag .equals("floor")) {
+            player.isOnFloor = true;
+        }
+    }
+
+    @Override
+    public void onTriggerUpdate(Collider collider) {
+
+    }
+
+    @Override
+    public void onTriggerExit(Collider collider) {
+        if (collider.getGameObject().tag .equals("floor")) {
+            player.isOnFloor = false;
+        }
+    }
+
+    @Override
+    public void onCollisionEnter(Collider collider) {
+
+    }
+}
+
+class AttackCheck extends GameObject implements Collision{
+    Player player;
+    BoxCollider collider;
+    Rigidbody rigidbody;
+    GameTimer gameTimer;
+    boolean isRight = true;
+    boolean attack1 = true;
+    AttackCheck(Player player){
+        this.player = player;
+        setParent(player);
+    }
+
+    @Override
+    public void start() {
+        rigidbody = new Rigidbody(this);
+        rigidbody.setGravity(false);
+        collider = new BoxCollider(this,rigidbody,330,450);
+        collider.isTrigger = true;
+        gameTimer = new GameTimer();
+        setActive(false);
+    }
+
+    @Override
+    public void update() {
+        if (gameTimer.time > 0.7 && attack1){
+            setActive(false);
+        }
+        if (gameTimer.time > 0.4 && !attack1){
+            setActive(false);
+        }
+    }
+
+    @Override
+    public void enable() {
+        gameTimer.reset();
+        if (isRight){
+            collider.setOffset(new Vector2D(200, 0));
+        }
+        else {
+            collider.setOffset(new Vector2D(-360, 0));
+        }
+    }
+
+    @Override
+    public void disable() {
+        player.isAttacking = false;
+    }
+
+    @Override
+    public void onTriggerEnter(Collider collider) {
+
+    }
+
+    @Override
+    public void onTriggerUpdate(Collider collider) {
+
+    }
+
+    @Override
+    public void onTriggerExit(Collider collider) {
+
+    }
+
+    @Override
+    public void onCollisionEnter(Collider collider) {
+
+    }
+}
+
 public class Player extends GameObject implements Collision{
 
     Sprite sprite;
     Animator animator;
     Rigidbody rigidbody;
     CircleCollider collider;
-    Boolean isJumped = false , isMoving = false , isJumping = false, isOnFloor = false,isAttacking = false;
-    float speed = 5;
+    Boolean isJumped = false , isMoving = false , isJumping = false, isOnFloor = false,isAttacking = false,isAttack1 =false, isAttack2 = false;
+    GameTimer attackTimer;
+    float speed = 4;
     @Override
     public void start(){
-        //System.out.println("player.start()");
+        System.out.println("player.start()");
         tag = "Player";
         name = "Player";
         transform.scale = new Vector2D(12,12);
@@ -26,8 +153,7 @@ public class Player extends GameObject implements Collision{
         rigidbody = new Rigidbody(this);
         rigidbody.setGravity(true);
         rigidbody.setMass(10);
-        collider = new CircleCollider(this,rigidbody,90);
-        collider.setOffset(new Vector2D(-88,-170));
+        collider = new CircleCollider(this,rigidbody,new Vector2D(-88,-180),80);
 
         animator = new Animator(this,sprite);
 
@@ -39,8 +165,11 @@ public class Player extends GameObject implements Collision{
         animator.createAction("falling-mid",0.05f,Animator.Policy.instant,Animator.Type.once,splitTexture.getTextures(44,45));
         animator.createAction("falling",0.1f,Animator.Policy.instant,Animator.Type.loop,splitTexture.getTextures(46,48));
 
-        animator.createAction("attack-1",0.1f,Animator.Policy.instant, Animator.Type.once,splitTexture.getTextures(15,23));
-        animator.createAction("attack-2",0.2f,Animator.Policy.instant, Animator.Type.loop,splitTexture.getTextures(22,26));
+        animator.createAction("attack-1",0.1f,Animator.Policy.instant, Animator.Type.once,splitTexture.getTextureIndex(15,16,17,18,19,20,21,22,18));
+        animator.createAction("attack-2",0.1f,Animator.Policy.instant, Animator.Type.once,splitTexture.getTextureIndex(22,23,24,25,25,15,16,17,18));
+        FloorCheck floorCheck = new FloorCheck(this);
+        AttackCheck attackCheck = new AttackCheck(this);
+        attackTimer = new GameTimer();
     }
 
     @Override
@@ -69,17 +198,25 @@ public class Player extends GameObject implements Collision{
     }
 
     private void attack() {
-        if (EventSystem.getMouseButton1()){
-
-        }
-        if (EventSystem.getMouseButton1() && isOnFloor) {
+        if (EventSystem.getMouseButton1() && isOnFloor && !isAttacking) {
             isAttacking = true;
-
+            getChildren().get(1).setActive(true);
+            attackTimer.reset();
+            if (!isAttack1){
+                isAttack1 = true;
+            }
+            else {
+                isAttack1 = false;
+                isAttack2 = true;
+            }
+            rigidbody.addForce(new Vector2D(Math.signum(transform.scale.x)*speed*3,0));
+            System.out.println("rigidbody.velocity.x = " + rigidbody.velocity.x);
         }
-
-        if (isAttacking){
-
-        }
+        if (isAttack1 && attackTimer.time > 1.2f)
+            isAttack1 = false;
+        if (isAttack2 && attackTimer.time > 1.2f)
+            isAttack2 = false;
+        ((AttackCheck) getChildren().get(1)).attack1 = isAttack1;
     }
 
     @Override
@@ -92,9 +229,11 @@ public class Player extends GameObject implements Collision{
 
     }
     private void move(){
-        Vector2D moveVector = new Vector2D();
-
         isMoving = false;
+
+        if (isAttacking) return;
+
+        Vector2D moveVector = new Vector2D();
 
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_A)==GLFW.GLFW_PRESS){
             moveVector.x = -1;
@@ -117,8 +256,10 @@ public class Player extends GameObject implements Collision{
 
     }
     private void jump(){
+        if (isAttacking) return;
+
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_SPACE)==GLFW.GLFW_PRESS && !isJumped && isOnFloor){
-            rigidbody.addForce(new Vector2D(0,200));
+            rigidbody.addForce(new Vector2D(0,150));
             isJumped = true;
             isJumping = true;
         }
@@ -136,6 +277,7 @@ public class Player extends GameObject implements Collision{
             sprite.offset = new Vector2D(-150, 0);
             transform.scale.x = -Math.abs(transform.scale.x);
         }
+        ((AttackCheck) getChildren().get(1)).isRight = isRight;
     }
     private void animateSwitch() {
         if (isJumping || rigidbody.velocity.y < -10) {
@@ -154,7 +296,14 @@ public class Player extends GameObject implements Collision{
         else if (animator.getCurrentAction().equals("running") && !isMoving) {
             animator.setAction("sliding");
         }
-        if (animator.getCurrentAction().equals("sliding") && animator.isFinished()) {
+        if(isAttacking)
+            if (isAttack1){
+                animator.setAction("attack-1");
+            }
+            else if (isAttack2){
+                animator.setAction("attack-2");
+            }
+        if ((animator.getCurrentAction().equals("sliding") ||animator.getCurrentAction().equals("attack-1") ||  animator.getCurrentAction().equals("attack-2")) && animator.isFinished()) {
             animator.setAction("idle");
         }
     }
@@ -176,7 +325,6 @@ public class Player extends GameObject implements Collision{
 
     @Override
     public void onCollisionEnter(Collider collider) {
-        //System.out.println("Player");
 
     }
 }

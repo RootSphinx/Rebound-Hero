@@ -37,10 +37,10 @@ public class GameEngine {
         ShaderProgram.defaultShaderInit();
         Renderer.init();
         Text.init();
-        Component.register("Render");
-        Component.register("Animator");
-        Component.register("Rigidbody");
-        Component.register("Collider");
+        Component.register(Render.class);
+        Component.register(Animator.class);
+        Component.register(Collider.class);
+        Component.register(Rigidbody.class);
         Debug.log("引擎初始化成功");
     }
     private void loop(){
@@ -48,13 +48,10 @@ public class GameEngine {
         while (!GLFW.glfwWindowShouldClose(windowController.window)){
             GLFW.glfwPollEvents();
             GameTimer.timerUpdate();
-            Collider.colliderUpdate();
-            Rigidbody.rigidbodyMove();
-            GameObject.gameObjectsUpdate();     //对象更新
-            GameObject.gameObjectStatusUpdate();    //对象状态更新
-            Animator.animatorsUpdate();         //动画更新
-            Renderer.render();                  //渲染器渲染
-            windowController.swapBuffer();  //交换缓冲区
+            GameObject.gameObjectsUpdate();
+            GameObject.gameObjectStatusUpdate();
+            Component.componentUpdate();
+            windowController.swapBuffer();
             Scene.finish();
             sleep();
         }
@@ -70,8 +67,6 @@ public class GameEngine {
         v = v > 0 ? v : 0;
         try {
             Thread.sleep((int) v);
-            //System.out.println(v>1?1000/(int) v:0);
-            //System.out.println(onceLoopTime);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

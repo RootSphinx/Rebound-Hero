@@ -41,7 +41,7 @@ public class Renderer {
             glClear(GL_COLOR_BUFFER_BIT);
             skyboxDraw();
             for (int i = 0; i <= 20; i++){
-                for(List<Component> renderList : Render.components.get("Render").values()){
+                for(List<Component> renderList : Render.components.get(Render.class).values()){
                     for (Component component : renderList){
                         Render render = (Render) component;
                         if (render.getLayout() == i && render.getGameObject().isEnable()){

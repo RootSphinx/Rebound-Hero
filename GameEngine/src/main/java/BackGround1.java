@@ -17,7 +17,6 @@ public class BackGround1 extends GameObject implements Collision{
 
     @Override
     public void start() {
-        boxColliders = new ArrayList<>(17);
         sprite = new Sprite(this, "/Image/BackGround/20231011-游戏背景.jpg", Render.UsageType.Item);
         sprite.setLayout(1);
         transform.scale = new Vector2D(8,8);
@@ -28,6 +27,8 @@ public class BackGround1 extends GameObject implements Collision{
         lable = new Lable(canvas,100,20);
         rigidbody = new Rigidbody(this);
         rigidbody.setGravity(false);
+
+        boxColliders = new ArrayList<>(17);
         boxColliders.add(0, new BoxCollider(this, rigidbody, new Vector2D(-6990, -1810), 1420, 1180));
         boxColliders.add(1, new BoxCollider(this, rigidbody, new Vector2D(-5190, -1690), 2180, 1420));
         boxColliders.add(2, new BoxCollider(this, rigidbody, new Vector2D(-3255, -1930), 1690, 940));

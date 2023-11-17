@@ -34,25 +34,6 @@ public class LittlePoint extends GameObject implements Collision {
             System.out.println("K");
 
         }
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_UP)==GLFW.GLFW_PRESS){
-            littlePoints.get(currentID).move(new Vector2D(0,10));
-        }
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_DOWN)==GLFW.GLFW_PRESS){
-            littlePoints.get(currentID).move(new Vector2D(0,-10));
-        }
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_LEFT)==GLFW.GLFW_PRESS){
-            littlePoints.get(currentID).move(new Vector2D(-10,0));
-        }
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_RIGHT)==GLFW.GLFW_PRESS){
-            littlePoints.get(currentID).move(new Vector2D(10,0));
-        }
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_F5)==GLFW.GLFW_PRESS) {
-            currentID = Math.max(currentID-1,0);
-        }
-        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_F6)==GLFW.GLFW_PRESS) {
-            currentID = Math.min(currentID+1,littlePoints.size()-1);
-        }
-        System.out.println(currentID +" "+ littlePoints.get(currentID).getPosition());
     }
 
     @Override

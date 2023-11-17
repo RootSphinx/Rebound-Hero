@@ -6,14 +6,21 @@ import java.awt.*;
 import java.util.List;
 
 public class BoxCollider extends Collider{
-    Vector2D point;
     float width;
     float height;
-    public BoxCollider(Collision collision, Rigidbody rigidbody, Vector2D point, float width, float height) {
+    public final Vector2D[] vectors = new Vector2D[4];
+    public BoxCollider(Collision collision, Rigidbody rigidbody, float width, float height) {
+        this(collision,rigidbody,new Vector2D(),width,height);
+    }
+    public BoxCollider(Collision collision, Rigidbody rigidbody, Vector2D offset, float width, float height) {
         super(collision, rigidbody, "Box");
-        this.point = point;
+        setOffset(offset);
         this.width = width;
         this.height = height;
+        vectors[0] = new Vector2D(offset.x-width/2,offset.y - height / 2);
+        vectors[1] = new Vector2D(offset.x+width/2,offset.y - height / 2);
+        vectors[2] = new Vector2D(offset.x+width/2,offset.y + height / 2);
+        vectors[3] = new Vector2D(offset.x-width/2,offset.y + height / 2);
         painter = new Painter(rigidbody.gameObject) {
             @Override
             public void draw() {
@@ -21,14 +28,18 @@ public class BoxCollider extends Collider{
                 this.type = UsageType.Item;
                 setOutLineColor(Color.GREEN);
                 this.setLayout(14);
-                drawQuadsOutLine(point.x - width / 2,point.y - height / 2,width, height);
+                drawQuadsOutLine(rigidbody.getGameObject().getPosition().x + vectors[0].x, rigidbody.getGameObject().getPosition().y + vectors[0].y,width, height);
             }
         };
     }
 
     @Override
-    protected void update() {
-        for (List<Component> component : components.get("Collider").values()) {
+    protected void colliderUpdate() {
+        vectors[0] = new Vector2D(offset.x-width/2,offset.y - height / 2);
+        vectors[1] = new Vector2D(offset.x+width/2,offset.y - height / 2);
+        vectors[2] = new Vector2D(offset.x+width/2,offset.y + height / 2);
+        vectors[3] = new Vector2D(offset.x-width/2,offset.y + height / 2);
+        for (List<Component> component : components.get(Collider.class).values()) {
             for (Component component1 : component) {
                 Collider collider = (Collider) component1;
                 if (collider.collision != this.collision && collider.gameObject.isEnable()){
