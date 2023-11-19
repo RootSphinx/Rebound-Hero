@@ -9,9 +9,10 @@ class Cloud extends GameObject{
     Sprite sprite;
     @Override
     public void start() {
+        this.name = "Cloud";
+        this.tag = "BackGround";
         speed = new Random().nextFloat(3,10);
         String str = "/Image/BackGround/Cloud/ (" + new Random().nextInt(1,12) + ").png";
-        System.out.println(str);
         sprite = new Sprite(this,str, Render.UsageType.Item);
         sprite.setLayout(15);
         transform.scale = new Vector2D(16,16);
@@ -42,6 +43,8 @@ public class BackCloud extends GameObject {
 
     @Override
     public void start() {
+        this.name = "BackCloud";
+        this.tag = "BackGround";
         sprite = new Sprite(this,"/Image/BackGround/20231011-游戏背景-2.png", Render.UsageType.Item);
         transform.scale = new Vector2D(16,16);
         transform.position = new Vector2D(0,2300);

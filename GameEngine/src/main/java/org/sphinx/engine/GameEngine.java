@@ -48,10 +48,9 @@ public class GameEngine {
         while (!GLFW.glfwWindowShouldClose(windowController.window)){
             GLFW.glfwPollEvents();
             GameTimer.timerUpdate();
+            Component.componentUpdate();
             GameObject.gameObjectsUpdate();
             GameObject.gameObjectStatusUpdate();
-            Component.componentUpdate();
-            windowController.swapBuffer();
             Scene.finish();
             sleep();
         }

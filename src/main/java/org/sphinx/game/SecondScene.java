@@ -15,10 +15,12 @@ public class SecondScene implements Scene {
         BackCloud backCloud = new BackCloud();
         Player player = new Player();
         player.transform.position = new Vector2D(-4320.0444f,-718.72577f);
+        player.isPlayerControl = false;
 
         gameCamera.target = player;
         gameCamera.backGround = backGround1.sprite;
 
         StartMenu startMenu = new StartMenu();
+        ExitMenu exitMenu = new ExitMenu();
     }
 }

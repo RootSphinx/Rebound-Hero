@@ -6,6 +6,7 @@ public class Sprite extends Render {
     private ShaderProgram shaderProgram = ShaderProgram.defaultShader;
     private Texture texture;
     public UsageType type;
+    public boolean isFlashing = false;
     public Vector2D offset = new Vector2D();
     float[] vertices = null;
     float[] texCoords = new float[]{

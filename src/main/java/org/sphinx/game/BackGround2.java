@@ -10,12 +10,15 @@ public class BackGround2 extends GameObject implements Collision{
     Sprite sprite;
     Rigidbody rigidbody;
     BoxCollider collider;
+    BoxCollider collider1;
+    BoxCollider collider2;
     Lable lable;
     Canvas canvas;
     GameTimer gameTimer;
     int frame = 0;
     @Override
     public void start() {
+        this.name = "BackGround2";
         this.tag = "floor";
         sprite = new Sprite(this,"/Image/BackGround/ThirdMap.png", Render.UsageType.Item);
         transform.scale = new Vector2D(2,2);
@@ -27,6 +30,9 @@ public class BackGround2 extends GameObject implements Collision{
         canvas = new Canvas(0,0,30,30);
         canvas.setColor(new Color(0,0,0,0));
         lable = new Lable(canvas,100,20);
+
+        collider1 = new BoxCollider(this,rigidbody,new Vector2D(-sprite.getTexture().getWidth()/2 * transform.scale.x -400,1000),800,2000);
+        collider2 = new BoxCollider(this,rigidbody,new Vector2D(+sprite.getTexture().getWidth()/2 * transform.scale.x +400,1000),800,2000);
     }
 
     @Override

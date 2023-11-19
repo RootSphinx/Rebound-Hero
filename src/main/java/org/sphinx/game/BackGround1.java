@@ -14,6 +14,7 @@ public class BackGround1 extends GameObject implements Collision{
     Canvas canvas;
     GameTimer gameTimer = new GameTimer();
     List<BoxCollider> boxColliders;
+    BoxCollider trigger;
     Rigidbody rigidbody;
     int frame = 0;
 
@@ -22,7 +23,7 @@ public class BackGround1 extends GameObject implements Collision{
         sprite = new Sprite(this, "/Image/BackGround/20231011-游戏背景.jpg", Render.UsageType.Item);
         sprite.setLayout(1);
         transform.scale = new Vector2D(8,8);
-        this.name = "org.sphinx.game.BackGround1";
+        this.name = "BackGround1";
         this.tag = "floor";
         canvas = new Canvas(0,0,30,30);
         canvas.setColor(new Color(0,0,0,0));
@@ -48,6 +49,10 @@ public class BackGround1 extends GameObject implements Collision{
         boxColliders.add(14, new BoxCollider(this, rigidbody, new Vector2D(6500, -1565), 940, 1670));
         boxColliders.add(15, new BoxCollider(this, rigidbody, new Vector2D(7335, -1685), 730, 1430));
         boxColliders.add(16, new BoxCollider(this, rigidbody, new Vector2D(-965, -1805), 490, 1190));
+        boxColliders.add(17, new BoxCollider(this, rigidbody, new Vector2D(7850, -1685), 300, 1430));
+
+        trigger = new BoxCollider(this,rigidbody,new Vector2D(7850,-300),300,1430);
+        trigger.isTrigger = true;
     }
 
     @Override
@@ -73,7 +78,8 @@ public class BackGround1 extends GameObject implements Collision{
 
     @Override
     public void onTriggerEnter(Collider collider) {
-
+        if (collider.getGameObject().tag.equals("Player"))
+            SceneController.loadSceneIndex(1);
     }
 
     @Override

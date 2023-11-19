@@ -1,5 +1,7 @@
 package org.sphinx.engine;
 
+import org.sphinx.util.Debug;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,7 @@ public abstract class Collider extends Component {
     protected abstract void colliderUpdate();
 
     static void update(){
+        OUT:
         for (List<Component> component : components.get(Collider.class).values()) {
             for (Component component1 : component) {
                 if (component1.gameObject.isEnable()) {
@@ -30,6 +33,10 @@ public abstract class Collider extends Component {
                     for (Collider collider : ((Collider) component1).colliderInTriggerList) {
                         if (collider.gameObject.isEnable()) {
                             ((Collider) component1).collision.onTriggerUpdate(collider);
+                            ////////////
+                            if (SceneController.isLoadingNextScene)
+                                break OUT;
+                            ///////////
                         }
                     }
                 }
@@ -37,12 +44,15 @@ public abstract class Collider extends Component {
         }
     }
     protected void collided(Collider collider){
-        if (isTrigger && !colliderInTriggerList.contains(collider)) {
+        if ((isTrigger && !colliderInTriggerList.contains(collider)) || (collider.isTrigger) && !collider.colliderInTriggerList.contains(this)) {
             collision.onTriggerEnter(collider);
+            collider.collision.onTriggerEnter(this);
             colliderInTriggerList.add(collider);
+            collider.colliderInTriggerList.add(this);
         }
         else {
             collision.onCollisionEnter(collider);
+            collider.collision.onCollisionEnter(this);
         }
     }
     protected void shakeOff(Collider collider){
@@ -53,6 +63,10 @@ public abstract class Collider extends Component {
     }
     public void setOffset(Vector2D offset) {
         this.offset = offset;
+    }
+    static void destroyAllCollider(){
+        Debug.log("动画器----正在释放动画器");
+        components.get(Collider.class).clear();
     }
 }
 

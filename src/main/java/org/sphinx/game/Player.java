@@ -14,6 +14,8 @@ class FloorCheck extends GameObject implements Collision{
     }
     @Override
     public void start() {
+        tag = "PlayerChild";
+        name = "Player.FloorCheck";
         rigidbody =  new Rigidbody(this);
         rigidbody.setGravity(false);
         collider = new CircleCollider(this,rigidbody,50);
@@ -75,6 +77,8 @@ class AttackCheck extends GameObject implements Collision{
 
     @Override
     public void start() {
+        tag = "PlayerChild";
+        name = "Player.AttackCheck";
         rigidbody = new Rigidbody(this);
         rigidbody.setGravity(false);
         collider = new BoxCollider(this,rigidbody,330,450);
@@ -111,12 +115,18 @@ class AttackCheck extends GameObject implements Collision{
 
     @Override
     public void onTriggerEnter(Collider collider) {
-
+        if (collider.getGameObject().tag.equals("Enemy")){
+            Enemy gameObject = (Enemy) collider.getGameObject();
+            gameObject.hurt(collider.getGameObject().getPosition().added(player.getPosition().reversed()));
+            //gameObject.hurt(new Vector2D(collider.getGameObject().getPosition().x,0).added(new Vector2D(player.getPosition().x,0).reversed()));
+        }
     }
 
     @Override
     public void onTriggerUpdate(Collider collider) {
-
+        if (collider.getGameObject().tag.equals("Enemy")){
+            System.out.println("ha");
+        }
     }
 
     @Override
@@ -142,12 +152,11 @@ public class Player extends GameObject implements Collision{
     @Override
     public void start(){
         System.out.println("player.start()");
-        tag = "org.sphinx.game.Player";
-        name = "org.sphinx.game.Player";
+        tag = "Player";
+        name = "Player";
         transform.scale = new Vector2D(12,12);
 
         SplitTexture splitTexture = new SplitTexture("/Image/Hero/Warrior_Sheet-Effect.png", 6, 17);
-        System.out.println(splitTexture.getTextureList().size());
         sprite = new Sprite(this, splitTexture.getTexture(0), Render.UsageType.Item);
         sprite.setLayout(2);
 

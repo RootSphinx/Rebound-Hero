@@ -20,6 +20,10 @@ class StartMenuEvent implements GameEvent{
         camera.isFlowing = true;
         StartMenu startMenu = (StartMenu) gameObject;
         startMenu.isStarted = true;
+        Player player = (Player) GameObject.findGameObjects("Player").get(0);
+        player.isPlayerControl = true;
+        ExitMenu exitMenu = (ExitMenu) GameObject.findGameObject("ExitMenu");
+        exitMenu.isDisable = false;
     }
     public static void Exit(GameObject gameObject,String[] args){
         System.out.println("Exit");
@@ -38,6 +42,9 @@ public class StartMenu extends GameObject {
     GameTimer gameTimer;
     @Override
     public void start() {
+        tag = "Menu";
+        name = "StartMenu";
+
         canvas = new Canvas(0,0, WindowController.getInstance().getWindowWidth(), WindowController.getInstance().getWindowHeight());
         canvas.fillColor = new Color(0,0,0,0);
         lable = new Lable(canvas, 360,150);

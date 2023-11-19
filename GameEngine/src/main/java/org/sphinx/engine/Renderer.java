@@ -57,6 +57,7 @@ public class Renderer {
         else {
             loadingDraw();
         }
+        WindowController.getInstance().swapBuffer();
     }
 
     private static void viewportRender(){
@@ -94,7 +95,12 @@ public class Renderer {
             case Item ->
                 sprite.getShaderProgram().setUniform("matrix", Transformation.getWorldMatrix(sprite.getGameObject().getTransform().addedVector(sprite.offset),activeCamera),16);
         }
+        if (sprite.isFlashing)
+            sprite.getShaderProgram().setUniform("isFlash", 1);
+        else
+            sprite.getShaderProgram().setUniform("isFlash", 0);
         sprite.getShaderProgram().setUniform("UIsign", 0);
+
         glDrawArrays(GL_QUADS, 0,sprite.getMesh().getVertexCount());
 
         sprite.getTexture().unbind();

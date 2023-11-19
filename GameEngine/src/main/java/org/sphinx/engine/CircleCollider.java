@@ -28,6 +28,7 @@ public class CircleCollider extends Collider{
     }
     @Override
     protected void colliderUpdate() {
+        OUT:
         for (List<Component> component : components.get(Collider.class).values()) {
             for (Component component1 : component) {
                 Collider collider = (Collider) component1;
@@ -37,6 +38,10 @@ public class CircleCollider extends Collider{
                         case "Box" -> boxCollided((BoxCollider) collider);
                     }
                 }
+                ////////////
+                if (SceneController.isLoadingNextScene)
+                    break OUT;
+                ///////////
             }
         }
     }
@@ -59,6 +64,7 @@ public class CircleCollider extends Collider{
         }
         else{
             shakeOff(collider);
+            collider.shakeOff(this);/////////////
             color = Color.green;
         }
     }
@@ -86,12 +92,14 @@ public class CircleCollider extends Collider{
                     }
                 }
                 collided(collider);
+                collider.shakeOff(this);/////////////
                 sign = true;
             }
         }
         if (!sign){
             color = Color.green;
             shakeOff(collider);
+            collider.shakeOff(this);/////////////
         }
     }
 

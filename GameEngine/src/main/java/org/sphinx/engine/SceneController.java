@@ -72,6 +72,7 @@ public class SceneController {
         Render.destroyAllRender();
         GameTimer.destroyAllGameTimer();
         Animator.destroyAllAnimator();
+        Collider.destroyAllCollider();
         GameObject.gameObjectsRemoveAll();
         System.gc();
     }

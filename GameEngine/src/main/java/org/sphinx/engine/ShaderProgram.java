@@ -85,6 +85,7 @@ public class ShaderProgram {
         defaultShader.createUniform("matrix");
         defaultShader.createUniform("UIsign");
         defaultShader.createUniform("UIcolor");
+        defaultShader.createUniform("isFlash");
         Debug.log("默认着色器编译成功");
     }
     public static ShaderProgram getDefaultShader(){

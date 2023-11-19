@@ -4,6 +4,7 @@ import org.sphinx.engine.Camera;
 import org.sphinx.engine.Renderer;
 import org.sphinx.engine.Scene;
 import org.sphinx.engine.Vector2D;
+import org.sphinx.util.Utils;
 
 public class ThirdScene implements Scene {
     @Override
@@ -16,5 +17,9 @@ public class ThirdScene implements Scene {
         Player player = new Player();
         player.transform.position = new Vector2D(0,200);
         gameCamera.target = player;
+        Enemy enemy = new Enemy();
+        EnemyController enemyController = new EnemyController();
+        ExitMenu exitMenu = new ExitMenu();
+        exitMenu.isDisable = false;
     }
 }
