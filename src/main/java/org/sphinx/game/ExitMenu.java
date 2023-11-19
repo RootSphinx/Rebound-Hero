@@ -19,6 +19,8 @@ class ExitMenuEvent implements GameEvent {
         System.out.println("Cancel");
         ExitMenu exitMenu = (ExitMenu) GameObject.findGameObject("ExitMenu");
         exitMenu.isShouldClose = true;
+        Player player = (Player) GameObject.findGameObjects("Player").get(0);
+        player.isPlayerControl = true;
 
     }
     public static void GoBack(GameObject gameObject,String[] args){
@@ -86,14 +88,16 @@ public class ExitMenu extends GameObject{
     public void update() {
 
         if (isShouldClose && canvas1.transform.position.y > -470){
-            canvas1.transform.position.y -= 20;
+            canvas1.transform.position.y -= 40;
         }
         else if (!isShouldClose && canvas1.transform.position.y < (WindowController.getInstance().getWindowHeight()-470)/2){
-            canvas1.transform.position.y += 20;
+            canvas1.transform.position.y += 40;
         }
         if (isDisable) return;
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_ESCAPE)== GLFW.GLFW_PRESS){
             isShouldClose = false;
+            Player player = (Player) GameObject.findGameObjects("Player").get(0);
+            player.isPlayerControl = false;
         }
     }
 

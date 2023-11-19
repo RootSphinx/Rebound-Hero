@@ -79,9 +79,8 @@ public class Enemy extends GameObject implements Collision{
     }
 
     void flip(){
-        if (GameObject.findGameObjects("Player").get(0).transform.position.x < transform.position.x) {
+        if (GameObject.findGameObjects("Player").get(0).transform.position.x < transform.position.x)
             this.transform.scale.x = -Math.abs(this.transform.scale.x);
-        }
         else
             this.transform.scale.x = Math.abs(this.transform.scale.x);
     }

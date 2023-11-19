@@ -6,7 +6,7 @@ import org.sphinx.util.Debug;
 
 class Demo{
     public static void main(String[] args) {
-        Debug.setDebugMod(true);
+        Debug.setDebugMod(false);
         GameEngine gameEngine = GameEngine.getGameEngine();
         gameEngine.setWindowAttribute(1400,800,"GameDemo");
         gameEngine.setFps(60);

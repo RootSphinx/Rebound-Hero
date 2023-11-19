@@ -13,39 +13,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="完成开始菜单">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/EnemyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/ExitMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/BackGround/Cloud/ (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/BackGround/Cloud/ (10).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/BackGround/Cloud/ (11).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/BackGround/Cloud/ (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/BackGround/Cloud/ (3).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/BackGround/Cloud/ (4).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/BackGround/Cloud/ (5).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/BackGround/Cloud/ (6).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/BackGround/Cloud/ (7).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/BackGround/Cloud/ (8).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/BackGround/Cloud/ (9).png" afterDir="false" />
+    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="暂停菜单及战斗效果">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/NPC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/CircleCollider.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/CircleCollider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Collider.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Collider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/ShaderProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Sprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/resources/fragment.frag" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/resources/fragment.frag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/BackCloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/BackCloud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/BackGround1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/BackGround1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/BackGround2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/BackGround2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/FirstScene.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/ExitMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/ExitMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/SecondScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/SecondScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/StartMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/ThirdScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/ThirdScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,53 +69,14 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Rebound-Hero" type="f1a62948:ProjectNode" />
-                <item name="GameEngine" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Rebound-Hero" type="f1a62948:ProjectNode" />
-                <item name="GameEngine" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Rebound-Hero" type="f1a62948:ProjectNode" />
-                <item name="GameEngine" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Rebound-Hero" type="f1a62948:ProjectNode" />
-                <item name="GameEngine" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Rebound-Hero" type="f1a62948:ProjectNode" />
-                <item name="GameEngine" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="distribution" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Rebound-Hero" type="f1a62948:ProjectNode" />
-                <item name="GameEngine" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="documentation" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Rebound-Hero" type="f1a62948:ProjectNode" />
-                <item name="GameEngine" type="2d1252cf:ModuleNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Rebound-Hero" type="f1a62948:ProjectNode" />
-                <item name="GameEngine" type="2d1252cf:ModuleNode" />
-                <item name="运行配置" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -258,7 +195,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Rebound-Hero [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Rebound-Hero [assembleDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -269,7 +206,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="run" />
+            <option value="assembleDist" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -280,10 +217,10 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="Rebound-Hero:GameEngine [distZip]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Rebound-Hero [installDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/GameEngine" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -291,7 +228,29 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="distZip" />
+            <option value="installDist" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="Rebound-Hero [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--stacktrace" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -324,7 +283,7 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="Rebound-Hero:GameEngine [javadoc]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Rebound-Hero:GameEngine [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/GameEngine" />
@@ -335,29 +294,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="javadoc" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="Rebound-Hero:GameEngine [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/GameEngine" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="test" />
+            <option value="run" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -369,21 +306,21 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle.Rebound-Hero [assembleDist]" />
+      <item itemvalue="Gradle.Rebound-Hero [installDist]" />
+      <item itemvalue="Gradle.Rebound-Hero:GameEngine [run]" />
       <item itemvalue="Gradle.Rebound-Hero [run]" />
-      <item itemvalue="Gradle.Rebound-Hero:GameEngine [distZip]" />
       <item itemvalue="Gradle.Rebound-Hero:GameEngine [installDist]" />
-      <item itemvalue="Gradle.Rebound-Hero:GameEngine [javadoc]" />
-      <item itemvalue="Gradle.Rebound-Hero:GameEngine [test]" />
       <item itemvalue="应用程序.引擎测试" />
       <item itemvalue="应用程序.Demo测试" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Rebound-Hero:GameEngine [installDist]" />
-        <item itemvalue="Gradle.Rebound-Hero:GameEngine [distZip]" />
+        <item itemvalue="Gradle.Rebound-Hero [installDist]" />
+        <item itemvalue="Gradle.Rebound-Hero [assembleDist]" />
         <item itemvalue="Gradle.Rebound-Hero [run]" />
-        <item itemvalue="Gradle.Rebound-Hero:GameEngine [javadoc]" />
-        <item itemvalue="Gradle.Rebound-Hero:GameEngine [test]" />
+        <item itemvalue="Gradle.Rebound-Hero:GameEngine [run]" />
+        <item itemvalue="Gradle.Rebound-Hero:GameEngine [installDist]" />
       </list>
     </recent_temporary>
   </component>
@@ -652,7 +589,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700387731659</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="暂停菜单及战斗效果">
+      <option name="closed" value="true" />
+      <created>1700402116439</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1700402116439</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -710,7 +655,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="场景加载器" />
     <MESSAGE value="解决切换场景时资源释放不正常的问题" />
     <MESSAGE value="新增Debug类" />
     <MESSAGE value="改善了纹理切割，加入了绘画类" />
@@ -735,7 +679,8 @@
     <MESSAGE value="完成地图" />
     <MESSAGE value="完成攻击动画" />
     <MESSAGE value="完成开始菜单" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成开始菜单" />
+    <MESSAGE value="暂停菜单及战斗效果" />
+    <option name="LAST_COMMIT_MESSAGE" value="暂停菜单及战斗效果" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
