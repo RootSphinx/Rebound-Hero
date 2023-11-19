@@ -59,7 +59,9 @@ public class Button extends org.sphinx.ui.Canvas {
         }
     }
 
-    public static void main(String[] args) {
-
+    public void setButtonColor(Color normalColor,Color hightLightColor, Color focusColor) {
+        this.color = normalColor;
+        this.hightLightColor = hightLightColor;
+        this.focusColor = focusColor;
     }
 }

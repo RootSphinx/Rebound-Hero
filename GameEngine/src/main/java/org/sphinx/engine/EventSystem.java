@@ -90,7 +90,8 @@ public class EventSystem {
     }
     public static void execute(Class<?> clazz,GameObject gameObject,String ... strings){
         try {
-            Method method = clazz.getMethod(strings[0],GameObject.class,String[].class);
+            Method method = clazz.getDeclaredMethod(strings[0],GameObject.class,String[].class);
+            method.setAccessible(true);
             method.invoke(null, gameObject, strings);
         } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
             Debug.err("NoMethod",e);

@@ -68,18 +68,18 @@ public class CircleCollider extends Collider{
         Vector2D vector2Dy = this.gameObject.getPosition().added(offset).added(new Vector2D(0,this.rigidbody.velocity.y));
 
         boolean sign = false;
-        for (int i = 0; i < collider.vectors.length; i++) {
-            if (PointToSegDist(vector2D, collider.vectors[i], collider.vectors[(i + 1) % collider.vectors.length]) < r) {
+        for (int i = 0; i < collider.getVectors().length; i++) {
+            if (PointToSegDist(vector2D, collider.getVectors()[i], collider.getVectors()[(i + 1) % collider.getVectors().length]) < r) {
                 color = Color.red;
                 if (!(collider.isTrigger || isTrigger)) {
-                    for (int j = 0; j < collider.vectors.length; j++) {
-                        if (PointToSegDist(vector2Dx, collider.vectors[j], collider.vectors[(j + 1) % collider.vectors.length]) < r) {
+                    for (int j = 0; j < collider.getVectors().length; j++) {
+                        if (PointToSegDist(vector2Dx, collider.getVectors()[j], collider.getVectors()[(j + 1) % collider.getVectors().length]) < r) {
                             rigidbody.velocity.x = 0;
                             break;
                         }
                     }
-                    for (int j = 0; j < collider.vectors.length; j++) {
-                        if (PointToSegDist(vector2Dy, collider.vectors[j], collider.vectors[(j + 1) % collider.vectors.length]) < r) {
+                    for (int j = 0; j < collider.getVectors().length; j++) {
+                        if (PointToSegDist(vector2Dy, collider.getVectors()[j], collider.getVectors()[(j + 1) % collider.getVectors().length]) < r) {
                             rigidbody.velocity.y = 0;
                             break;
                         }

@@ -10,8 +10,6 @@ public class Canvas extends UI {
     }
     Type type;
     public Render render;
-    protected float width;
-    protected float height;
     public Color fillColor =new Color(255,255,255,255 );
     public Color outLineColor =new Color(0,0,0,255);
     private boolean isOutLine = false;

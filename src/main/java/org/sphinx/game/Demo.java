@@ -1,15 +1,19 @@
+package org.sphinx.game;
+
 import org.sphinx.engine.GameEngine;
 import org.sphinx.engine.SceneController;
 import org.sphinx.util.Debug;
 
-public class Test {
+class Demo{
     public static void main(String[] args) {
-        Debug.setDebugMod(true);
+        Debug.setDebugMod(false);
         GameEngine gameEngine = GameEngine.getGameEngine();
-        gameEngine.setWindowAttribute(1400,800,"你好");
+        gameEngine.setWindowAttribute(1400,800,"GameDemo");
         gameEngine.setFps(60);
         gameEngine.init();
-        //SceneController.register(new GameTestScene());
+        //SceneController.register(new FirstScene());
+        SceneController.register(new SecondScene());
+        SceneController.register(new ThirdScene());
         gameEngine.start();
     }
 }

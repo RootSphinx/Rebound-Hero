@@ -1,7 +1,8 @@
+package org.sphinx.game;
+
 import org.lwjgl.glfw.GLFW;
 import org.sphinx.engine.*;
 import org.sphinx.util.Debug;
-import org.sphinx.util.Utils;
 
 class FloorCheck extends GameObject implements Collision{
     CircleCollider collider;
@@ -84,7 +85,7 @@ class AttackCheck extends GameObject implements Collision{
 
     @Override
     public void update() {
-        if (gameTimer.time > 0.7 && attack1){
+        if (gameTimer.time > 0.6 && attack1){
             setActive(false);
         }
         if (gameTimer.time > 0.4 && !attack1){
@@ -135,14 +136,14 @@ public class Player extends GameObject implements Collision{
     Animator animator;
     Rigidbody rigidbody;
     CircleCollider collider;
-    Boolean isJumped = false , isMoving = false , isJumping = false, isOnFloor = false,isAttacking = false,isAttack1 =false, isAttack2 = false;
+    Boolean isJumped = false , isMoving = false , isJumping = false, isOnFloor = false,isAttacking = false,isAttack1 =false, isAttack2 = false, isPlayerControl = true;
     GameTimer attackTimer;
     float speed = 4;
     @Override
     public void start(){
         System.out.println("player.start()");
-        tag = "Player";
-        name = "Player";
+        tag = "org.sphinx.game.Player";
+        name = "org.sphinx.game.Player";
         transform.scale = new Vector2D(12,12);
 
         SplitTexture splitTexture = new SplitTexture("/Image/Hero/Warrior_Sheet-Effect.png", 6, 17);
@@ -174,6 +175,7 @@ public class Player extends GameObject implements Collision{
 
     @Override
     public void update(){
+        if(!isPlayerControl) return;
         move();
         jump();
         attack();
@@ -181,7 +183,9 @@ public class Player extends GameObject implements Collision{
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_K)== GLFW.GLFW_PRESS){
 
         } else if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_F1) == GLFW.GLFW_PRESS) {
-            Debug.setDebugMod(!Debug.isIsDebugging());
+            Debug.setDebugMod(true);
+        } else if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_F2) == GLFW.GLFW_PRESS) {
+            Debug.setDebugMod(false);
         }
 
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_H)==GLFW.GLFW_PRESS){
@@ -190,33 +194,42 @@ public class Player extends GameObject implements Collision{
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_J)==GLFW.GLFW_PRESS){
             rigidbody.setGravity(false);
         }
-
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_F11)==GLFW.GLFW_PRESS){
+            Debug.log("transform.position = " + transform.position);
+        }
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_G)==GLFW.GLFW_PRESS){
             transform.position = new Vector2D(0,0);
         }
-        LittlePoint.updateA();
     }
 
     private void attack() {
         if (EventSystem.getMouseButton1() && isOnFloor && !isAttacking) {
             isAttacking = true;
-            getChildren().get(1).setActive(true);
             attackTimer.reset();
             if (!isAttack1){
                 isAttack1 = true;
+                isAttack2 = false;
             }
             else {
                 isAttack1 = false;
                 isAttack2 = true;
             }
             rigidbody.addForce(new Vector2D(Math.signum(transform.scale.x)*speed*3,0));
-            System.out.println("rigidbody.velocity.x = " + rigidbody.velocity.x);
         }
-        if (isAttack1 && attackTimer.time > 1.2f)
+        if (isAttacking) {
+            ((AttackCheck) getChildren().get(1)).attack1 = isAttack1;
+            if (isAttack1 && attackTimer.time > 0.3f) {
+                getChildren().get(1).setActive(true);
+            } else if (isAttack2) {
+                getChildren().get(1).setActive(true);
+            }
+        }
+        if ((isAttack1||isAttack2) && attackTimer.time > 1.2f) {
             isAttack1 = false;
-        if (isAttack2 && attackTimer.time > 1.2f)
             isAttack2 = false;
-        ((AttackCheck) getChildren().get(1)).attack1 = isAttack1;
+        }
+
+
     }
 
     @Override
@@ -249,7 +262,9 @@ public class Player extends GameObject implements Collision{
         if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_LEFT_SHIFT)==GLFW.GLFW_PRESS) {
             moveVector.y = -1;
         }
-
+        if (GLFW.glfwGetKey(WindowController.getInstance().window, GLFW.GLFW_KEY_UP)==GLFW.GLFW_PRESS) {
+            moveVector.y = 1;
+        }
         moveVector.normalize();
         if (moveVector.getLength() != 0)
             rigidbody.addForce( new Vector2D(moveVector.multiplied(speed)));

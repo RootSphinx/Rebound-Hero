@@ -59,4 +59,12 @@ public class BoxCollider extends Collider{
     private void circleCollided(CircleCollider collider) {
 
     }
+
+    public Vector2D[] getVectors() {
+        Vector2D[] vectors= new Vector2D[4];
+        for (int i = 0; i < this.vectors.length; i++) {
+            vectors[i] = this.vectors[i].added(getGameObject().getPosition());
+        }
+        return vectors;
+    }
 }

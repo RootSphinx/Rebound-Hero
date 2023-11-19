@@ -27,10 +27,15 @@ public class TestGameEvent implements GameEvent {
     }
     public static void shake(GameObject gameObject,String[] args){
         Dialog dialog = (Dialog) gameObject;
-        Utils.createShaker(dialog.getCanvas().transform,10,0.15);
+        Utils.createShaker(dialog.getCanvas(),10,0.15);
     }
     public static void stop(GameObject gameObject,String[]args){
         Dialog dialog = (Dialog) gameObject;
         dialog.getCanvas().setActive(false);
+    }
+
+    @Override
+    public void run() {
+
     }
 }

@@ -33,21 +33,21 @@ public class Utils {
             return "";
         }
     }
-    public static void createShaker(Transform transform,int amp,double time){
-        new Shaker(transform,amp,time);
+    public static void createShaker(GameObject gameObject,int amp,double time){
+        new Shaker(gameObject,amp,time);
     }
     public static class Shaker extends GameObject{
         Random random = new Random((long) GLFW.glfwGetTime());
         Vector2D origin;
-        Transform transform;
+        GameObject gameObject;
         GameTimer gameTimer = new GameTimer();
         int amp;
         double time;
-        private Shaker(Transform transform,int amp,double time){
-            this.transform = transform;
+        private Shaker(GameObject gameObject,int amp,double time){
+            this.gameObject = gameObject;
             this.amp = amp;
             this.time = time;
-            origin = transform.position.multiplied(1);
+            origin = gameObject.transform.position.multiplied(1);
         }
         @Override
         public void start() {
@@ -57,8 +57,8 @@ public class Utils {
         @Override
         public void update() {
             if (gameTimer.time < time){
-                transform.position.x = origin.x + random.nextInt(-amp,amp);
-                transform.position.y = origin.y + random.nextInt(-amp,amp);
+                gameObject.transform.position.x = origin.x + random.nextInt(-amp,amp);
+                gameObject.transform.position.y = origin.y + random.nextInt(-amp,amp);
             }
             else {
                 transform.position = origin;

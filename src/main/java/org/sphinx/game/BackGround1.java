@@ -1,3 +1,5 @@
+package org.sphinx.game;
+
 import org.sphinx.engine.*;
 import org.sphinx.ui.Canvas;
 import org.sphinx.ui.Lable;
@@ -20,7 +22,7 @@ public class BackGround1 extends GameObject implements Collision{
         sprite = new Sprite(this, "/Image/BackGround/20231011-游戏背景.jpg", Render.UsageType.Item);
         sprite.setLayout(1);
         transform.scale = new Vector2D(8,8);
-        this.name = "BackGround1";
+        this.name = "org.sphinx.game.BackGround1";
         this.tag = "floor";
         canvas = new Canvas(0,0,30,30);
         canvas.setColor(new Color(0,0,0,0));

@@ -13,6 +13,8 @@ public class Lable extends UI {
     Sprite sprite;
     public Lable(Canvas canvas, int width, int height){
         super(canvas);
+        this.width = width;
+        this.height = height;
         text = new Text(width,height);
         text.setStr("",80,Color.black);
         sprite = new Sprite(this,text.getTexture(), Render.UsageType.UI);
@@ -25,10 +27,8 @@ public class Lable extends UI {
         this.text.setStr(str,size,0,size,color,Color.black);
     }
     public void setText(String str, int size, Color color,boolean isCenter) {
-
         if (isCenter)
-            this.text.setStr(str,size, text.getTexture().getWidth()/2 - str.length()* size+size,
-                    text.getTexture().getHeight()/2+size/2,color,Color.black);
+            this.text.setStr(str,size, 0,text.getTexture().getHeight()/2+size/2,color,Color.black,true);
         else
             this.text.setStr(str,size,0,size,color,Color.black);
     }

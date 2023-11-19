@@ -71,4 +71,7 @@ public class WindowController {
         glfwTerminate();
         Debug.log("窗口管理器----窗口销毁");
     }
+    public void setWindowShouldClose(){
+        glfwSetWindowShouldClose(window,true);
+    }
 }

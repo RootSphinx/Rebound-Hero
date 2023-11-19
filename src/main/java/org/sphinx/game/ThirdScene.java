@@ -1,18 +1,20 @@
+package org.sphinx.game;
+
+import org.sphinx.engine.Camera;
 import org.sphinx.engine.Renderer;
 import org.sphinx.engine.Scene;
 import org.sphinx.engine.Vector2D;
 
-public class GameTestScene implements Scene {
+public class ThirdScene implements Scene {
     @Override
     public void initScene() {
         GameCamera gameCamera = new GameCamera(1400, 800);
+        gameCamera.setZoom(3.2f);
         Renderer.setActiveCamera(gameCamera);
-        BackGround backGround = new BackGround();
-        BackGround1 backGround1 = new BackGround1();
-
+        BackGround2 backGround2 = new BackGround2();
+        backGround2.transform.position = new Vector2D(0, -800);
         Player player = new Player();
-
+        player.transform.position = new Vector2D(0,200);
         gameCamera.target = player;
-        gameCamera.backGround = backGround1.sprite;
     }
 }

@@ -5,8 +5,6 @@ import org.sphinx.engine.Vector2D;
 import java.awt.*;
 
 public class ProgressBar extends UI{
-    private final int width;
-    private final int height;
     private float mValue = 0;
     private float minValue = 0;
     private float maxValue = 100;
