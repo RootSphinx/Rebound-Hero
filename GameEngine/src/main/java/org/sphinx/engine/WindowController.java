@@ -1,8 +1,18 @@
 package org.sphinx.engine;
 
 import org.lwjgl.glfw.GLFWErrorCallback;
+import org.lwjgl.glfw.GLFWImage;
 import org.lwjgl.opengl.GL;
+import org.lwjgl.system.MemoryUtil;
 import org.sphinx.util.Debug;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.nio.Buffer;
+import java.nio.ByteBuffer;
+import java.util.Objects;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -73,5 +83,36 @@ public class WindowController {
     }
     public void setWindowShouldClose(){
         glfwSetWindowShouldClose(window,true);
+    }
+    public void setWindowIcon(String path){
+        ByteBuffer buffer = null;
+        try {
+            BufferedImage image = ImageIO.read(Objects.requireNonNull(Texture.class.getResource(path)));
+            int imageWidth = image.getWidth();
+            int imageHeight = image.getHeight();
+            int[] pixels =  image.getRGB(0,0,imageWidth,imageHeight,null,0,imageWidth);
+            buffer  = MemoryUtil.memAlloc(imageWidth * imageHeight * 4);
+
+            for (int y = 0; y < imageHeight; y++){
+                for (int x = 0; x < imageWidth; x++){
+                    Color color = new Color(pixels[y * imageWidth + x],true);
+                    buffer.put((byte) color.getRed());
+                    buffer.put((byte) color.getGreen());
+                    buffer.put((byte) color.getBlue());
+                    buffer.put((byte) color.getAlpha());
+                }
+            }
+            buffer.flip();
+
+            final GLFWImage img = GLFWImage.malloc();
+            final GLFWImage.Buffer imagebf = GLFWImage.malloc(1);
+            img.set(image.getWidth(), image.getHeight(), buffer);
+            imagebf.put(0, img);
+
+            glfwSetWindowIcon(window,imagebf);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

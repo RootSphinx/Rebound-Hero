@@ -65,15 +65,15 @@ public class ExitMenu extends GameObject{
         button = new Button(canvas1,150,50);
         button.transform.position = new Vector2D((canvas1.getWidth() - button.getWidth())/2,(canvas1.getHeight() - button.getHeight())/2f);
         button.setButtonColor(new Color(131, 174, 255),new Color(217, 229, 255),new Color(81, 137, 255));
-        button.lable.setText("返回主菜单",30,Color.white,true);
+        button.lable.setText("返回游戏",30,Color.white,true);
 
-        button.setEvent(new ExitMenuEvent("GoBack",this));
+        button.setEvent(new ExitMenuEvent("Cancel",this));
 
         button1 = new Button(canvas1,150,50);
         button1.transform.position = new Vector2D((canvas1.getWidth() - button1.getWidth())/2,(canvas1.getHeight() - button1.getHeight())/2f + button.getHeight()+ 30);
         button1.setButtonColor(new Color(131, 174, 255),new Color(217, 229, 255),new Color(81, 137, 255));
-        button1.lable.setText("返回游戏",30,Color.white,true);
-        button1.setEvent(new ExitMenuEvent("Cancel",this));
+        button1.lable.setText("返回主菜单",30,Color.white,true);
+        button1.setEvent(new ExitMenuEvent("GoBack",this));
 
         button2 = new Button(canvas1,150,50);
         button2.transform.position = new Vector2D((canvas1.getWidth() - button1.getWidth())/2,(canvas1.getHeight() - button1.getHeight())/2f + (button.getHeight()+30)*2);

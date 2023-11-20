@@ -129,11 +129,7 @@ public class Animator extends Component{
                 }
                 timer.reset();
             }
-            else {
-
-            }
             currentSprite.setTexture(texturesMap.get(currentAction).get(currentTexture));
-
         }
         catch (NullPointerException e){
             e.printStackTrace();
@@ -154,7 +150,6 @@ public class Animator extends Component{
     public void destroy(){
         components.get(Animator.class).remove(gameObject.getId());
     }
-
 
     public boolean isFinished() {
         return isFinished;

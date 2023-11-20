@@ -86,6 +86,4 @@ public class Camera extends GameObject{
     public void disable() {
 
     }
-
-
 }

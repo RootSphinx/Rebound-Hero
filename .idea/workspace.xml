@@ -13,11 +13,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="完成NPC功能">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="Release">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/ico.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Image/icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Animator.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Animator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/Component.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/WindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/WindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/ExitMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/ExitMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,27 +149,27 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17 (2)",
-    "last_opened_file_path": "D:/PROJECT/Java/Rebound-Hero/src/main/resources/Image/BackGround/Cloud",
+    "last_opened_file_path": "D:/PROJECT/Java/Rebound-Hero/src/main/resources",
     "project.structure.last.edited": "SDK",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.16206896",
-    "settings.editor.selected.configurable": "settings.sync"
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\PROJECT\Java\Rebound-Hero\src\main\resources\Image\BackGround\Cloud" />
+      <recent name="D:\PROJECT\Java\Rebound-Hero\src\main\resources" />
       <recent name="D:\PROJECT\Java\Rebound-Hero\GameEngine\src\main\resources" />
+      <recent name="D:\PROJECT\Java\Rebound-Hero\src\main\resources\Image\BackGround\Cloud" />
       <recent name="D:\PROJECT\Java\Rebound-Hero\GameEngine\src\main\resources\Image\BackGround" />
       <recent name="D:\PROJECT\Java\Rebound-Hero\GameEngine\src\main\resources\Image\Monster" />
-      <recent name="D:\PROJECT\Java\Rebound-Hero\GameEngine\src\main\resources\image\Hero" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PROJECT\Java\Rebound-Hero\src\main\resources\Image" />
       <recent name="D:\PROJECT\Java\Rebound-Hero\src\main\java\org\sphinx\game" />
       <recent name="D:\PROJECT\Java\Rebound-Hero\src\main\resources\Image\BackGround" />
       <recent name="D:\PROJECT\Java\Rebound-Hero\src\main\resources\Image\BackGround\Cloud" />
       <recent name="D:\PROJECT\Java\Rebound-Hero\src\main\resources" />
-      <recent name="D:\PROJECT\Java\Rebound-Hero\GameEngine\src\main\resources\Image\BackGround" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -313,10 +320,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Rebound-Hero [installDist]" />
+        <item itemvalue="Gradle.Rebound-Hero [run]" />
         <item itemvalue="Gradle.Rebound-Hero [build]" />
         <item itemvalue="Gradle.Rebound-Hero [assemble]" />
         <item itemvalue="Gradle.Rebound-Hero [distZip]" />
-        <item itemvalue="Gradle.Rebound-Hero [run]" />
       </list>
     </recent_temporary>
   </component>
@@ -601,7 +608,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700406166963</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Release">
+      <option name="closed" value="true" />
+      <created>1700457535418</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1700457535418</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -659,7 +674,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="新增Debug类" />
     <MESSAGE value="改善了纹理切割，加入了绘画类" />
     <MESSAGE value="完善了游戏对象的父对象功能，以及画布功能" />
     <MESSAGE value="加入了休眠机制" />
@@ -684,7 +698,8 @@
     <MESSAGE value="完成开始菜单" />
     <MESSAGE value="暂停菜单及战斗效果" />
     <MESSAGE value="完成NPC功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成NPC功能" />
+    <MESSAGE value="Release" />
+    <option name="LAST_COMMIT_MESSAGE" value="Release" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

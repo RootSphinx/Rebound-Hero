@@ -37,10 +37,10 @@ public class GameEngine {
         ShaderProgram.defaultShaderInit();
         Renderer.init();
         Text.init();
-        Component.register(Animator.class);
-        Component.register(Render.class);
-        Component.register(Rigidbody.class);
-        Component.register(Collider.class);
+        Component.register(Animator.class,0);
+        Component.register(Render.class,1);
+        Component.register(Collider.class,2);
+        Component.register(Rigidbody.class,3);
         Debug.log("引擎初始化成功");
     }
     private void loop(){

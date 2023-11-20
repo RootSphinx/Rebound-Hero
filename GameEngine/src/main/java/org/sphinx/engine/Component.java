@@ -4,10 +4,7 @@ import org.sphinx.util.Debug;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 组件类型接口
@@ -16,8 +13,10 @@ public abstract class Component {
     protected final Class<? extends Component> aClass;
     protected final GameObject gameObject;
     protected static final Map<Class<? extends Component>, Map<Integer,List<Component>>> components = new HashMap<>();
-    public static void register(Class<? extends Component> clazz){
+    protected static final Map<Integer,Class<? extends Component>> ORDERS = new HashMap<>();
+    public static void register(Class<? extends Component> clazz,int order){
         components.computeIfAbsent(clazz,k->new HashMap<>());
+        ORDERS.put(order,clazz);
     }
     protected Component(GameObject gameObject,Class<? extends Component> componentName) {
         this.aClass = componentName;
@@ -31,8 +30,10 @@ public abstract class Component {
 
     public static void componentUpdate(){
         try {
-            for(Class clazz : components.keySet()){
-                Method method = clazz.getDeclaredMethod("update");
+            var orderArray =  ORDERS.keySet().toArray();
+            Arrays.sort(orderArray);
+            for (Object order : orderArray) {
+                Method method = ORDERS.get(order).getDeclaredMethod("update");
                 method.setAccessible(true);
                 method.invoke(null);
             }
