@@ -13,15 +13,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="暂停菜单及战斗效果">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/NPC.java" afterDir="false" />
+    <list default="true" id="421cef18-2aba-4987-aa37-fd4706a5c970" name="更改" comment="完成NPC功能">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/org/sphinx/engine/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameEngine/src/main/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameEngine/src/main/java/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/ExitMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/ExitMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sphinx/game/SecondScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sphinx/game/SecondScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +143,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17 (2)",
     "last_opened_file_path": "D:/PROJECT/Java/Rebound-Hero/src/main/resources/Image/BackGround/Cloud",
-    "project.structure.last.edited": "工件",
+    "project.structure.last.edited": "SDK",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.16206896",
     "settings.editor.selected.configurable": "settings.sync"
@@ -162,11 +158,11 @@
       <recent name="D:\PROJECT\Java\Rebound-Hero\GameEngine\src\main\resources\image\Hero" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PROJECT\Java\Rebound-Hero\src\main\java\org\sphinx\game" />
       <recent name="D:\PROJECT\Java\Rebound-Hero\src\main\resources\Image\BackGround" />
       <recent name="D:\PROJECT\Java\Rebound-Hero\src\main\resources\Image\BackGround\Cloud" />
       <recent name="D:\PROJECT\Java\Rebound-Hero\src\main\resources" />
       <recent name="D:\PROJECT\Java\Rebound-Hero\GameEngine\src\main\resources\Image\BackGround" />
-      <recent name="D:\PROJECT\Java\Rebound-Hero\src\main\java\org\sphinx\game" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -176,7 +172,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.Demo测试">
+  <component name="RunManager" selected="Gradle.Rebound-Hero [installDist]">
     <configuration name="引擎测试" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -187,7 +183,7 @@
       </method>
     </configuration>
     <configuration name="Demo测试" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="17 (2)" />
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.sphinx.game.Demo" />
       <module name="Rebound-Hero.main" />
@@ -195,7 +191,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Rebound-Hero [assembleDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Rebound-Hero [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -206,7 +202,51 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="assembleDist" />
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="Rebound-Hero [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="Rebound-Hero [distZip]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="distZip" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -261,66 +301,22 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="Rebound-Hero:GameEngine [installDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/GameEngine" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="installDist" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="Rebound-Hero:GameEngine [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/GameEngine" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Gradle.Rebound-Hero [assembleDist]" />
+      <item itemvalue="Gradle.Rebound-Hero [assemble]" />
+      <item itemvalue="Gradle.Rebound-Hero [build]" />
+      <item itemvalue="Gradle.Rebound-Hero [distZip]" />
       <item itemvalue="Gradle.Rebound-Hero [installDist]" />
-      <item itemvalue="Gradle.Rebound-Hero:GameEngine [run]" />
       <item itemvalue="Gradle.Rebound-Hero [run]" />
-      <item itemvalue="Gradle.Rebound-Hero:GameEngine [installDist]" />
       <item itemvalue="应用程序.引擎测试" />
       <item itemvalue="应用程序.Demo测试" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Rebound-Hero [installDist]" />
-        <item itemvalue="Gradle.Rebound-Hero [assembleDist]" />
+        <item itemvalue="Gradle.Rebound-Hero [build]" />
+        <item itemvalue="Gradle.Rebound-Hero [assemble]" />
+        <item itemvalue="Gradle.Rebound-Hero [distZip]" />
         <item itemvalue="Gradle.Rebound-Hero [run]" />
-        <item itemvalue="Gradle.Rebound-Hero:GameEngine [run]" />
-        <item itemvalue="Gradle.Rebound-Hero:GameEngine [installDist]" />
       </list>
     </recent_temporary>
   </component>
@@ -597,7 +593,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700402116439</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="完成NPC功能">
+      <option name="closed" value="true" />
+      <created>1700406166963</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1700406166963</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -655,7 +659,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="解决切换场景时资源释放不正常的问题" />
     <MESSAGE value="新增Debug类" />
     <MESSAGE value="改善了纹理切割，加入了绘画类" />
     <MESSAGE value="完善了游戏对象的父对象功能，以及画布功能" />
@@ -680,7 +683,8 @@
     <MESSAGE value="完成攻击动画" />
     <MESSAGE value="完成开始菜单" />
     <MESSAGE value="暂停菜单及战斗效果" />
-    <option name="LAST_COMMIT_MESSAGE" value="暂停菜单及战斗效果" />
+    <MESSAGE value="完成NPC功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成NPC功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -707,5 +711,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Rebound_Hero$.ic" NAME="引擎测试 覆盖结果" MODIFIED="1693922210200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Rebound_Hero$Rebound_Hero__run_.ic" NAME="Rebound-Hero [run] 覆盖结果" MODIFIED="1700407141775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

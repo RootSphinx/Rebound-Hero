@@ -53,6 +53,7 @@ public class ExitMenu extends GameObject{
         canvas.fillColor = new Color(0,0,0,0);
 
         canvas1 = new Canvas((WindowController.getInstance().getWindowWidth()-400)/2,(WindowController.getInstance().getWindowHeight()-470)/2,400,470);
+        canvas1.setLayout(18);
         canvas1.setOutLine(true);
         canvas1.setColor(new Color(16, 141, 173));
         canvas1.transform.position.y = -470;
